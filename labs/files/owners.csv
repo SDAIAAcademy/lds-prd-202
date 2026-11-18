@@ -1,0 +1,7 @@
+﻿name,role,may_sign_off
+عهود الرشيدي,رئيسة تجربة الأعضاء، المالكة التجارية لمضمار,release decision; service level
+يزن الشمراني,قائد الفريق الهندسي؛ يعدل التعليمات والتوجيه ويشغّل التقييم,technical readiness (not the evaluation results he produced)
+نوف البيشي,قائدة فريق المراجعة البشرية؛ تعتمد التسميات البشرية والمصححات,grader calibration; evaluation set versions
+هتون المالكي,مسؤولة حماية البيانات,privacy of traces and logs
+إياد الخثلان,مدير المالية,model budget
+مالك المنتج (المشارك),يكتب معايير الإطلاق ويقرأ النتائج ويوصي بالقرار,proposes; does not sign off his own recommendation

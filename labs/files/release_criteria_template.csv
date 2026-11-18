@@ -1,0 +1,8 @@
+﻿criterion,metric_and_threshold,evidence_source,slice_checked,owner,signed_off_by,when_checked
+quality: severity 4 criteria,,,,,,
+quality: severity 3 and 2 criteria,,,,,,
+experiment: primary metric,,,,,,
+experiment: guardrail,,,,,,
+cost,,,,,,
+latency,,,,,,
+privacy of traces,,,,,,

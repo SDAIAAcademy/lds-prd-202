@@ -5,7 +5,7 @@ Evaluation, Experiments and Economics for AI Products
 
 مسار التنفيذيين والقادة · أكاديمية سدايا · LDS-PRD-202 · المستوى 200
 
-REPLACE: سطر واحد تحت العنوان: ما يستطيع المشارك فعله بعد المقرر
+تملك أدلة مساعد ذكي في مشروعه التجريبي: من آثار التنفيذ إلى مجموعة تقييم بإصدارات، ومن تجربة مباشرة إلى تكلفة كل مهمة ناجحة، حتى قرار إطلاق تدافع عنه
 
 يتولى المشاركون مسؤولية الأدلة الخاصة بمساعد ذكاء اصطناعي في مرحلة المشروع التجريبي. فاستنادًا إلى 300 أثر تنفيذ (trace) اصطناعي، وسجل تجربة من 20,000 جلسة، وثلاث قوائم أسعار، يصنّفون أنماط الفشل، ويحولونها إلى مجموعة تقييم ذات إصدارات فيها مصححات وعتبات، ويخططون لتجربة مباشرة ويقرؤون نتائجها، وينمذجون التكلفة لكل مهمة ناجحة مقابل الجودة وزمن الاستجابة، وينتهون بتوصية إطلاق يناقشونها. ويبني المقرر DEV-EVL-301 إطار التقييم؛ أما هذا المقرر فيدرّب مالكه.
 
@@ -30,10 +30,10 @@ REPLACE: سطر واحد تحت العنوان: ما يستطيع المشارك
 
 | الوحدة | العنوان | الجلسات | الشرائح |
 |---|---|---|---|
-| اليوم 1 | REPLACE: موضوع هذه الوحدة في كلمات قليلة | REPLACE: عنوان الجلسة 1; REPLACE: عنوان الجلسة 2; REPLACE: عنوان الجلسة 3; REPLACE: عنوان الجلسة 4 | [`slides/day1.html`](slides/day1.html) |
-| اليوم 2 | REPLACE: موضوع هذه الوحدة في كلمات قليلة | REPLACE: عنوان الجلسة 1; REPLACE: عنوان الجلسة 2; REPLACE: عنوان الجلسة 3; REPLACE: عنوان الجلسة 4 | [`slides/day2.html`](slides/day2.html) |
-| اليوم 3 | REPLACE: موضوع هذه الوحدة في كلمات قليلة | REPLACE: عنوان الجلسة 1; REPLACE: عنوان الجلسة 2; REPLACE: عنوان الجلسة 3; REPLACE: عنوان الجلسة 4 | [`slides/day3.html`](slides/day3.html) |
-| المشروع الختامي | عروض المشروع الختامي |  | [`slides/capstone.html`](slides/capstone.html) |
+| اليوم 1 | من آثار التنفيذ إلى تصنيف للفشل | مخرجات متغيرة تحتاج محاولات متكررة; ما يسجله أثر التنفيذ، والترميز المفتوح; الترميز المحوري مع المهندسين; التكرار مقابل الشدة | [`slides/day1.html`](slides/day1.html) |
+| اليوم 2 | مجموعة التقييم وخطة التجربة | الفحص البرمجي والمصحح النموذجي والمراجعة البشرية; اتفاق المصحح مع الحكم البشري; الإصدارات والتسرب والتحديث من التشغيل; تخطيط تجربة مباشرة | [`slides/day2.html`](slides/day2.html) |
+| اليوم 3 | قراءة التجربة واقتصادياتها وقرار الإطلاق | قراءة نتائج التجربة; الوحدات المفوترة والتكلفة لكل مهمة ناجحة; الفئات والتوجيه والتخزين المؤقت، والتكلفة توزيع; معايير الإطلاق ومالكوها، والمتابعة بعد الإطلاق | [`slides/day3.html`](slides/day3.html) |
+| المشروع الختامي | مراجعة الإطلاق المباشرة |  | [`slides/capstone.html`](slides/capstone.html) |
 <!-- /academy:units -->
 
 ## دراسة الحالة
@@ -47,18 +47,18 @@ REPLACE: سطر واحد تحت العنوان: ما يستطيع المشارك
 
 | | الجلسة | المختبر | الملف |
 |---|---|---|---|
-| 1.1 | اليوم 1 · الجلسة 1 | REPLACE: ما يبنيه المشاركون في المختبر 1.1 | [`D1_1.html`](labs/D1_1.html) |
-| 1.2 | اليوم 1 · الجلسة 2 | REPLACE: ما يبنيه المشاركون في المختبر 1.2 | [`D1_2.html`](labs/D1_2.html) |
-| 1.3 | اليوم 1 · الجلسة 3 | REPLACE: ما يبنيه المشاركون في المختبر 1.3 | [`D1_3.html`](labs/D1_3.html) |
-| 1.4 | اليوم 1 · الجلسة 4 | REPLACE: ما يبنيه المشاركون في المختبر 1.4 | [`D1_4.html`](labs/D1_4.html) |
-| 2.1 | اليوم 2 · الجلسة 1 | REPLACE: ما يبنيه المشاركون في المختبر 2.1 | [`D2_1.html`](labs/D2_1.html) |
-| 2.2 | اليوم 2 · الجلسة 2 | REPLACE: ما يبنيه المشاركون في المختبر 2.2 | [`D2_2.html`](labs/D2_2.html) |
-| 2.3 | اليوم 2 · الجلسة 3 | REPLACE: ما يبنيه المشاركون في المختبر 2.3 | [`D2_3.html`](labs/D2_3.html) |
-| 2.4 | اليوم 2 · الجلسة 4 | REPLACE: ما يبنيه المشاركون في المختبر 2.4 | [`D2_4.html`](labs/D2_4.html) |
-| 3.1 | اليوم 3 · الجلسة 1 | REPLACE: ما يبنيه المشاركون في المختبر 3.1 | [`D3_1.html`](labs/D3_1.html) |
-| 3.2 | اليوم 3 · الجلسة 2 | REPLACE: ما يبنيه المشاركون في المختبر 3.2 | [`D3_2.html`](labs/D3_2.html) |
-| 3.3 | اليوم 3 · الجلسة 3 | REPLACE: ما يبنيه المشاركون في المختبر 3.3 | [`D3_3.html`](labs/D3_3.html) |
-| 3.4 | اليوم 3 · الجلسة 4 | REPLACE: ما يبنيه المشاركون في المختبر 3.4 | [`D3_4.html`](labs/D3_4.html) |
+| 1.1 | اليوم 1 · الجلسة 1 | ادعاءات الموردين الأربعة | [`D1_1_vendor_claims.html`](labs/D1_1_vendor_claims.html) |
+| 1.2 | اليوم 1 · الجلسة 2 | الترميز المفتوح لخمسين أثرًا | [`D1_2_open_coding.html`](labs/D1_2_open_coding.html) |
+| 1.3 | اليوم 1 · الجلسة 3 | من الملاحظات إلى تصنيف | [`D1_3_axial_coding.html`](labs/D1_3_axial_coding.html) |
+| 1.4 | اليوم 1 · الجلسة 4 | ترتيب التصنيف | [`D1_4_frequency_severity.html`](labs/D1_4_frequency_severity.html) |
+| 2.1 | اليوم 2 · الجلسة 1 | مصحح لكل معيار | [`D2_1_grader_choice.html`](labs/D2_1_grader_choice.html) |
+| 2.2 | اليوم 2 · الجلسة 2 | تقرير المعايرة والعتبات | [`D2_2_grader_calibration.html`](labs/D2_2_grader_calibration.html) |
+| 2.3 | اليوم 2 · الجلسة 3 | مجموعة التقييم v1.0 | [`D2_3_evalset_v1.html`](labs/D2_3_evalset_v1.html) |
+| 2.4 | اليوم 2 · الجلسة 4 | خطة مسجلة مسبقًا | [`D2_4_experiment_plan.html`](labs/D2_4_experiment_plan.html) |
+| 3.1 | اليوم 3 · الجلسة 1 | تقرير التجربة | [`D3_1_experiment_readout.html`](labs/D3_1_experiment_readout.html) |
+| 3.2 | اليوم 3 · الجلسة 2 | تكلفة ثلاثة إعدادات | [`D3_2_cost_per_success.html`](labs/D3_2_cost_per_success.html) |
+| 3.3 | اليوم 3 · الجلسة 3 | الحساسية للحجم والنجاح والسعر | [`D3_3_cost_sensitivity.html`](labs/D3_3_cost_sensitivity.html) |
+| 3.4 | اليوم 3 · الجلسة 4 | معايير الإطلاق ومواصفة المراقبة | [`D3_4_release_criteria.html`](labs/D3_4_release_criteria.html) |
 <!-- /academy:labs -->
 
 ## المشروع الختامي
@@ -87,7 +87,32 @@ REPLACE: سطر واحد تحت العنوان: ما يستطيع المشارك
 <!-- academy:sources -->
 ## المصادر
 
-- REPLACE: كل مصدر يستشهد به المقرر مع عنوانه، في course.json ضمن "sources"؛ هذه القائمة تُكتب من هناك
+### المرجعيات الوطنية
+
+- [نظام حماية البيانات الشخصية (سدايا)](https://sdaia.gov.sa/en/SDAIA/about/Documents/PersonalDataProtectionLaw.pdf)
+- [نظام حماية البيانات الشخصية، النص العربي النافذ بتعديلاته (هيئة الخبراء بمجلس الوزراء)](https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/b7cfae89-828e-4994-b167-adaa00e37188/1)
+- [مبادئ أخلاقيات الذكاء الاصطناعي (سدايا)](https://sdaia.gov.sa/ar/SDAIA/about/Documents/ai-principles.pdf)
+- [الإطار الوطني لإدارة مخاطر الذكاء الاصطناعي، النص العربي (سدايا)](https://sdaia.gov.sa/ar/MediaCenter/KnowledgeCenter/ResearchLibrary/ExecutiveSummaryAr.pdf)
+- [المبادئ التوجيهية للذكاء الاصطناعي التوليدي للجهات الحكومية (سدايا)](https://sdaia.gov.sa/ar/SDAIA/about/Files/GenAIGuidelinesForGovernmentARCompressed.pdf)
+
+### تحليل الأخطاء والمصححات والمحاولات المتكررة
+
+- [Hamel Husain and Shreya Shankar: AI Evals, Everything You Need to Know (2026)](https://hamel.dev/blog/posts/evals-faq/)
+- [Yao et al.: τ-bench, a benchmark for tool-agent-user interaction (2024)](https://arxiv.org/abs/2406.12045)
+
+### التجارب والتكلفة
+
+- [Evan Miller: How Not To Run an A/B Test (2010)](https://www.evanmiller.org/how-not-to-run-an-ab-test.html)
+- [Anthropic: Prompt caching, Claude Platform Docs](https://platform.claude.com/docs/en/build-with-claude/prompt-caching)
+
+### أمثلة الأدوات (نوفمبر 2026)
+
+- [Langfuse documentation](https://langfuse.com/docs)
+- [Arize Phoenix documentation](https://arize.com/docs/phoenix)
+- [MLflow Tracing for GenAI](https://mlflow.org/docs/latest/genai/tracing/)
+- [promptfoo documentation](https://www.promptfoo.dev/docs/intro/)
+- [Inspect (UK AI Security Institute)](https://inspect.aisi.org.uk/)
+- [LiteLLM documentation](https://docs.litellm.ai/docs/)
 <!-- /academy:sources -->
 
 ### المرجعيات الوطنية

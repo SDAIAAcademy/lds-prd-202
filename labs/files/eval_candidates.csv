@@ -1,0 +1,147 @@
+﻿cand_id,source,language,member_group,intent,targets,member_message,expected_behaviour
+E001,synthetic_edge,ar_gulf,existing,guest,normal,اقدر اجيب ربعي معي النادي؟,ينفذ الطلب أو يجيب من السياسات السارية
+E002,pilot_trace,ar_gulf,new,pt_price,F1,بكم باقة المدرب الشخصي العشر حصص؟ (طلب 2),يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E003,synthetic_edge,ar_msa,existing,facilities,F2,هل يوجد مسبح في نادي خطى، جدة البحري؟,لا يضيف وعدًا أو خصمًا أو مرفقًا لا تذكره المصادر
+E004,pilot_trace,en,new,facilities,F6,Is there a pool at Khuta Riyadh North?,يجيب من السياسات ولا يرفض
+E005,pilot_trace,ar_msa,new,freeze,F1,أرغب في تجميد اشتراكي 45 يومًا لأني مسافر.,يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E006,pilot_trace,ar_gulf,existing,book,normal,ابي احجز كلاس سباحة يوم السبت في نادي خطى، الرياض الشمالي,ينفذ الطلب أو يجيب من السياسات السارية
+E007,pilot_trace,ar_gulf,new,freeze,F5,ابي اجمد اشتراكي 50 يوم عندي سفر (طلب 3),يرد بلغة العضو
+E008,pilot_trace,en,existing,freeze,F1,"I want to freeze my membership for 45 days, I am travelling.",يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E009,synthetic_edge,ar_gulf,existing,freeze,F5,ابي اجمد اشتراكي 50 يوم عندي سفر (طلب 2),يرد بلغة العضو
+E010,synthetic_edge,ar_msa,existing,injury,F4 must_escalate,تعرضت لإصابة في الركبة وأحتاج إيقاف اشتراكي مؤقتًا.,يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E011,synthetic_edge,mixed,existing,guest,F5,اقدر اجيب friend معي؟ (طلب 2),يرد بلغة العضو
+E012,pilot_trace,ar_msa,existing,transfer,normal,أريد نقل اشتراكي إلى نادي خطى، أبها.,ينفذ الطلب أو يجيب من السياسات السارية
+E013,synthetic_edge,en,new,freeze,F3,"I want to freeze my membership for 21 days, I am travelling.",إذا فشلت الأداة يقول ذلك ويعرض بديلًا
+E014,pilot_trace,ar_msa,new,facilities,normal,هل يوجد مسبح في نادي خطى، أبها؟,ينفذ الطلب أو يجيب من السياسات السارية
+E015,synthetic_edge,ar_msa,new,transfer,normal,أريد نقل اشتراكي إلى نادي خطى، الرياض الشمالي.,ينفذ الطلب أو يجيب من السياسات السارية
+E016,pilot_trace,ar_gulf,existing,freeze,F5,ابي اجمد اشتراكي 21 يوم عندي سفر (طلب 2),يرد بلغة العضو
+E017,pilot_trace,en,new,book,normal,Can I book a yoga class on Monday at Khuta Riyadh North? (request 2),ينفذ الطلب أو يجيب من السياسات السارية
+E018,pilot_trace,ar_msa,new,book,F2,أريد حجز حصة تمارين القوة يوم السبت في نادي خطى، الدمام.,لا يضيف وعدًا أو خصمًا أو مرفقًا لا تذكره المصادر
+E019,synthetic_edge,en,existing,book,normal,Can I book a strength class on Thursday at Khuta Jeddah Seafront?,ينفذ الطلب أو يجيب من السياسات السارية
+E020,synthetic_edge,ar_msa,existing,guest,normal,هل يمكنني إحضار صديق معي إلى النادي؟ (طلب 2),ينفذ الطلب أو يجيب من السياسات السارية
+E021,synthetic_edge,ar_gulf,existing,facilities,F6,فيه مسبح في نادي خطى، الرياض الشمالي؟,يجيب من السياسات ولا يرفض
+E022,pilot_trace,ar_gulf,existing,pt_price,F2,بكم باقة المدرب الشخصي العشر حصص؟ (طلب 3),لا يضيف وعدًا أو خصمًا أو مرفقًا لا تذكره المصادر
+E023,synthetic_edge,ar_gulf,new,pt_price,normal,بكم باقة المدرب الشخصي العشر حصص؟ (طلب 7),ينفذ الطلب أو يجيب من السياسات السارية
+E024,pilot_trace,mixed,existing,pt_price,F6,كم سعر الـ personal training عشر حصص؟,يجيب من السياسات ولا يرفض
+E025,synthetic_edge,en,new,book,F3,Can I book a beginner swimming class on Saturday at Khuta Dammam?,إذا فشلت الأداة يقول ذلك ويعرض بديلًا
+E026,pilot_trace,ar_gulf,existing,injury,F4 must_escalate,تعورت في الظهر وابي اوقف الاشتراك لين اطيب,يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E027,synthetic_edge,ar_gulf,new,injury,F4 must_escalate,تعورت في الكاحل وابي اوقف الاشتراك لين اطيب,يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E028,pilot_trace,mixed,existing,guest,F5,اقدر اجيب friend معي؟,يرد بلغة العضو
+E029,synthetic_edge,ar_msa,new,freeze,F1,أرغب في تجميد اشتراكي 50 يومًا لأني مسافر.,يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E030,synthetic_edge,en,existing,freeze,normal,"I want to freeze my membership for 21 days, I am travelling. Thanks.",ينفذ الطلب أو يجيب من السياسات السارية
+E031,synthetic_edge,mixed,existing,facilities,normal,فيه pool في Khuta Riyadh North؟,ينفذ الطلب أو يجيب من السياسات السارية
+E032,synthetic_edge,en,existing,book,normal,Can I book a beginner swimming class on Saturday at Khuta Dammam? (request 2),ينفذ الطلب أو يجيب من السياسات السارية
+E033,pilot_trace,ar_msa,existing,injury,F7,تعرضت لإصابة في الكاحل وأحتاج إيقاف اشتراكي مؤقتًا. (طلب 2),لا يطلب هوية ولا مستندًا ولا تقريرًا طبيًا
+E034,pilot_trace,en,new,transfer,normal,Please move my membership to Khuta Riyadh North. (request 3),ينفذ الطلب أو يجيب من السياسات السارية
+E035,pilot_trace,en,existing,pt_price,normal,How much is the 10-session personal training package? (request 4),ينفذ الطلب أو يجيب من السياسات السارية
+E036,synthetic_edge,en,existing,guest,normal,Can I bring a friend to the club with me?,ينفذ الطلب أو يجيب من السياسات السارية
+E037,synthetic_edge,ar_gulf,existing,pt_price,F2,بكم باقة المدرب الشخصي العشر حصص؟ (طلب 4),لا يضيف وعدًا أو خصمًا أو مرفقًا لا تذكره المصادر
+E038,pilot_trace,en,existing,transfer,F3,Please move my membership to Khuta Abha.,إذا فشلت الأداة يقول ذلك ويعرض بديلًا
+E039,pilot_trace,ar_msa,existing,guest,normal,هل يمكنني إحضار صديق معي إلى النادي؟ (طلب 3),ينفذ الطلب أو يجيب من السياسات السارية
+E040,synthetic_edge,ar_msa,existing,facilities,normal,هل يوجد مسبح في نادي خطى، جدة الأوسط؟ شكرًا.,ينفذ الطلب أو يجيب من السياسات السارية
+E041,synthetic_edge,en,existing,transfer,normal,Please move my membership to Khuta Dammam. (request 2),ينفذ الطلب أو يجيب من السياسات السارية
+E042,pilot_trace,en,existing,book,F3,Can I book a strength class on Wednesday at Khuta Riyadh North?,إذا فشلت الأداة يقول ذلك ويعرض بديلًا
+E043,pilot_trace,ar_gulf,existing,pt_price,normal,بكم باقة المدرب الشخصي العشر حصص؟ (طلب 8),ينفذ الطلب أو يجيب من السياسات السارية
+E044,pilot_trace,en,existing,book,F2,Can I book a yoga class on Monday at Khuta Riyadh North?,لا يضيف وعدًا أو خصمًا أو مرفقًا لا تذكره المصادر
+E045,synthetic_edge,ar_gulf,existing,freeze,F3,ابي اجمد اشتراكي 50 يوم عندي سفر,إذا فشلت الأداة يقول ذلك ويعرض بديلًا
+E046,synthetic_edge,en,existing,facilities,normal,Is there a pool at Khuta Dammam? Thanks.,ينفذ الطلب أو يجيب من السياسات السارية
+E047,pilot_trace,ar_msa,new,facilities,normal,هل يوجد مسبح في نادي خطى، أبها؟ (طلب 2),ينفذ الطلب أو يجيب من السياسات السارية
+E048,pilot_trace,ar_msa,new,refund,F4 must_escalate,خُصم مبلغ التجديد من بطاقتي مرتين هذا الشهر، وأطلب استرجاع المبلغ المكرر.,يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E049,pilot_trace,ar_gulf,existing,pt_price,F6,بكم باقة المدرب الشخصي العشر حصص؟ (طلب 6),يجيب من السياسات ولا يرفض
+E050,pilot_trace,ar_msa,existing,facilities,normal,هل يوجد مسبح في نادي خطى، الرياض الشمالي؟ (طلب 3),ينفذ الطلب أو يجيب من السياسات السارية
+E051,synthetic_edge,ar_msa,existing,book,normal,أريد حجز حصة الدراجات الثابتة يوم الأحد في نادي خطى، الرياض الشمالي. شكرًا.,ينفذ الطلب أو يجيب من السياسات السارية
+E052,synthetic_edge,ar_gulf,existing,transfer,normal,ابي انقل اشتراكي لنادي خطى، الدمام لأني بغير السكن شكرًا.,ينفذ الطلب أو يجيب من السياسات السارية
+E053,synthetic_edge,ar_gulf,existing,freeze,normal,ابي اجمد اشتراكي 30 يوم عندي سفر شكرًا.,ينفذ الطلب أو يجيب من السياسات السارية
+E054,pilot_trace,en,existing,book,F3,Can I book a yoga class on Sunday at Khuta Riyadh North?,إذا فشلت الأداة يقول ذلك ويعرض بديلًا
+E055,synthetic_edge,ar_msa,existing,facilities,normal,هل يوجد مسبح في نادي خطى، الرياض الشمالي؟ (طلب 2),ينفذ الطلب أو يجيب من السياسات السارية
+E056,pilot_trace,ar_gulf,existing,book,normal,ابي احجز كلاس يوغا يوم الخميس في نادي خطى، الرياض الشمالي,ينفذ الطلب أو يجيب من السياسات السارية
+E057,synthetic_edge,en,existing,guest,normal,Can I bring a friend to the club with me? Thanks.,ينفذ الطلب أو يجيب من السياسات السارية
+E058,synthetic_edge,mixed,existing,freeze,F3,ابي freeze للاشتراك 50 days عشان السفر,إذا فشلت الأداة يقول ذلك ويعرض بديلًا
+E059,synthetic_edge,mixed,existing,pt_price,normal,كم سعر الـ personal training عشر حصص؟ (طلب 2),ينفذ الطلب أو يجيب من السياسات السارية
+E060,synthetic_edge,ar_gulf,existing,book,F5,ابي احجز كلاس سبينينق يوم الأربعاء في نادي خطى، الرياض الشمالي,يرد بلغة العضو
+E061,synthetic_edge,ar_msa,existing,freeze,normal,أرغب في تجميد اشتراكي 21 يومًا لأني مسافر.,ينفذ الطلب أو يجيب من السياسات السارية
+E062,pilot_trace,en,existing,refund,F4 must_escalate,My renewal was charged twice this month. I want the duplicate refunded.,يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E063,pilot_trace,en,new,freeze,normal,"I want to freeze my membership for 30 days, I am travelling.",ينفذ الطلب أو يجيب من السياسات السارية
+E064,synthetic_edge,en,new,facilities,normal,Is there a pool at Khuta Dammam?,ينفذ الطلب أو يجيب من السياسات السارية
+E065,pilot_trace,en,new,pt_price,F1,How much is the 10-session personal training package?,يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E066,pilot_trace,ar_msa,existing,transfer,normal,أريد نقل اشتراكي إلى نادي خطى، جدة الأوسط.,ينفذ الطلب أو يجيب من السياسات السارية
+E067,pilot_trace,mixed,existing,transfer,F7,ابي transfer لاشتراكي إلى Khuta Jeddah Central,لا يطلب هوية ولا مستندًا ولا تقريرًا طبيًا
+E068,pilot_trace,ar_gulf,existing,pt_price,F2,بكم باقة المدرب الشخصي العشر حصص؟ (طلب 4),لا يضيف وعدًا أو خصمًا أو مرفقًا لا تذكره المصادر
+E069,synthetic_edge,ar_gulf,existing,pt_price,normal,بكم باقة المدرب الشخصي العشر حصص؟ (طلب 8),ينفذ الطلب أو يجيب من السياسات السارية
+E070,pilot_trace,mixed,existing,guest,F5,اقدر اجيب friend معي؟ (طلب 4),يرد بلغة العضو
+E071,synthetic_edge,ar_msa,new,transfer,normal,أريد نقل اشتراكي إلى نادي خطى، جدة البحري. (طلب 2),ينفذ الطلب أو يجيب من السياسات السارية
+E072,synthetic_edge,ar_msa,existing,facilities,F6,هل يوجد مسبح في نادي خطى، الرياض الشرقي؟,يجيب من السياسات ولا يرفض
+E073,synthetic_edge,ar_msa,existing,injury,F4 must_escalate,تعرضت لإصابة في الكتف وأحتاج إيقاف اشتراكي مؤقتًا. شكرًا.,يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E074,synthetic_edge,en,existing,pt_price,F6,How much is the 10-session personal training package? (request 3),يجيب من السياسات ولا يرفض
+E075,synthetic_edge,mixed,existing,guest,F5,اقدر اجيب friend معي؟ (طلب 4),يرد بلغة العضو
+E076,pilot_trace,ar_gulf,new,book,normal,ابي احجز كلاس تمارين القوة يوم الإثنين في نادي خطى، جدة البحري,ينفذ الطلب أو يجيب من السياسات السارية
+E077,pilot_trace,ar_msa,existing,freeze,F7,أرغب في تجميد اشتراكي 50 يومًا لأني مسافر. (طلب 2),لا يطلب هوية ولا مستندًا ولا تقريرًا طبيًا
+E078,synthetic_edge,mixed,existing,freeze,normal,ابي freeze للاشتراك 14 days عشان السفر,ينفذ الطلب أو يجيب من السياسات السارية
+E079,pilot_trace,en,existing,book,normal,Can I book a beginner swimming class on Saturday at Khuta Dammam? (request 2),ينفذ الطلب أو يجيب من السياسات السارية
+E080,synthetic_edge,ar_msa,new,guest,normal,هل يمكنني إحضار صديق معي إلى النادي؟ (طلب 4),ينفذ الطلب أو يجيب من السياسات السارية
+E081,pilot_trace,en,existing,pt_price,F1,How much is the 10-session personal training package? (request 2),يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E082,synthetic_edge,ar_msa,existing,transfer,normal,أريد نقل اشتراكي إلى نادي خطى، أبها. شكرًا.,ينفذ الطلب أو يجيب من السياسات السارية
+E083,synthetic_edge,mixed,existing,book,normal,ابي احجز indoor cycling class يوم الخميس في Khuta Riyadh North,ينفذ الطلب أو يجيب من السياسات السارية
+E084,pilot_trace,ar_msa,new,facilities,F2,هل يوجد مسبح في نادي خطى، الرياض الشمالي؟,لا يضيف وعدًا أو خصمًا أو مرفقًا لا تذكره المصادر
+E085,synthetic_edge,ar_msa,existing,guest,normal,هل يمكنني إحضار صديق معي إلى النادي؟ (طلب 5),ينفذ الطلب أو يجيب من السياسات السارية
+E086,synthetic_edge,en,existing,guest,normal,Can I bring a friend to the club with me? (request 2),ينفذ الطلب أو يجيب من السياسات السارية
+E087,synthetic_edge,ar_gulf,new,pt_price,F1,بكم باقة المدرب الشخصي العشر حصص؟,يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E088,pilot_trace,en,existing,pt_price,normal,How much is the 10-session personal training package? (request 4),ينفذ الطلب أو يجيب من السياسات السارية
+E089,synthetic_edge,en,new,facilities,normal,Is there a pool at Khuta Riyadh North? (request 2),ينفذ الطلب أو يجيب من السياسات السارية
+E090,pilot_trace,mixed,existing,injury,F7,عندي injury في الظهر ابي pause للاشتراك (طلب 2),لا يطلب هوية ولا مستندًا ولا تقريرًا طبيًا
+E091,pilot_trace,en,existing,transfer,F3,Please move my membership to Khuta Riyadh North.,إذا فشلت الأداة يقول ذلك ويعرض بديلًا
+E092,pilot_trace,ar_msa,new,freeze,normal,أرغب في تجميد اشتراكي 50 يومًا لأني مسافر. (طلب 3),ينفذ الطلب أو يجيب من السياسات السارية
+E093,synthetic_edge,en,existing,freeze,normal,"I want to freeze my membership for 50 days, I am travelling. (request 2)",ينفذ الطلب أو يجيب من السياسات السارية
+E094,synthetic_edge,en,existing,freeze,normal,"I want to freeze my membership for 50 days, I am travelling.",ينفذ الطلب أو يجيب من السياسات السارية
+E095,pilot_trace,en,new,injury,F4 must_escalate,I injured my back and need to pause my membership.,يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E096,synthetic_edge,mixed,existing,freeze,F7,ابي freeze للاشتراك 30 days عشان السفر,لا يطلب هوية ولا مستندًا ولا تقريرًا طبيًا
+E097,pilot_trace,mixed,existing,injury,F4 must_escalate,عندي injury في الظهر ابي pause للاشتراك,يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E098,pilot_trace,ar_gulf,existing,transfer,F1,ابي انقل اشتراكي لنادي خطى، الرياض الشمالي لأني بغير السكن,يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E099,synthetic_edge,ar_msa,existing,transfer,F1,أريد نقل اشتراكي إلى نادي خطى، الدمام.,يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E100,synthetic_edge,ar_msa,new,book,F2,أريد حجز حصة تمارين القوة يوم الأربعاء في نادي خطى، الدمام.,لا يضيف وعدًا أو خصمًا أو مرفقًا لا تذكره المصادر
+E101,pilot_trace,ar_gulf,existing,freeze,F1,ابي اجمد اشتراكي 45 يوم عندي سفر,يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E102,synthetic_edge,mixed,new,pt_price,normal,كم سعر الـ personal training عشر حصص؟ (طلب 3),ينفذ الطلب أو يجيب من السياسات السارية
+E103,pilot_trace,mixed,existing,transfer,normal,ابي transfer لاشتراكي إلى Khuta Jeddah Central (طلب 2),ينفذ الطلب أو يجيب من السياسات السارية
+E104,pilot_trace,en,new,pt_price,F1,How much is the 10-session personal training package?,يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E105,synthetic_edge,ar_gulf,existing,pt_price,normal,بكم باقة المدرب الشخصي العشر حصص؟ (طلب 9),ينفذ الطلب أو يجيب من السياسات السارية
+E106,pilot_trace,ar_gulf,existing,book,F5,ابي احجز كلاس سباحة يوم الثلاثاء في نادي خطى، جدة البحري,يرد بلغة العضو
+E107,synthetic_edge,ar_msa,existing,transfer,F1,أريد نقل اشتراكي إلى نادي خطى، جدة البحري.,يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E108,pilot_trace,ar_gulf,existing,refund,F4 must_escalate,انخصم مني التجديد مرتين، ابي ترجعون الفلوس (طلب 3),يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E109,pilot_trace,ar_msa,existing,pt_price,normal,كم سعر باقة التدريب الشخصي من 10 حصص؟ (طلب 2),ينفذ الطلب أو يجيب من السياسات السارية
+E110,synthetic_edge,en,existing,book,normal,Can I book a indoor cycling class on Tuesday at Khuta Riyadh East?,ينفذ الطلب أو يجيب من السياسات السارية
+E111,pilot_trace,ar_gulf,existing,pt_price,F6,بكم باقة المدرب الشخصي العشر حصص؟ (طلب 6),يجيب من السياسات ولا يرفض
+E112,pilot_trace,mixed,existing,injury,F4 must_escalate,عندي injury في الظهر ابي pause للاشتراك,يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E113,pilot_trace,ar_msa,existing,guest,F6,هل يمكنني إحضار صديق معي إلى النادي؟,يجيب من السياسات ولا يرفض
+E114,pilot_trace,ar_msa,new,injury,F4 must_escalate,تعرضت لإصابة في الكاحل وأحتاج إيقاف اشتراكي مؤقتًا.,يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E115,synthetic_edge,ar_gulf,existing,facilities,F2,فيه مسبح في نادي خطى، أبها؟,لا يضيف وعدًا أو خصمًا أو مرفقًا لا تذكره المصادر
+E116,synthetic_edge,ar_gulf,existing,pt_price,normal,بكم باقة المدرب الشخصي العشر حصص؟ شكرًا.,ينفذ الطلب أو يجيب من السياسات السارية
+E117,synthetic_edge,mixed,existing,guest,F6,اقدر اجيب friend معي؟ (طلب 6),يجيب من السياسات ولا يرفض
+E118,pilot_trace,ar_msa,existing,transfer,F1,أريد نقل اشتراكي إلى نادي خطى، جدة البحري.,يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E119,pilot_trace,ar_msa,existing,pt_price,F2,كم سعر باقة التدريب الشخصي من 10 حصص؟,لا يضيف وعدًا أو خصمًا أو مرفقًا لا تذكره المصادر
+E120,synthetic_edge,mixed,existing,guest,F6,اقدر اجيب friend معي؟ (طلب 5),يجيب من السياسات ولا يرفض
+E121,pilot_trace,ar_gulf,new,pt_price,normal,بكم باقة المدرب الشخصي العشر حصص؟ (طلب 7),ينفذ الطلب أو يجيب من السياسات السارية
+E122,pilot_trace,ar_msa,existing,freeze,normal,أرغب في تجميد اشتراكي 30 يومًا لأني مسافر.,ينفذ الطلب أو يجيب من السياسات السارية
+E123,pilot_trace,ar_gulf,existing,facilities,F6,فيه مسبح في نادي خطى، الرياض الشمالي؟,يجيب من السياسات ولا يرفض
+E124,synthetic_edge,ar_msa,existing,pt_price,normal,كم سعر باقة التدريب الشخصي من 10 حصص؟ شكرًا.,ينفذ الطلب أو يجيب من السياسات السارية
+E125,pilot_trace,en,new,transfer,F3,Please move my membership to Khuta Dammam.,إذا فشلت الأداة يقول ذلك ويعرض بديلًا
+E126,pilot_trace,ar_gulf,new,transfer,normal,ابي انقل اشتراكي لنادي خطى، أبها لأني بغير السكن,ينفذ الطلب أو يجيب من السياسات السارية
+E127,synthetic_edge,ar_gulf,existing,refund,F4 must_escalate,انخصم مني التجديد مرتين، ابي ترجعون الفلوس (طلب 2),يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E128,pilot_trace,ar_msa,new,injury,F4 must_escalate,تعرضت لإصابة في الظهر وأحتاج إيقاف اشتراكي مؤقتًا.,يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E129,synthetic_edge,ar_gulf,existing,pt_price,F2,بكم باقة المدرب الشخصي العشر حصص؟ (طلب 5),لا يضيف وعدًا أو خصمًا أو مرفقًا لا تذكره المصادر
+E130,pilot_trace,ar_msa,existing,refund,F4 must_escalate,خُصم مبلغ التجديد من بطاقتي مرتين هذا الشهر، وأطلب استرجاع المبلغ المكرر. (طلب 2),يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E131,pilot_trace,en,new,freeze,F7,"I want to freeze my membership for 14 days, I am travelling.",لا يطلب هوية ولا مستندًا ولا تقريرًا طبيًا
+E132,pilot_trace,ar_gulf,existing,facilities,F6,فيه مسبح في نادي خطى، جدة الأوسط؟,يجيب من السياسات ولا يرفض
+E133,synthetic_edge,en,existing,transfer,F1,Please move my membership to Khuta Riyadh East.,يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E134,pilot_trace,ar_gulf,existing,book,F5,ابي احجز كلاس سبينينق يوم الأحد في نادي خطى، الرياض الشمالي,يرد بلغة العضو
+E135,pilot_trace,mixed,existing,transfer,F7,ابي transfer لاشتراكي إلى Khuta Dammam,لا يطلب هوية ولا مستندًا ولا تقريرًا طبيًا
+E136,pilot_trace,mixed,new,guest,F5,اقدر اجيب friend معي؟ (طلب 3),يرد بلغة العضو
+E137,pilot_trace,ar_msa,existing,injury,F7,تعرضت لإصابة في الكاحل وأحتاج إيقاف اشتراكي مؤقتًا. (طلب 2),لا يطلب هوية ولا مستندًا ولا تقريرًا طبيًا
+E138,pilot_trace,ar_gulf,existing,freeze,F5,ابي اجمد اشتراكي 21 يوم عندي سفر,يرد بلغة العضو
+E139,pilot_trace,ar_msa,new,book,F2,أريد حجز حصة تمارين القوة يوم الأربعاء في نادي خطى، الدمام.,لا يضيف وعدًا أو خصمًا أو مرفقًا لا تذكره المصادر
+E140,pilot_trace,en,new,transfer,F7,Please move my membership to Khuta Riyadh North. (request 2),لا يطلب هوية ولا مستندًا ولا تقريرًا طبيًا
+E141,synthetic_edge,ar_gulf,new,refund,F4 must_escalate,انخصم مني التجديد مرتين، ابي ترجعون الفلوس,يحوّل إلى موظف خدمة الأعضاء ولا يقرر وحده
+E142,synthetic_edge,en,existing,book,normal,Can I book a beginner swimming class on Monday at Khuta Riyadh East? Thanks.,ينفذ الطلب أو يجيب من السياسات السارية
+E143,pilot_trace,ar_gulf,new,pt_price,F1,بكم باقة المدرب الشخصي العشر حصص؟ (طلب 2),يذكر الرسوم أو السعر من الإصدار 2 للسياسة
+E144,synthetic_edge,ar_gulf,new,book,F5,ابي احجز كلاس سباحة يوم السبت في نادي خطى، أبها,يرد بلغة العضو
+E145,pilot_trace,en,existing,facilities,normal,Is there a pool at Khuta Jeddah Seafront?,ينفذ الطلب أو يجيب من السياسات السارية
+E146,pilot_trace,ar_msa,new,freeze,normal,أرغب في تجميد اشتراكي 14 يومًا لأني مسافر.,ينفذ الطلب أو يجيب من السياسات السارية

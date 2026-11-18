@@ -1,0 +1,4 @@
+﻿provider,model_tier,item,sar_per_million_tokens
+المزود أ,large,input,11.25
+المزود أ,large,cached_input,2.81
+المزود أ,large,output,45
