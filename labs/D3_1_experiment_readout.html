@@ -20,22 +20,22 @@
   <div class="step">
     <h3>1 · افتح الخطة المرجعية وتحقق من توازن الذراعين <span class="min">4 د</span></h3>
     <p>عدّ الجلسات في كل ذراع. التوزيع 50/50، فإن ابتعد العدد عن النصف أكثر مما تسمح به الصدفة فالخلل في التوزيع لا في المساعد:</p>
-    <div class="prompt" data-tool="جدول بيانات">=(COUNTIF(C:C,"A")-10000)/SQRT(20000*0.25)</div>
+    <div class="prompt" data-tool="جدول بيانات">=(COUNTIF(C:C, "A")-10000) / SQRT(20000 * 0.25)</div>
     <p>قيمة بين −1.96 و1.96 تعني أن الفرق بين العددين في حدود الصدفة.</p>
   </div>
 
   <div class="step">
     <h3>2 · احسب نسبة الحل في كل ذراع والفرق بفترته <span class="min">8 د</span></h3>
     <p>ضع لكل ذراع النسبة <span class="ph">p</span> والعدد <span class="ph">n</span>. الفرق B ناقص A بالنقاط المئوية، والفترة ±1.96 من خطئه المعياري:</p>
-    <div class="prompt" data-tool="جدول بيانات">=AVERAGEIFS(F:F,C:C,"<span class="ph">B</span>")</div>
-    <div class="prompt" data-tool="جدول بيانات">=1.96*SQRT(<span class="ph">pA</span>*(1-<span class="ph">pA</span>)/<span class="ph">nA</span>+<span class="ph">pB</span>*(1-<span class="ph">pB</span>)/<span class="ph">nB</span>)</div>
+    <div class="prompt" data-tool="جدول بيانات">=AVERAGEIFS(F:F, C:C, "<span class="ph">B</span>")</div>
+    <div class="prompt" data-tool="جدول بيانات">=1.96 * SQRT(<span class="ph">pA</span>*(1-<span class="ph">pA</span>)/<span class="ph">nA</span>+<span class="ph">pB</span>*(1-<span class="ph">pB</span>)/<span class="ph">nB</span>)</div>
     <p>ثم احسب الفرق نفسه لكل لغة.</p>
   </div>
 
   <div class="step">
     <h3>3 · احسب التصعيد الفائت في المتوسط وفي كل لغة <span class="min">8 د</span></h3>
     <p>المقام الجلسات التي تحتاج تصعيدًا (<code>escalation_needed</code> = 1)، لا كل الجلسات:</p>
-    <div class="prompt" data-tool="جدول بيانات">=SUMIFS(H:H,C:C,"<span class="ph">B</span>",D:D,"<span class="ph">ar_gulf</span>")/SUMIFS(I:I,C:C,"<span class="ph">B</span>",D:D,"<span class="ph">ar_gulf</span>")</div>
+    <div class="prompt" data-tool="جدول بيانات">=SUMIFS(H:H, C:C, "<span class="ph">B</span>", D:D, "<span class="ph">ar_gulf</span>") / SUMIFS(I:I, C:C, "<span class="ph">B</span>", D:D, "<span class="ph">ar_gulf</span>")</div>
     <table>
       <tr><th>الشريحة</th><th>A</th><th>B</th><th>الفرق بالنقاط</th><th>الفترة</th></tr>
       <tr><td>الكل</td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>

@@ -25,14 +25,14 @@
   <div class="step">
     <h3>2 · احسب الاتفاق والتقاط الفشل وقبول النجاح لكل معيار <span class="min">10 د</span></h3>
     <p>التقاط الفشل: من الحالات التي حكم البشر بفشلها، كم حكم المصحح بفشلها أيضًا. قبول النجاح: من الحالات التي حكم البشر بنجاحها، كم قبلها المصحح.</p>
-    <div class="prompt" data-tool="جدول بيانات">=COUNTIFS(B:B,"<span class="ph">K2</span>",D:D,"fail",E:E,"fail")/COUNTIFS(B:B,"<span class="ph">K2</span>",D:D,"fail")</div>
-    <div class="prompt" data-tool="جدول بيانات">=SUMPRODUCT((B2:B241="<span class="ph">K2</span>")*(D2:D241=E2:E241))/COUNTIF(B:B,"<span class="ph">K2</span>")</div>
+    <div class="prompt" data-tool="جدول بيانات">=COUNTIFS(B:B, "<span class="ph">K2</span>", D:D, "fail", E:E, "fail") / COUNTIFS(B:B, "<span class="ph">K2</span>", D:D, "fail")</div>
+    <div class="prompt" data-tool="جدول بيانات">=SUMPRODUCT((B2:B241="<span class="ph">K2</span>") * (D2:D241=E2:E241)) / COUNTIF(B:B, "<span class="ph">K2</span>")</div>
   </div>
 
   <div class="step">
     <h3>3 · فصّل التقاط الفشل بحسب اللغة <span class="min">8 د</span></h3>
     <p>أضف شرط اللغة إلى المعادلة. اكتب العدد بجانب النسبة: لغة فيها حالتا فشل فقط لا تُقرأ نسبتها كما تُقرأ لغة فيها عشرون.</p>
-    <div class="prompt" data-tool="جدول بيانات">=COUNTIFS(B:B,"<span class="ph">K4</span>",C:C,"<span class="ph">ar_gulf</span>",D:D,"fail",E:E,"fail")</div>
+    <div class="prompt" data-tool="جدول بيانات">=COUNTIFS(B:B, "<span class="ph">K4</span>", C:C, "<span class="ph">ar_gulf</span>", D:D, "fail", E:E, "fail")</div>
   </div>
 
   <div class="step">

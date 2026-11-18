@@ -24,14 +24,14 @@
   <div class="step">
     <h3>2 · احسب نسبة النجاح في المحاولة الأولى وفي المحاولات المئة <span class="min">7 د</span></h3>
     <p>المحاولة الأولى هي ما يقيسه عرض تجريبي يشغّل كل مهمة مرة واحدة.</p>
-    <div class="prompt" data-tool="جدول بيانات">=COUNTIFS(C:C,1,D:D,1)/20
+    <div class="prompt" data-tool="جدول بيانات">=COUNTIFS(C:C, 1, D:D, 1)/20
 =AVERAGE(D2:D101)</div>
   </div>
 
   <div class="step">
     <h3>3 · عدّ المهام التي نجحت في المحاولات الخمس، وفصّلها بحسب اللغة <span class="min">8 د</span></h3>
     <p>اجمع المحاولات الناجحة لكل مهمة بجدول محوري (المهمة في الصفوف، ومجموع <code>pass</code> في القيم)، ثم عدّ المهام التي مجموعها 5. ثم احسب نسبة النجاح لكل لغة.</p>
-    <div class="prompt" data-tool="جدول بيانات">=AVERAGEIFS(D:D,B:B,"<span class="ph">ar_gulf</span>")</div>
+    <div class="prompt" data-tool="جدول بيانات">=AVERAGEIFS(D:D, B:B, "<span class="ph">ar_gulf</span>")</div>
   </div>
 
   <div class="step">

@@ -28,19 +28,19 @@
   <div class="step">
     <h3>2 · احسب تكلفة كل تشغيل والتكلفة لكل استدعاء <span class="min">8 د</span></h3>
     <p>اكتب التكلفة في عمود جديد N. الوحدات المخزنة جزء من وحدات الإدخال، وتُحسب بسعرها:</p>
-    <div class="prompt" data-tool="جدول بيانات">=((H2-I2)*XLOOKUP(A2&amp;"_"&amp;F2,prices!A:A,prices!B:B)+I2*XLOOKUP(A2&amp;"_"&amp;F2,prices!A:A,prices!C:C)+J2*XLOOKUP(A2&amp;"_"&amp;F2,prices!A:A,prices!D:D))/1000000</div>
+    <div class="prompt" data-tool="جدول بيانات">=((H2-I2) * XLOOKUP(A2&amp;"_"&amp;F2, prices!A:A, prices!B:B) + I2 * XLOOKUP(A2&amp;"_"&amp;F2, prices!A:A, prices!C:C) + J2 * XLOOKUP(A2&amp;"_"&amp;F2, prices!A:A, prices!D:D))/1000000</div>
     <p>التكلفة لكل استدعاء: مجموع التكلفة للتهيئة مقسومًا على مجموع <code>model_calls</code>.</p>
   </div>
 
   <div class="step">
     <h3>3 · احسب التكلفة لكل مهمة ناجحة، بالنماذج وحدها ومع تكلفة الفشل <span class="min">8 د</span></h3>
     <p>بالنماذج وحدها: مجموع التكلفة ÷ عدد التشغيلات الناجحة. مع تكلفة الفشل: أضف 7.50 ريال لكل تشغيل فاشل يتولاه موظف، ثم اقسم على الناجحة:</p>
-    <div class="prompt" data-tool="جدول بيانات">=(SUMIFS(N:N,A:A,"<span class="ph">C</span>")+COUNTIFS(A:A,"<span class="ph">C</span>",L:L,0)*7.5)/COUNTIFS(A:A,"<span class="ph">C</span>",L:L,1)</div>
+    <div class="prompt" data-tool="جدول بيانات">=(SUMIFS(N:N, A:A, "<span class="ph">C</span>") + COUNTIFS(A:A, "<span class="ph">C</span>", L:L, 0) * 7.5) / COUNTIFS(A:A, "<span class="ph">C</span>", L:L, 1)</div>
   </div>
 
   <div class="step">
     <h3>4 · احسب المئين 50 والمئين 95 لزمن المهمة، وفي كل لغة <span class="min">8 د</span></h3>
-    <div class="prompt" data-tool="جدول بيانات">=PERCENTILE.INC(FILTER(K:K,(A:A="<span class="ph">C</span>")*(D:D="<span class="ph">ar_gulf</span>")),0.95)</div>
+    <div class="prompt" data-tool="جدول بيانات">=PERCENTILE.INC(FILTER(K:K, (A:A="<span class="ph">C</span>") * (D:D="<span class="ph">ar_gulf</span>")), 0.95)</div>
     <p>قارن كل مئين 95 بمستوى الخدمة: 4,000 ms للمهمة كلها.</p>
   </div>
 

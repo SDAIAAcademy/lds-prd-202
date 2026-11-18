@@ -21,12 +21,12 @@
   <div class="step">
     <h3>1 · اجمع وسمك مع ملف الفريق الهندسي <span class="min">5 د</span></h3>
     <p>انسخ عمودي <code>trace_id</code> و<code>failure_mode</code> من الملفين في ورقة واحدة: 300 صف. ثم أضف اللغة وفئة العضو من <code>traces_300.csv</code>:</p>
-    <div class="prompt" data-tool="جدول بيانات">=XLOOKUP(A2,traces!A:A,traces!E:E)</div>
+    <div class="prompt" data-tool="جدول بيانات">=XLOOKUP(A2, traces!A:A, traces!E:E)</div>
   </div>
 
   <div class="step">
     <h3>2 · عدّ كل نمط واحسب نسبته من 300 <span class="min">7 د</span></h3>
-    <div class="prompt" data-tool="جدول بيانات">=COUNTIF(B:B,"<span class="ph">F4</span>")</div>
+    <div class="prompt" data-tool="جدول بيانات">=COUNTIF(B:B, "<span class="ph">F4</span>")</div>
   </div>
 
   <div class="step">
@@ -37,7 +37,7 @@
   <div class="step">
     <h3>4 · فصّل الأنماط الثلاثة الأولى بحسب اللغة وفئة العضو <span class="min">8 د</span></h3>
     <p>احسب لكل لغة نسبة آثارها التي فيها النمط، لا العدد وحده: اللغات مختلفة الحجم.</p>
-    <div class="prompt" data-tool="جدول بيانات">=COUNTIFS(B:B,"<span class="ph">F1</span>",C:C,"<span class="ph">ar_gulf</span>")/COUNTIF(C:C,"<span class="ph">ar_gulf</span>")</div>
+    <div class="prompt" data-tool="جدول بيانات">=COUNTIFS(B:B, "<span class="ph">F1</span>", C:C, "<span class="ph">ar_gulf</span>") / COUNTIF(C:C, "<span class="ph">ar_gulf</span>")</div>
   </div>
 
   <div class="step">
