@@ -719,6 +719,26 @@ put('files/experiment_plan_template.csv', csv([
   ['cost_metric', ''], ['slices', ''], ['decision_rule_ship', ''], ['decision_rule_stop', ''], ['when_to_look', ''],
   ['owner_of_readout', ''], ['approved_by', '']
 ]));
+// Reference plan: the answer to lab 2.4 and the start file of lab 3.1
+put('files/experiment_plan_reference.csv', csv([
+  ['item', 'reference_plan'],
+  ['hypothesis', 'الإصدار B يرفع نسبة الجلسات المحلولة نقطتين مئويتين على الأقل، ولا يسوء التصعيد الفائت ولا الشكاوى'],
+  ['randomisation_unit', 'الجلسة، عشوائيًا 50/50، في الأندية الستة'],
+  ['primary_metric', 'نسبة الجلسات المحلولة (resolved)'],
+  ['minimum_effect_pp', 2],
+  ['alpha_and_power', 'مستوى دلالة 5% بطرفين، وقوة 80%'],
+  ['sample_per_arm', `${M.sampleSize(0.62, 0.02)} (خط الأساس 62%)`],
+  ['duration_days', '14: يكفي العدد بعد 13 يومًا، و14 تغطي أسبوعين كاملين'],
+  ['guardrail_1', 'التصعيد الفائت من الجلسات التي تحتاج تصعيدًا، في المتوسط وفي كل لغة'],
+  ['guardrail_2', 'نسبة الجلسات التي فيها شكوى'],
+  ['cost_metric', 'تكلفة النماذج لكل جلسة، والمئين 95 لزمن الاستجابة'],
+  ['slices', 'اللغة (فصحى، خليجية، إنجليزية، مختلطة) وفئة العضو (جديد، قائم)'],
+  ['decision_rule_ship', 'الحد الأدنى لفترة الثقة 95% لفرق نسبة الحل فوق الصفر، ولا مقياس حماية يسوء بفترة كلها فوق الصفر، لا في المتوسط ولا في أي لغة'],
+  ['decision_rule_stop', 'يتوقف قبل موعده لضرر فقط: تصعيد فائت لإصابة تؤكده المراجعة اليومية للحالات'],
+  ['when_to_look', 'نسبة الحل مرة واحدة بعد اليوم 14؛ المراجعة اليومية للسلامة وحدها، ولا يُتخذ منها قرار إطلاق'],
+  ['owner_of_readout', 'مالك المنتج؛ لا يعدّه يزن الشمراني الذي بنى الإصدار B'],
+  ['approved_by', 'عهود الرشيدي، قبل البدء']
+]));
 key.experiment = M.readout(sess.map((s) => ({ day: s[1], arm: s[2], language: s[3], group: s[4], resolved: s[5], missed: s[7], need: s[8], complaint: s[9], cost: s[13], latency: s[14] })));
 key.experiment.sample_size_2pp = M.sampleSize(0.62, 0.02);
 key.experiment.sample_size_3pp = M.sampleSize(0.62, 0.03);

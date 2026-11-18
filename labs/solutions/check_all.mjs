@@ -150,10 +150,20 @@ ok('2.3 the English must-escalate gap is real', key.evalset.must_escalate_en < 3
 ok('2.3 English share meets the rule', cov((c) => c.language === 'en') / 120 >= 0.25);
 ok('2.3 new members share meets the rule', cov((c) => c.member_group === 'new') / 120 >= 0.3);
 ok('2.3 F8 appears in production traces only', (cs.F8 || 0) === 0 && (ct.F8 || 0) >= 1);
+// The rule removes exact copies only; the stretch of 2.3 asks about near-copies (a prompt example
+// without its closing "شكرًا." or "Thanks.") that the rule keeps.
+const bare = (t) => String(t).replace(/ ?(شكرًا.|Thanks.)$/, '').trim();
+const nearLeaks = keep.filter((c) => examples.map(bare).includes(bare(c.member_message)));
+console.log('2.3 near-copies of prompt examples kept by the rule: ' + nearLeaks.map((c) => c.cand_id).join(' '));
+ok('2.3 near-copies exist for the stretch', nearLeaks.length >= 3);
 const g = f('gateway_runs.csv');
 ok('2.3 gateway runs use exactly the 120 kept examples', new Set(g.map((r) => r.example_id)).size === 120 && g.every((r) => seen.has(keep.find((k) => k.cand_id === r.example_id)?.member_message)));
 
 // Labs 2.4 and 3.1: the experiment
+const plan = Object.fromEntries(f('experiment_plan_reference.csv').map((r) => [r.item, String(r.reference_plan)]));
+ok('2.4 reference plan sample per arm', plan.sample_per_arm.startsWith(String(key.experiment.sample_size_2pp)));
+ok('2.4 reference plan duration covers the sample', 2 * key.experiment.sample_size_2pp / 1430 <= 14);
+
 const sess = f('sessions_20000.csv').map((r) => ({ day: r.day, arm: r.arm, language: r.language, group: r.member_group, resolved: r.resolved, missed: r.missed_escalation, need: r.escalation_needed, complaint: r.complaint, cost: r.cost_sar, latency: r.latency_ms }));
 eq('3.1 sessions', sess.length, 20000);
 const ro = M.readout(sess);

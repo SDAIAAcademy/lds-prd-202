@@ -45,6 +45,33 @@ const out = {};
 }
 // Day 2. Marketing's class-reminder message test: attendance baseline 40%, minimum effect 3 points.
 out.reminder_sample = { baseline: 0.4, mde: 0.03, per_arm: M.sampleSize(0.4, 0.03), per_arm_mde2: M.sampleSize(0.4, 0.02) };
+// Day 2. The offer-copy assistant's evaluation set: 90 candidates, cleaned by the same two rules.
+{
+  const cand = 90, leaks = 6, dups = 9;
+  out.copy_evalset = { candidates: cand, leaks, duplicates: dups, kept: cand - leaks - dups };
+}
+// Day 2. Peeking: an A/A test (no true difference), attendance 40%, 700 members per arm per day,
+// 14 days. Share of runs a daily look would call "significant" at least once, against the share
+// at the planned single look on day 14.
+{
+  const r = rng(424242);
+  const sims = 2000, days = 14, perDay = 700, p = 0.4;
+  let anyLook = 0, finalOnly = 0;
+  for (let s = 0; s < sims; s++) {
+    let xa = 0, xb = 0, n = 0, hit = false, last = false;
+    for (let d = 1; d <= days; d++) {
+      for (let i = 0; i < perDay; i++) { if (r() < p) xa++; if (r() < p) xb++; }
+      n += perDay;
+      const ci = M.diffCI(xa, n, xb, n);
+      const sig = ci.low_pp > 0 || ci.high_pp < 0;
+      if (sig) hit = true;
+      if (d === days) last = sig;
+    }
+    if (hit) anyLook++;
+    if (last) finalOnly++;
+  }
+  out.peeking = { sims, days, per_arm_per_day: perDay, any_daily_look: M.r4(anyLook / sims), single_final_look: M.r4(finalOnly / sims) };
+}
 // Day 3. The reminder test read out: 6,000 members per arm; a guardrail on unsubscribes.
 {
   const r = rng(909);

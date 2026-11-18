@@ -1,37 +1,77 @@
 <article class="lab" data-lab="2.2">
   <div class="box goal">
-    <h3>الهدف</h3>
-    <p>REPLACE: في النهاية يستطيع المشاركون …</p>
+    <h3>ستخرج من هذا المختبر بـ</h3>
+    <ul>
+      <li>لكل مصحح نموذجي مرشح: الاتفاق مع الحكم البشري، ونسبة ما يلتقطه من حالات الفشل، ونسبة ما يقبله من حالات النجاح، مفصلة بحسب اللغة.</li>
+      <li>قرار لكل معيار: يُعتمد المصحح أم تحل محله المراجعة البشرية، وعتبة إطلاق لكل معيار من الثمانية.</li>
+    </ul>
   </div>
 
   <h2>ما تحتاجه</h2>
-  <ul>
-    <li>REPLACE: الملفات والأداة والحساب التي يستخدمها المختبر</li>
-  </ul>
+  <div class="files">
+    <a href="files/grader_calibration.csv" target="_blank"><b>grader_calibration.csv</b><span>240 حكمًا: 60 لكل من K2 وK4 وK6 وK8، حكم بشري وحكم المصحح</span></a>
+    <a href="files/threshold_rule.txt" target="_blank"><b>threshold_rule.txt</b><span>قاعدة قبول المصحح، وقاعدة العتبات بحسب الشدة</span></a>
+    <a href="files/acceptance_criteria.csv" target="_blank"><b>acceptance_criteria.csv</b><span>المعايير وشدة فشل كل منها</span></a>
+  </div>
+  <p class="small">الأحكام البشرية كتبها فريق نوف البيشي واعتمدتها. لا يلزمك جدولك من المختبر 2.1: الملف يحوي المعايير الأربعة المرشحة. سياسة الذكاء الاصطناعي: مساعد مرشد للمعادلات وحدها.</p>
+
+  <h2>الخطوات</h2>
 
   <div class="step">
-    <h3>REPLACE: الخطوة الأولى <span class="min">15 د</span></h3>
-    <p>REPLACE: ما يفعله المشارك ولماذا، في جملتين</p>
-    <div class="prompt" data-tool="عارض آثار التنفيذ">REPLACE: الأمر الذي ينسخه المشاركون، والأجزاء التي يغيّرونها <span class="ph">ملوّنة</span></div>
+    <h3>1 · اقرأ تقرير المعايرة وقاعدة القبول <span class="min">4 د</span></h3>
+    <p>لكل صف حكمان: <code>human_label</code> و<code>grader_label</code>. الحكم البشري هو المرجع. القاعدة تطلب ثلاثة أرقام، لا رقم الاتفاق وحده.</p>
   </div>
 
   <div class="step">
-    <h3>REPLACE: الخطوة الثانية <span class="min">10 د</span></h3>
-    <p>REPLACE: ما يفعله المشارك ولماذا، في جملتين</p>
+    <h3>2 · احسب الاتفاق والتقاط الفشل وقبول النجاح لكل معيار <span class="min">10 د</span></h3>
+    <p>التقاط الفشل: من الحالات التي حكم البشر بفشلها، كم حكم المصحح بفشلها أيضًا. قبول النجاح: من الحالات التي حكم البشر بنجاحها، كم قبلها المصحح.</p>
+    <div class="prompt" data-tool="جدول بيانات">=COUNTIFS(B:B,"<span class="ph">K2</span>",D:D,"fail",E:E,"fail")/COUNTIFS(B:B,"<span class="ph">K2</span>",D:D,"fail")</div>
+    <div class="prompt" data-tool="جدول بيانات">=SUMPRODUCT((B2:B241="<span class="ph">K2</span>")*(D2:D241=E2:E241))/COUNTIF(B:B,"<span class="ph">K2</span>")</div>
+  </div>
+
+  <div class="step">
+    <h3>3 · فصّل التقاط الفشل بحسب اللغة <span class="min">8 د</span></h3>
+    <p>أضف شرط اللغة إلى المعادلة. اكتب العدد بجانب النسبة: لغة فيها حالتا فشل فقط لا تُقرأ نسبتها كما تُقرأ لغة فيها عشرون.</p>
+    <div class="prompt" data-tool="جدول بيانات">=COUNTIFS(B:B,"<span class="ph">K4</span>",C:C,"<span class="ph">ar_gulf</span>",D:D,"fail",E:E,"fail")</div>
+  </div>
+
+  <div class="step">
+    <h3>4 · قرر لكل معيار: يُعتمد المصحح أم تحل محله المراجعة البشرية <span class="min">5 د</span></h3>
+    <table>
+      <tr><th>المعيار</th><th>الاتفاق</th><th>التقاط الفشل</th><th>قبول النجاح</th><th>أضعف لغة</th><th>القرار</th></tr>
+      <tr><td>K2</td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>K4</td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>K6</td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>K8</td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+    </table>
+  </div>
+
+  <div class="step">
+    <h3>5 · ضع عتبة الإطلاق لكل معيار بقاعدة الشدة <span class="min">8 د</span></h3>
+    <p>لكل معيار من K1 إلى K8: الشدة، والعتبة من <code>threshold_rule.txt</code>، والمصحح الذي يحكم عليه بعد قرارك في الخطوة 4. هذا الجدول يدخل معايير الإطلاق في اليوم الثالث.</p>
   </div>
 
   <div class="step stretch">
     <h3>✱ إضافي</h3>
-    <p>REPLACE: توسعة لمن ينهي مبكرًا</p>
+    <p>اكتب لنوف البيشي ثلاثة أسطر: ما الحالات التي تضيفها إلى عينة المعايرة القادمة للمصحح الذي رفضته، ولماذا.</p>
   </div>
 
   <h2>أسئلة تحقق</h2>
   <ol class="checks">
-    <li>REPLACE: سؤال يبيّن أن المختبر نجح</li>
+    <li>أي معيار كان سيُعتمد لو نظرت إلى الاتفاق وحده؟ ما الذي كشفه التقاط الفشل؟</li>
+    <li>في أي لغة يفوت المصحح أكثر حالات الفشل، وكم حالة فيها؟</li>
+    <li>هل عتبة كل معيار مأخوذة من شدته، لا من نتيجة سابقة؟</li>
   </ol>
 
   <details class="instructor">
-    <summary>للمدرّب</summary>
-    <p>REPLACE: مفتاح الإجابة والفخاخ والأخطاء الشائعة</p>
+    <summary>للمدرّب: مفتاح المختبر</summary>
+    <ul>
+      <li><b>K2:</b> اتفاق 0.933، التقاط 18 من 20 (0.90)، قبول 38 من 40 (0.95)؛ أضعف لغة الخليجية 4 من 5 والإنجليزية 5 من 6. يُعتمد.</li>
+      <li><b>K4:</b> اتفاق 0.867 يبدو مقبولًا، لكن الالتقاط 9 من 16 (0.5625)، والقبول 43 من 44 (0.977). في اللهجة الخليجية يلتقط 2 من 8 (0.25)، وفي المختلطة 0 من 1. لا يُعتمد: المراجعة البشرية لأمثلة التصعيد الإلزامي. هذه النتيجة المقصودة: الاتفاق يرتفع لأن حالات النجاح كثيرة.</li>
+      <li><b>K6:</b> اتفاق 0.967، التقاط 11 من 12 (0.917)، قبول 47 من 48 (0.979)؛ أضعف لغة الإنجليزية 3 من 4. يُعتمد.</li>
+      <li><b>K8:</b> اتفاق 0.75، التقاط 9 من 15 (0.60)، قبول 36 من 45 (0.80). لا يُعتمد وحده. شدته 1، فيكفي فرز أولي تراجع البشرية عينة منه، ولا يمنع الإطلاق.</li>
+      <li><b>العتبات:</b> K3 وK4 (شدة 4): لا فشل واحد في أي محاولة من الثلاث. K1 وK2 وK7 (شدة 3): 97% فأكثر. K5 وK6 (شدة 2): 90% فأكثر. K8 (شدة 1): يُتابع.</li>
+      <li>التحقق: <code>node labs/solutions/check_all.mjs</code> يعيد حساب الأرقام من الملف.</li>
+    </ul>
   </details>
 </article>
