@@ -110,6 +110,8 @@ ok('1.4 the most frequent mode is not first', rank[0] !== Object.keys(sevOf).sor
 // 1.4 starts from the team file alone when the participant's coding is missing
 const rankTeam = Object.keys(sevOf).map((m) => ({ m, sev: sevOf[m], score: ((ct[m] || 0) / 200) * sevOf[m] })).sort((a, b) => (b.sev === 4) - (a.sev === 4) || b.score - a.score).map((x) => x.m);
 ok('1.4 runs on the team file alone', rankTeam.length === 8 && rankTeam[0] === 'F4');
+const modeOf = Object.fromEntries([...ref, ...team].map((r) => [r.trace_id, r.failure_mode]));
+for (const m of ['F1', 'F3', 'F4', 'F5']) for (const l of ['ar_msa', 'ar_gulf', 'en', 'mixed']) eq(`1.4 slice ${m} ${l}`, traces.filter((t) => modeOf[t.trace_id] === m && t.language === l).length, key.traces.slices[m].language[l]);
 eq('1.2 median tokens billed per trace', M.percentileInc(traces.map((t) => t.tokens_in), 0.5), key.traces.tokens_in_median);
 
 // Lab 2.2: calibration

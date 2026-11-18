@@ -1,158 +1,517 @@
 <section class="slide title" id="title" data-auto="title">
-  <aside class="notes">REPLACE: الترحيب، والتعريف بنفسك، وسؤال للقاعة يضبط الإيقاع، وإيقاع اليوم</aside>
+  <aside class="notes"><p>رحّب بالقاعة واسأل: من رأى مساعدًا ذكيًا يُطلق لأن عرضه التجريبي كان مقنعًا، ثم اكتشف أحد المستخدمين خطأً لم يره أحد؟ إيقاع اليوم: أربع جلسات من 70 دقيقة، نحو 35 دقيقة شرح ونقاش ونقطة تحقق، ثم مختبر 35 دقيقة. اليوم كله على الآثار: ما الذي فعله المساعد فعلًا.</p></aside>
 </section>
 
-<section class="slide" id="agenda" data-auto="agenda"></section>
+<section class="slide" id="agenda" data-auto="agenda">
+  <aside class="notes"><p>الجلسة الأولى عن قراءة الادعاءات، والثلاث التالية عن الآثار: وسم مفتوح، فتصنيف، فترتيب. الجلستان الثانية والثالثة دون مساعد ذكي، كما تنص سياسة المقرر.</p></aside>
+</section>
+
+<section class="slide" id="setup-check">
+  <div class="kicker">قبل أن نبدأ</div>
+  <h2>ثلاثة أشياء مفتوحة على جهازك</h2>
+  <div class="cols cols-3">
+    <div class="card c-teal"><h4>صفحة المقرر</h4><p class="small mb0">منها تُفتح المختبرات والملفات في <code>labs/files/</code>.</p></div>
+    <div class="card c-cyan"><h4>جدول بيانات</h4><p class="small mb0">LibreOffice Calc أو Microsoft Excel أو Google Sheets، يفتح ملف CSV بالعربية.</p></div>
+    <div class="card c-purple"><h4>عارض آثار التنفيذ</h4><p class="small mb0">الصفحة <code>labs/tools/traces.html</code> تُفتح في المتصفح دون شبكة.</p></div>
+  </div>
+  <div class="callout tip mt"><b>الاختبار:</b> افتح <code>traces_300.csv</code> في جدول البيانات، وافتح العارض وابحث عن <code>P001</code>. إن ظهرت العربية مقروءة في الاثنين، فأنت جاهز.</div>
+  <aside class="notes"><p>دقيقتان؛ من أكمل العمل التحضيري جاهز. إن ظهرت العربية رموزًا في Excel فاستعمل الاستيراد من نص واختر الوسم UTF-8، أو افتح الملف في Google Sheets. لا حساب ولا مفتاح يلزم في هذا المقرر: كل ردود المساعد وأحكام المصححات في الملفات مكتوبة بمحاكاة.</p></aside>
+</section>
+
+<section class="slide" id="case-khuta">
+  <div class="kicker">دراسة الحالة</div>
+  <h2>أنت مالك المنتج لمساعد «مضمار» في أندية خطى للياقة</h2>
+  <div class="cols cols-21">
+    <ul class="bullets">
+      <li>سلسلة افتراضية لها 36 ناديًا في خمس مدن؛ المساعد في تجربة بستة أندية</li>
+      <li>يجيب الأعضاء، ويحجز الحصص، ويجمّد الاشتراكات وينقلها، ويحوّل إلى موظف</li>
+      <li>رسائل بالفصحى واللهجة الخليجية والإنجليزية، ومختلطة</li>
+      <li>السؤال الذي يملكه: هل يُطلق في كل الأندية، ومتى، وبأي شرط؟</li>
+    </ul>
+    <div class="card c-navy"><h4>من تعمل معهم</h4><p class="small mb0">عهود الرشيدي، المالكة التجارية · يزن الشمراني، قائد الفريق الهندسي · نوف البيشي، المراجعة البشرية · هتون المالكي، حماية البيانات · إياد الخثلان، المالية</p></div>
+  </div>
+  <aside class="notes"><p>الجهة والأشخاص والأرقام افتراضية، وأندية اللياقة كثيرة فلا تشير الحالة إلى سلسلة بعينها. يزن الشمراني يؤدي دوره الميسِّر في المختبر 1.3. اذكر أن الشركة خاصة: قاعدتها في التصنيف سياستها هي، وسنراها في الجلسة الثانية.</p></aside>
+</section>
+
+<section class="slide" id="from-prd-201">
+  <div class="kicker">من المقرر السابق</div>
+  <h2>المواصفة كتبت المعايير؛ هذا المقرر يملك الدليل عليها</h2>
+  <div class="flow">
+    <div class="step c-teal"><b>LDS-PRD-201</b>معايير قبول ثنائية وأول 50 مثالًا</div>
+    <div class="arrow">←</div>
+    <div class="step c-cyan"><b>هذا المقرر</b>آثار وتصنيف ومجموعة تقييم وتجربة وتكلفة</div>
+    <div class="arrow">←</div>
+    <div class="step c-coral"><b>القرار</b>إطلاق أو مواصلة تحسين أو إيقاف</div>
+  </div>
+  <div class="callout note mt"><b>من يبني ماذا:</b> بناء إطار التقييم برمجيًا في المقرر DEV-EVL-301؛ هنا تتعلم أن تملكه وتقرأه وتقرر به.</div>
+  <aside class="notes"><p>دقيقة واحدة. من لم يحضر LDS-PRD-201: معيار القبول جملة يُحكم عليها بنجح أو فشل. لا نعيد تدريس كتابة المواصفة.</p></aside>
+</section>
+
+<section class="slide" id="ai-policy">
+  <div class="kicker">متى تستخدم الذكاء الاصطناعي في هذا المقرر</div>
+  <h2>ثلاثة مستويات، بحسب ما يُقيَّم</h2>
+  <table class="t">
+    <tr><th>المستوى</th><th>أين</th></tr>
+    <tr><td><b>دون ذكاء اصطناعي</b></td><td>الوسم الأول للآثار (المختبران 1.2 و1.3)، والاختبار القصير المراقب</td></tr>
+    <tr><td><b>مساعد مرشد</b></td><td>بقية المختبرات: تسأله عن طريقة أو معادلة، ولا يعمل عنك</td></tr>
+    <tr><td><b>ذكاء اصطناعي كامل</b></td><td>مذكرة الإطلاق، وتدافع عنها دون مساعد</td></tr>
+  </table>
+  <div class="callout warn mt"><b>قاعدة أندية خطى:</b> الآثار والسجلات على مستوى السجل الواحد «مقيد»، فلا تدخل أي أداة ذكاء اصطناعي توليدي. الجداول المجمعة التي تحسبها «عام».</div>
+  <aside class="notes"><p>المستويات من بطاقة المقرر: دون ذكاء اصطناعي للفحص المراقب وللوسم الأول، ومرشد في مختبرات التجربة والتكلفة، وكامل للمذكرة. أما المرشد في المختبرات الأخرى فقرار المقرر. قاعدة التصنيف سياسة الشركة الخاصة، تستند إلى مستويات التصنيف الوطنية (عام، مقيد، سري، سري للغاية). المبادئ التوجيهية للذكاء الاصطناعي التوليدي من سدايا تمنع موظفي الجهات الحكومية من إدخال ما صُنف «مقيد» فأعلى، وتقصر الاستعمال على «عام»؛ وخطى شركة خاصة اعتمدت القاعدة نفسها.</p><p>المصادر: سدايا، المبادئ التوجيهية للذكاء الاصطناعي التوليدي للجهات الحكومية، قسم الخصوصية والأمن.</p></aside>
+</section>
 
 <!-- الجلسة 1 -->
 
-<section class="slide section" id="s1" data-auto="section" data-session="1"></section>
-
-<section class="slide" id="s1-idea">
-  <div class="kicker">REPLACE: السؤال الذي تجيب عنه الشريحة</div>
-  <h2>REPLACE: فكرة واحدة في جملة</h2>
-  <div class="cols cols-2">
-    <ul class="bullets">
-      <li>REPLACE: ست نقاط على الأكثر، كل منها فكرة تامة</li>
-      <li>REPLACE: أبرز العبارة الأساسية، والأرقام من تشغيل المختبر لا من الذاكرة</li>
-    </ul>
-    <div class="card c-teal"><h4>في دراسة الحالة</h4><p class="small mb0">REPLACE: اربط الفكرة بدراسة الحالة وبياناتها</p></div>
-  </div>
-  <div class="callout warn mt"><b>أين يقع الخطأ.</b> REPLACE: الخطأ الذي سيقع فيه المشاركون، وكيف يتعرفون عليه</div>
-  <aside class="notes">REPLACE: ما تقوله، والعرض الحي، والسؤال للقاعة، والخطأ الشائع وحلّه</aside>
+<section class="slide section" id="s1" data-auto="section" data-session="1">
+  <aside class="notes"><p>نحو 35 دقيقة قبل المختبر: الترحيب والحالة والسياسة (10)، والمخرجات المتغيرة والأسئلة الستة (20)، ونقطة التحقق (5)؛ ثم المختبر 1.1، 35 دقيقة.</p></aside>
 </section>
 
-<section class="slide" id="s1-steps">
-  <div class="kicker">خطوة بخطوة</div>
-  <h2>REPLACE: عملية تظهر خطوة مع كل ضغطة</h2>
-  <div class="flow">
-    <div class="step c-teal"><b>1 · REPLACE: الاسم</b>REPLACE: ما يحدث أولًا</div>
-    <div class="arrow frag" data-frag="b">←</div><div class="step c-cyan frag" data-frag="b"><b>2 · REPLACE: الاسم</b>REPLACE: الجزء التالي</div>
-    <div class="arrow frag" data-frag="c">←</div><div class="step c-coral frag" data-frag="c"><b>3 · REPLACE: الاسم</b>REPLACE: النتيجة</div>
+<section class="slide" id="same-question" data-lo="LO1">
+  <div class="kicker">المخرجات المتغيرة</div>
+  <h2>السؤال نفسه قد يلقى ردًا مختلفًا في كل مرة</h2>
+  <div class="cols cols-2">
+    <ul class="bullets">
+      <li>النموذج اللغوي يولّد الرد كلمة بعد كلمة، باحتمالات</li>
+      <li>تغيّر صغير في الصياغة أو في ما استُرجع يغيّر الرد</li>
+      <li>فتشغيل واحد عينة من ردود ممكنة، لا قياس للمساعد</li>
+    </ul>
+    <div class="card c-teal"><h4>مثال موازٍ: مساعد جدولة المدربين</h4><p class="small mb0">يسأل مدرب: «هل أبدّل نوبة الخميس مع زميلي؟». قد يجيب صحيحًا في محاولة، ثم يؤكد في محاولة أخرى تبديلًا رفضه نظام الجدولة.</p></div>
   </div>
-  <div class="callout tip mt frag"><b>الخلاصة.</b> REPLACE: الجملة التي تبقى في الذاكرة</div>
-  <aside class="notes">اضغط مرة لكل خطوة، وقل ما تضيفه كل خطوة قبل ظهور التالية. REPLACE: المثال الذي تشرحه</aside>
+  <aside class="notes"><p>مساعد جدولة المدربين مثال موازٍ من إدارة التدريب في خطى، وأرقامه غير أرقام المختبر. السؤال للقاعة: لو جربتم المساعد مرة واحدة ونجح، ماذا تعرفون؟ الجواب: أنه قادر، لا أنه يُعتمد عليه.</p></aside>
+</section>
+
+<section class="slide" id="one-run-vs-all" data-lo="LO1">
+  <div class="kicker">محاولة واحدة أم كل المحاولات</div>
+  <h2>نسبة النجاح في محاولة واحدة تبالغ في الاعتمادية</h2>
+  <div class="cols cols-3">
+    <div class="stat center"><div class="big">80%</div><div class="lbl">نجاح المحاولة الأولى: 24 من 30 مهمة</div></div>
+    <div class="stat center"><div class="big">78%</div><div class="lbl">نجاح المحاولات كلها: 94 من 120</div></div>
+    <div class="stat center"><div class="big">57%</div><div class="lbl">مهام نجحت في المحاولات الأربع: 17 من 30</div></div>
+  </div>
+  <div class="callout tip mt"><b>ما يعني العضو:</b> هل ينجح المساعد في طلبه كل مرة يطلبه؟ هذا الرقم الثالث.</div>
+  <div class="caption">مساعد جدولة المدربين، 30 مهمة في أربع محاولات (أرقام اصطناعية من <code>labs/_tools/parallel_examples.mjs</code>).</div>
+  <aside class="notes"><p>اقرأ الأرقام الثلاثة من اليمين. الفكرة نفسها في معيار τ-bench: نسبة المهام التي تنجح في كل محاولات من k محاولة (pass^k). في الورقة، نجح أفضل الوكلاء في أقل من نصف المهام، وكانت نسبة النجاح في ثماني محاولات أقل من 25% في مجال التجزئة.</p><p>المصادر: Yao et al., τ-bench (2024), arXiv 2406.12045.</p></aside>
+</section>
+
+<section class="slide" id="binary-criteria" data-lo="LO1">
+  <div class="kicker">المعيار الثنائي</div>
+  <h2>المعيار الذي يُحكم عليه بنجح أو فشل يتفق عليه المصححون</h2>
+  <div class="chat">
+    <div class="msg ai bad"><span class="who">معيار مبهم</span>«جودة الرد من 1 إلى 5»: مصحح يعطي 3 وآخر 4، ولا يعرف أحد ما الذي يُصلح.</div>
+    <div class="msg ai good"><span class="who">معيار ثنائي</span>«يذكر الرد النادي الذي سمّاه المدرب»: نجح أو فشل، والفشل يقول ما يُصلح.</div>
+  </div>
+  <ul class="bullets mt">
+    <li>المقياس المتدرج يخفي التردد في وسطه</li>
+    <li>المعيار الثنائي يجبر على تعريف النجاح قبل التصحيح</li>
+  </ul>
+  <aside class="notes"><p>المعايير الثنائية كتبها المشاركون في LDS-PRD-201؛ هنا نراها أداة قياس. حجة Husain وShankar: التقييم الثنائي يفرض تفكيرًا أوضح وتسمية أكثر اتساقًا من مقاييس 1 إلى 5. اطلب من القاعة تحويل «رد مفيد» إلى معيار ثنائي.</p><p>المصادر: Hamel Husain وShreya Shankar، AI Evals: Everything You Need to Know (سبتمبر 2026).</p></aside>
+</section>
+
+<section class="slide" id="validated-graders" data-lo="LO1">
+  <div class="kicker">المصحح أداة قياس</div>
+  <h2>المصحح الآلي يُصدَّق بعد أن يُقاس على حكم بشري</h2>
+  <div class="cols cols-3">
+    <div class="card c-teal"><h4>فحص برمجي</h4><p class="small mb0">قاعدة تقارن رقمًا بجدول أو حالة أداة بنص الرد.</p></div>
+    <div class="card c-cyan"><h4>مصحح نموذجي</h4><p class="small mb0">نموذج يقرأ الرد والمعيار ويحكم. يُقاس اتفاقه مع البشر قبل اعتماده.</p></div>
+    <div class="card c-purple"><h4>مراجعة بشرية</h4><p class="small mb0">الأدق في الملتبس، والأبطأ والأغلى.</p></div>
+  </div>
+  <div class="callout warn mt"><b>أين يقع الخطأ:</b> «صححه نموذجنا» دون رقم عن اتفاقه مع البشر يعني أن أحدًا لم يقس المسطرة.</div>
+  <aside class="notes"><p>تمهيد لليوم الثاني: سنحسب في المختبر 2.2 نسبة ما يلتقطه المصحح من حالات الفشل البشرية. الآن يكفي السؤال: من صحح، وهل قيس؟</p></aside>
+</section>
+
+<section class="slide" id="six-questions" data-lo="LO1">
+  <div class="kicker">قراءة ادعاء دقة</div>
+  <h2>ستة أسئلة لكل رقم يصلك عن مساعد ذكي</h2>
+  <table class="t small">
+    <tr><th>#</th><th>السؤال</th></tr>
+    <tr><td>1</td><td>ما المهمة، وهل معيار النجاح ثنائي؟</td></tr>
+    <tr><td>2</td><td>كم حالة، ومن أين، وهل تشبه طلبات أعضائنا ولغاتهم؟</td></tr>
+    <tr><td>3</td><td>كم محاولة لكل حالة، وكم حالة نجحت فيها كلها؟</td></tr>
+    <tr><td>4</td><td>من صحح، وهل قيس اتفاقه مع حكم بشري؟</td></tr>
+    <tr><td>5</td><td>هل النتيجة مفصلة بحسب اللغة وفئة المستخدم؟</td></tr>
+    <tr><td>6</td><td>ما الذي لم يُقس: مقياس الحماية والتكلفة وزمن الاستجابة؟</td></tr>
+  </table>
+  <aside class="notes"><p>هذه القائمة من وضع المقرر، وهي في ملف المختبر <code>vendor_claims.txt</code>. اطلب من كل طاولة أن تحفظ الأسئلة بأرقامها: ستكتب النقد بها.</p></aside>
+</section>
+
+<section class="slide" id="parallel-claim" data-lo="LO1">
+  <div class="kicker">مثال موازٍ</div>
+  <h2>«يفهم 98% من رسائل المدربين»: ماذا يغفل الرقم؟</h2>
+  <div class="cols cols-2">
+    <div class="card c-coral"><h4>الادعاء كما وصل</h4><p class="small mb0">عرض لمساعد جدولة: «فهم 98% من الرسائل في تجربتنا مع ناديين». لا هامش آخر.</p></div>
+    <ul class="bullets">
+      <li><b>1:</b> «فهم» ليس معيارًا ثنائيًا</li>
+      <li><b>2 و5:</b> ناديان فقط، ولا ذكر للغة الرسائل</li>
+      <li><b>3 و4:</b> لا محاولات ولا مصحح مذكور</li>
+      <li><b>6:</b> لا كلمة عن التبديل الخاطئ ولا التكلفة</li>
+    </ul>
+  </div>
+  <aside class="notes"><p>مثال موازٍ لا يطابق أي ادعاء في المختبر. أشر إلى أن أسوأ ما يغفله غالبًا السؤال 6: ما الذي يجب ألا يسوء.</p></aside>
+</section>
+
+<section class="slide" id="check-claims" data-lo="LO1">
+  <div class="kicker">نقطة تحقق</div>
+  <h2>أي معلومة تجعل هذا الرقم صالحًا للمقارنة؟</h2>
+  <div class="quiz" data-type="single" data-lo="LO1">
+    <p class="lead">يعرض مورد لمساعد جدولة المدربين «نسبة نجاح 90% على 40 مهمة». تريد مقارنته بمساعد آخر يقيس الاعتمادية لا القدرة. ما المعلومة التي تحتاجها أولًا؟</p>
+    <div class="opts">
+      <div class="opt" data-why="يخلط الحجم بالتصميم: أربعون مهمة أخرى في محاولة واحدة تعطي الرقم نفسه بثقة أكبر، ولا تقول هل تتكرر النتيجة">عدد مهام أكبر في المحاولة الواحدة نفسها</div>
+      <div class="opt" data-ok>عدد المهام التي نجحت في كل المحاولات المتكررة</div>
+      <div class="opt" data-why="يقيس شيئًا آخر: سرعة الرد لا تقول شيئًا عن صحته أو تكراره">زمن الاستجابة المتوسط للمهام الأربعين</div>
+      <div class="opt" data-why="يقيس الانطباع: تقييم المستخدمين للتجربة ليس قياسًا لتكرار النجاح">تقييم المدربين للتجربة بعد استخدامها</div>
+    </div>
+    <div class="callout tip why"><b>لماذا.</b> الاعتمادية أن ينجح المساعد في المهمة كل مرة. لا يقيسها إلا تشغيل كل مهمة عدة مرات وعدّ ما نجح فيها كلها.</div>
+  </div>
+  <aside class="notes"><p>الإجابة: ب. ثلاث دقائق. إن اختار كثيرون «عدد مهام أكبر» فارجع إلى شريحة الأرقام الثلاثة: الحجم يضيّق الفترة حول رقم المحاولة الواحدة ولا يقيس التكرار.</p></aside>
 </section>
 
 <section class="slide lab" id="lab-1-1" data-auto="lab" data-lab="1.1">
-  <aside class="notes">REPLACE: ما تراقبه أثناء عمل المشاركين، والمشكلات المعتادة، والبديل لمن لم يُنهِ مختبرًا سابقًا</aside>
+  <aside class="notes"><p>35 دقيقة، والمساعد المرشد مسموح للمعادلات. مر على الطاولات بعد الخطوة 3: من حسب المتوسط وحده اسأله عن المهام الناجحة في المحاولات الخمس. لا تعرض الأرقام قبل المراجعة في أول الجلسة التالية.</p></aside>
 </section>
 
 <!-- الجلسة 2 -->
 
-<section class="slide section" id="s2" data-auto="section" data-session="2"></section>
-
-<section class="slide" id="s2-idea">
-  <div class="kicker">REPLACE: السؤال الذي تجيب عنه الشريحة</div>
-  <h2>REPLACE: فكرة واحدة في جملة</h2>
-  <div class="cols cols-2">
-    <ul class="bullets">
-      <li>REPLACE: ست نقاط على الأكثر، كل منها فكرة تامة</li>
-      <li>REPLACE: أبرز العبارة الأساسية، والأرقام من تشغيل المختبر لا من الذاكرة</li>
-    </ul>
-    <div class="card c-teal"><h4>في دراسة الحالة</h4><p class="small mb0">REPLACE: اربط الفكرة بدراسة الحالة وبياناتها</p></div>
-  </div>
-  <div class="callout warn mt"><b>أين يقع الخطأ.</b> REPLACE: الخطأ الذي سيقع فيه المشاركون، وكيف يتعرفون عليه</div>
-  <aside class="notes">REPLACE: ما تقوله، والعرض الحي، والسؤال للقاعة، والخطأ الشائع وحلّه</aside>
+<section class="slide section" id="s2" data-auto="section" data-session="2">
+  <aside class="notes"><p>نحو 35 دقيقة قبل المختبر: مراجعة المختبر 1.1 (6)، وأجزاء الأثر والملاحظة المفتوحة والخصوصية (24)، ونقطة التحقق (5)؛ ثم المختبر 1.2، 35 دقيقة، دون مساعد ذكي.</p></aside>
 </section>
 
-<section class="slide" id="s2-steps">
-  <div class="kicker">خطوة بخطوة</div>
-  <h2>REPLACE: عملية تظهر خطوة مع كل ضغطة</h2>
-  <div class="flow">
-    <div class="step c-teal"><b>1 · REPLACE: الاسم</b>REPLACE: ما يحدث أولًا</div>
-    <div class="arrow frag" data-frag="b">←</div><div class="step c-cyan frag" data-frag="b"><b>2 · REPLACE: الاسم</b>REPLACE: الجزء التالي</div>
-    <div class="arrow frag" data-frag="c">←</div><div class="step c-coral frag" data-frag="c"><b>3 · REPLACE: الاسم</b>REPLACE: النتيجة</div>
+<section class="slide" id="debrief-1-1" data-lo="LO1">
+  <div class="kicker">ما أظهره المختبر 1.1</div>
+  <h2>85% في محاولة واحدة، و55% في المحاولات الخمس</h2>
+  <div class="bars">
+    <div class="row"><span>المحاولة الأولى</span><div class="bar c-teal" style="--w:85%"></div><span class="val">17 من 20</span></div>
+    <div class="row"><span>المحاولات المئة</span><div class="bar c-cyan" style="--w:82%"></div><span class="val">82 من 100</span></div>
+    <div class="row"><span>نجحت في الخمس</span><div class="bar c-coral" style="--w:55%"></div><span class="val">11 من 20</span></div>
   </div>
-  <div class="callout tip mt frag"><b>الخلاصة.</b> REPLACE: الجملة التي تبقى في الذاكرة</div>
-  <aside class="notes">اضغط مرة لكل خطوة، وقل ما تضيفه كل خطوة قبل ظهور التالية. REPLACE: المثال الذي تشرحه</aside>
+  <div class="callout warn mt small"><b>والمتوسط يخفي اللغة:</b> الإنجليزية 34 من 35، واللهجة الخليجية 11 من 20، والمختلطة 4 من 10.</div>
+  <aside class="notes"><p>ست دقائق. اسأل: أي ادعاء من الأربعة يقترب من رقم المحاولة الواحدة؟ الأول (96% في «اختبار داخلي»). ثم: أي ادعاء صححه مصحح غير مقيس؟ الثالث. ادعاء «85% دون تدخل بشري» يعدّ التصعيد الفائت نجاحًا: سنراه في الجلسة التالية في الآثار.</p></aside>
+</section>
+
+<section class="slide" id="trace-anatomy" data-lo="LO2">
+  <div class="kicker">ما يسجله أثر التنفيذ</div>
+  <h2>أثر التنفيذ يسجل ما فعله المساعد، لا ما قاله فقط</h2>
+  <div class="trace s">
+    <div class="ev user"><b>المدرب</b>بدّل نوبتي يوم الخميس مع سلمان في نادي الدمام</div>
+    <div class="ev call"><b>استرجاع</b><code>rota_policy v4</code></div>
+    <div class="ev call"><b>أداة</b><code>swap_shift(club=C05, day=Thursday)</code></div>
+    <div class="ev error"><b>النتيجة</b><code>error: coach_not_confirmed</code></div>
+    <div class="ev final"><b>الرد</b>تم تبديل نوبتك يوم الخميس.</div>
+  </div>
+  <div class="caption">أثر من مساعد جدولة المدربين، مثال موازٍ. الرد وحده يبدو سليمًا.</div>
+  <aside class="notes"><p>اقرأ الأثر من أعلى. السؤال للقاعة: لو قرأتم الرد وحده، هل ترون الخطأ؟ لا. الأداة رفضت، والرد قال تم. أدوات عرض الآثار (Langfuse أو Arize Phoenix أو التتبع في MLflow) تعرض هذه الأجزاء نفسها؛ في المقرر نستعمل صفحة بسيطة دون شبكة.</p></aside>
+</section>
+
+<section class="slide" id="trace-parts" data-lo="LO2">
+  <div class="kicker">أجزاء الأثر في عارض المقرر</div>
+  <h2>خمسة أجزاء تُقرأ بالترتيب، وثلاثة أرقام في ذيله</h2>
+  <table class="t small">
+    <tr><th>الجزء</th><th>ما تسأله عنه</th></tr>
+    <tr><td>رسالة العضو</td><td>ما الذي طلبه، وبأي لغة؟ هل ذكر إصابة أو خلافًا ماليًا؟</td></tr>
+    <tr><td>الاسترجاع</td><td>أي وثيقة، وأي إصدار منها؟</td></tr>
+    <tr><td>استدعاء الأداة</td><td>هل نجح، أم أعاد خطأً؟</td></tr>
+    <tr><td>الرد</td><td>هل كل رقم ووعد فيه في المصادر؟ هل يطابق ما فعلته الأداة؟</td></tr>
+    <tr><td>التحويل</td><td>هل وصل إلى موظف ما يجب أن يصل؟</td></tr>
+    <tr><td>الذيل</td><td>الاستدعاءات والوحدات النصية وزمن الاستجابة: نعود إليها في اليوم الثالث</td></tr>
+  </table>
+  <aside class="notes"><p>اعرض الأثر P003 في العارض: سؤال عن سعر باقة التدريب، استرجاع <code>price_pt v2</code>، رد بالسعر الساري. أثر سليم. لا تعرض أثرًا فاشلًا من الخمسين الأولى: هذا عمل المختبر.</p></aside>
+</section>
+
+<section class="slide" id="first-error" data-lo="LO2">
+  <div class="kicker">أين يبدأ الخطأ</div>
+  <h2>اكتب أول خطأ في السلسلة، فما بعده نتيجته</h2>
+  <div class="flow">
+    <div class="step c-teal"><b>1 · الاسترجاع</b>وثيقة قديمة</div>
+    <div class="arrow">←</div>
+    <div class="step c-cyan"><b>2 · الرد</b>رسوم خاطئة</div>
+    <div class="arrow">←</div>
+    <div class="step c-coral"><b>3 · العضو</b>يرفض التجميد أو يدفع أكثر</div>
+  </div>
+  <div class="callout tip mt"><b>القاعدة:</b> الخطأ الأول هو الذي لو لم يقع لما وقع ما بعده. أصلحه، تختفِ الأخطاء التالية.</div>
+  <aside class="notes"><p>مثال عام دون رقم أثر. اسأل: لو كتبتم «رسوم خاطئة في الرد»، ماذا سيصلح المهندس؟ قد يعدّل التعليمات، والمشكلة في فهرس الاسترجاع.</p></aside>
+</section>
+
+<section class="slide" id="open-note" data-lo="LO2">
+  <div class="kicker">الوسم المفتوح</div>
+  <h2>الملاحظة المفتوحة تصف ما حدث، بلا اسم نمط ولا سبب مفترض</h2>
+  <div class="chat">
+    <div class="msg ai bad"><span class="who">ملاحظة ضعيفة</span>مشكلة في الأدوات.</div>
+    <div class="msg ai bad"><span class="who">ملاحظة ضعيفة</span>النموذج لا يفهم المدربين.</div>
+    <div class="msg ai good"><span class="who">ملاحظة قوية</span>الأداة أعادت <code>coach_not_confirmed</code>، والرد يقول تم التبديل.</div>
+  </div>
+  <aside class="notes"><p>الوسم المفتوح من البحث النوعي: ملاحظات حرة أولًا، والأنماط بعدها. إن سمّيت النمط قبل القراءة رأيت ما تتوقعه فقط. المصادر: Husain وShankar، AI Evals FAQ، قسم تحليل الأخطاء.</p></aside>
+</section>
+
+<section class="slide" id="trace-privacy" data-lo="LO2">
+  <div class="kicker">خصوصية الآثار</div>
+  <h2>رسالة تذكر إصابة تحمل بيانات صحية، وهي من البيانات الحساسة</h2>
+  <div class="cols cols-2">
+    <div class="card c-coral"><h4>ما يقوله النظام</h4><p class="small mb0">نظام حماية البيانات الشخصية يعدّ البيانات الصحية من البيانات الحساسة، ويقصر محتوى البيانات المجموعة على الحد الأدنى اللازم لغرض جمعها.</p></div>
+    <div class="card c-navy"><h4>ما تفعله في هذا المقرر</h4><p class="small mb0">تقرأ الآثار في العارض على جهازك، ولا تنسخ منها شيئًا إلى أداة ذكاء اصطناعي، ولا ترسلها. وتكتب في اليوم الثالث ما يُحفظ منها وما يُحجب.</p></div>
+  </div>
+  <div class="caption">المصدر: نظام حماية البيانات الشخصية، المادة الأولى (تعريفا البيانات الحساسة والبيانات الصحية) والمادة الحادية عشرة. النظام نافذ بتعديلاته.</div>
+  <aside class="notes"><p>النص العربي النافذ من موقع هيئة الخبراء بمجلس الوزراء: البيانات الحساسة تشمل «البيانات الصحية»، والبيانات الصحية «كل بيان شخصي يتعلق بحالة الفرد الصحية»، ومحتوى البيانات يجب أن يكون «مقصورًا على الحد الأدنى اللازم لتحقيق الغرض من جمعها». ملاحظة هتون المالكي في <code>trace_privacy_note.txt</code> تطبق ذلك على الآثار. لا تفصّل أكثر من هذا: الالتزامات التفصيلية في اللائحة التنفيذية، ونعود إلى الحجب في المختبر 3.4.</p><p>المصادر: نظام حماية البيانات الشخصية (هيئة الخبراء، والملف الرسمي على موقع سدايا).</p></aside>
+</section>
+
+<section class="slide" id="viewer-demo" data-lo="LO2">
+  <div class="kicker">عرض حي: العارض وورقة الوسم</div>
+  <h2>العارض للقراءة، وورقة الوسم للكتابة</h2>
+  <ol class="bullets">
+    <li>اختر «P001 إلى P050» في العارض</li>
+    <li>اقرأ الأجزاء الخمسة بالترتيب، وقارن كل رقم بالسياسات السارية</li>
+    <li>اكتب الملاحظة في <code>open_note</code> والشدة في <code>severity</code></li>
+    <li>اترك <code>failure_mode</code> فارغًا حتى الجلسة التالية</li>
+  </ol>
+  <div class="callout note mt"><b>الشدة من 1 إلى 4</b> في <code>severity_scale.txt</code>: الرابعة لمال أو طلب يُعد منفذًا دون علم العضو، أو إصابة أو خلاف مالي لا يصل إلى إنسان.</div>
+  <aside class="notes"><p>اعرض الخطوات على شاشتك بالأثر P003 السليم، واكتب «لا ملاحظة». المقياس من وضع المقرر، لا معيار وطني. أخبر القاعة أن الخطوة 5 مقارنة مع زميل: الخلاف في الشدة طبيعي، والمهم سببه.</p></aside>
+</section>
+
+<section class="slide" id="check-open-note" data-lo="LO2">
+  <div class="kicker">نقطة تحقق</div>
+  <h2>أي ملاحظة مفتوحة أنفع للفريق الهندسي؟</h2>
+  <div class="quiz" data-type="single" data-lo="LO2">
+    <p class="lead">في أثر من مساعد جدولة المدربين يسأل مدرب عن رصيد إجازته، فيسترجع المساعد سياسة الإجازات لسنة سابقة، ويرد برصيد أقل من الصحيح بيومين. أي ملاحظة تكتب؟</p>
+    <div class="opts">
+      <div class="opt" data-why="يسمّي نمطًا قبل القراءة: «هلوسة» حكم عام لا يقول أين بدأ الخطأ">هلوسة في رد الإجازات</div>
+      <div class="opt" data-why="يخمّن سببًا هندسيًا لم يره في الأثر: لا شيء في الأثر عن حجم النموذج">النموذج صغير ولا يحسب الأرصدة</div>
+      <div class="opt" data-why="يصف أثر الخطأ على المدرب لا الخطأ نفسه: المهندس لا يعرف أين يبحث">المدرب سيغضب من الرصيد</div>
+      <div class="opt" data-ok>استرجع سياسة سنة سابقة، فجاء الرصيد أقل بيومين</div>
+    </div>
+    <div class="callout tip why"><b>لماذا.</b> الملاحظة تصف ما حدث وأين بدأ: الاسترجاع. هذا ما يحتاجه المهندس ليصلح، وما يسمح لك لاحقًا بجمع الملاحظات المتشابهة.</div>
+  </div>
+  <aside class="notes"><p>الإجابة: د. الخيار «أ» الأكثر جذبًا: كلمة «هلوسة» شائعة، لكنها تجمع أخطاء مختلفة الأسباب.</p></aside>
 </section>
 
 <section class="slide lab" id="lab-1-2" data-auto="lab" data-lab="1.2">
-  <aside class="notes">REPLACE: ما تراقبه أثناء عمل المشاركين، والمشكلات المعتادة، والبديل لمن لم يُنهِ مختبرًا سابقًا</aside>
+  <aside class="notes"><p>35 دقيقة دون مساعد ذكي. ابدأ الخطوة 1 مع القاعة على خمسة آثار، ثم اتركهم. الأخطاء المعتادة: اسم نمط بدل ملاحظة، وإغفال حالة الأداة. من يكتب ببطء: يكفي أن يصل إلى P040، والمختبر 1.3 يبدأ من ملاحظات يزن الشمراني لمن لم يكمل.</p></aside>
 </section>
 
 <!-- الجلسة 3 -->
 
-<section class="slide section" id="s3" data-auto="section" data-session="3"></section>
-
-<section class="slide" id="s3-idea">
-  <div class="kicker">REPLACE: السؤال الذي تجيب عنه الشريحة</div>
-  <h2>REPLACE: فكرة واحدة في جملة</h2>
-  <div class="cols cols-2">
-    <ul class="bullets">
-      <li>REPLACE: ست نقاط على الأكثر، كل منها فكرة تامة</li>
-      <li>REPLACE: أبرز العبارة الأساسية، والأرقام من تشغيل المختبر لا من الذاكرة</li>
-    </ul>
-    <div class="card c-teal"><h4>في دراسة الحالة</h4><p class="small mb0">REPLACE: اربط الفكرة بدراسة الحالة وبياناتها</p></div>
-  </div>
-  <div class="callout warn mt"><b>أين يقع الخطأ.</b> REPLACE: الخطأ الذي سيقع فيه المشاركون، وكيف يتعرفون عليه</div>
-  <aside class="notes">REPLACE: ما تقوله، والعرض الحي، والسؤال للقاعة، والخطأ الشائع وحلّه</aside>
+<section class="slide section" id="s3" data-auto="section" data-session="3">
+  <aside class="notes"><p>نحو 35 دقيقة قبل المختبر: مراجعة المختبر 1.2 (5)، والوسم المحوري والعمل مع المهندسين والتشبع (25)، ونقطة التحقق (5)؛ ثم المختبر 1.3، 35 دقيقة، دون مساعد ذكي، والميسِّر في دور يزن الشمراني.</p></aside>
 </section>
 
-<section class="slide" id="s3-steps">
-  <div class="kicker">خطوة بخطوة</div>
-  <h2>REPLACE: عملية تظهر خطوة مع كل ضغطة</h2>
+<section class="slide" id="debrief-1-2" data-lo="LO2">
+  <div class="kicker">ما أظهره المختبر 1.2</div>
+  <h2>في المراجعة: اجمع خلافات الشدة قبل خلافات الحدث</h2>
+  <ul class="bullets">
+    <li>الحدث يُتفق عليه غالبًا حين تُقرأ حالة الأداة والاسترجاع</li>
+    <li>الشدة يُختلف فيها: هل الرد بلغة أخرى إزعاج أم تضليل؟</li>
+    <li>وأكثر ما يفوت: خطأ الأداة تحت رد يبدو سليمًا</li>
+  </ul>
+  <div class="callout note mt"><b>هذا ما نعالجه الآن:</b> الشدة تحتاج قاعدة مكتوبة، والأنماط تحتاج تعريفات يطبقها غيرك.</div>
+  <aside class="notes"><p>خمس دقائق. اجمع من القاعة خلافين حقيقيين في الشدة واكتبهما على اللوح. لا تسمِّ الأنماط بعد ولا تعرض الوسم المرجعي: هذا عمل المختبر 1.3. إن لم تظهر هذه الخلافات في قاعتك، فاسأل عن أول أثر ترددوا فيه.</p></aside>
+</section>
+
+<section class="slide" id="axial-coding" data-lo="LO2">
+  <div class="kicker">الوسم المحوري</div>
+  <h2>من ملاحظات متفرقة إلى أنماط معدودة</h2>
   <div class="flow">
-    <div class="step c-teal"><b>1 · REPLACE: الاسم</b>REPLACE: ما يحدث أولًا</div>
-    <div class="arrow frag" data-frag="b">←</div><div class="step c-cyan frag" data-frag="b"><b>2 · REPLACE: الاسم</b>REPLACE: الجزء التالي</div>
-    <div class="arrow frag" data-frag="c">←</div><div class="step c-coral frag" data-frag="c"><b>3 · REPLACE: الاسم</b>REPLACE: النتيجة</div>
+    <div class="step c-teal"><b>1 · ملاحظات</b>جملة لكل أثر</div>
+    <div class="arrow">←</div>
+    <div class="step c-cyan"><b>2 · مجموعات</b>الملاحظات المتشابهة معًا</div>
+    <div class="arrow">←</div>
+    <div class="step c-purple"><b>3 · أنماط</b>اسم وتعريف وقاعدة دخول</div>
+    <div class="arrow">←</div>
+    <div class="step c-coral"><b>4 · عدّ</b>كم مرة، وبأي شدة</div>
   </div>
-  <div class="callout tip mt frag"><b>الخلاصة.</b> REPLACE: الجملة التي تبقى في الذاكرة</div>
-  <aside class="notes">اضغط مرة لكل خطوة، وقل ما تضيفه كل خطوة قبل ظهور التالية. REPLACE: المثال الذي تشرحه</aside>
+  <aside class="notes"><p>الوسم المحوري يجمع الملاحظات المفتوحة في تصنيف، ثم يعدّ ما في كل نمط. هذا ما يصفه Husain وShankar بعد الوسم المفتوح. المصادر: AI Evals FAQ.</p></aside>
+</section>
+
+<section class="slide" id="name-by-member" data-lo="LO2">
+  <div class="kicker">اسم النمط</div>
+  <h2>سمِّ النمط بما يراه المستخدم، وضع السبب في عمود آخر</h2>
+  <table class="t small">
+    <tr><th>مثال موازٍ: مساعد الجدولة</th><th>اسم بما يراه المدرب</th><th>السبب كما يقوله المهندس</th></tr>
+    <tr><td>يؤكد تبديلًا رفضه النظام</td><td>تأكيد تبديل لم يتم</td><td>التعليمات لا تقول ماذا يفعل عند الخطأ</td></tr>
+    <tr><td>يكتب النادي الخطأ في الجدول</td><td>نادٍ غير المطلوب</td><td>الأداة تأخذ النادي من ملف المدرب</td></tr>
+    <tr><td>يرد بالإنجليزية على رسالة عربية</td><td>لغة لا تطابق</td><td>أمثلة التعليمات كلها بالإنجليزية</td></tr>
+  </table>
+  <div class="callout tip mt"><b>لماذا:</b> نمطان قد يشتركان في سبب، ويختلفان في الضرر. الشدة تتبع ما يقع على المستخدم.</div>
+  <aside class="notes"><p>مثال موازٍ من إدارة التدريب، لا من آثار مضمار. السؤال للقاعة: لو جمعتم الصفين الأولين في «مشكلة أدوات»، ماذا تخسرون؟ الأول شدته أعلى: المدرب يظن أن نوبته تبدلت.</p></aside>
+</section>
+
+<section class="slide" id="definition-rule" data-lo="LO2">
+  <div class="kicker">التعريف وقاعدة الدخول</div>
+  <h2>قاعدة الدخول جملة يحكم بها زميل لم يحضر النقاش</h2>
+  <div class="cols cols-2">
+    <div class="card c-coral"><h4>تعريف لا يكفي</h4><p class="small mb0">«تأكيد غير صحيح»: هل يشمل الرد الذي يتأخر في التأكيد؟ وهل يشمل التأكيد بلا أداة؟</p></div>
+    <div class="card c-teal"><h4>قاعدة دخول</h4><p class="small mb0">«يدخل إذا أعادت أداة التبديل خطأً، وقال الرد إن التبديل تم».</p></div>
+  </div>
+  <ul class="bullets mt">
+    <li>لكل نمط: اسم، وتعريف، وقاعدة دخول، ومثال بمعرّف أثر</li>
+    <li>الأثر الذي لا تدخله قاعدة: «جديد»، لا أقرب نمط</li>
+  </ul>
+  <aside class="notes"><p>دليل الناتج الثاني في بطاقة المقرر: خمسة أنماط أو أكثر، لكل منها تعريف ومعرّفات آثار نموذجية وعدد. القاعدة هي ما يجعل العدد قابلًا للتكرار.</p></aside>
+</section>
+
+<section class="slide" id="engineer-role" data-lo="LO2">
+  <div class="kicker">الوسم مع المهندسين</div>
+  <h2>مالك المنتج يسمّي ما يراه العضو، والمهندس يشرح لماذا حدث</h2>
+  <div class="cols cols-2">
+    <div class="card c-teal"><h4>ما تسأل المهندس عنه</h4><p class="small mb0">ما الذي في الأثر يفسر هذا؟ هل له سبب واحد مع غيره؟ ما الذي يلزم لإصلاحه؟</p></div>
+    <div class="card c-purple"><h4>ما لا تتنازل عنه</h4><p class="small mb0">اسم النمط وشدته من جهة العضو. السبب عمود آخر في الجدول.</p></div>
+  </div>
+  <div class="callout note mt"><b>في المختبر:</b> الميسِّر يؤدي دور يزن الشمراني. اسأله عن السبب، لا عن الاسم.</div>
+  <aside class="notes"><p>إن كان في القاعة مهندسون فاطلب من أحدهم أن يؤدي الدور مع الميسِّر. الخلاف المعتاد: المهندس يريد دمج نمطين لهما إصلاح واحد. الجواب: ادمجوا التذكرة الهندسية، لا النمط.</p></aside>
+</section>
+
+<section class="slide" id="saturation" data-lo="LO2">
+  <div class="kicker">متى تتوقف</div>
+  <h2>توقف حين لا تضيف الآثار الجديدة أنماطًا جديدة</h2>
+  <div class="cols cols-2">
+    <ul class="bullets">
+      <li>التشبع: آخر عشرين أثرًا لم تضف نمطًا</li>
+      <li>العينة تحدد ما تراه: ستة أندية في شهر واحد</li>
+      <li>نمط لم يظهر في العينة قد يظهر في التشغيل</li>
+    </ul>
+    <div class="card c-amber"><h4>مثال موازٍ</h4><p class="small mb0">إن ظهرت أنماط مساعد الجدولة كلها في أول أربعين أثرًا، ولم يضف آخر عشرين شيئًا، فالتصنيف بلغ التشبع لهذه العينة وحدها.</p></div>
+  </div>
+  <aside class="notes"><p>اربط بما سيأتي: في المختبر 2.3 تحدّث مجموعة التقييم من آثار التشغيل، لأن التشبع يخص العينة لا العالم. السؤال 3 في أسئلة التحقق للمختبر 1.3 عن هذا.</p></aside>
+</section>
+
+<section class="slide" id="check-axial" data-lo="LO2">
+  <div class="kicker">نقطة تحقق</div>
+  <h2>ماذا تفعل بهذا الأثر؟</h2>
+  <div class="quiz" data-type="single" data-lo="LO2">
+    <p class="lead">بعد أن اتفقت مع المهندس على خمسة أنماط لمساعد الجدولة، تقرأ أثرًا يطلب فيه مدرب إجازة مرضية، فيرد المساعد بنصيحة طبية ولا يحوّل الطلب إلى الموارد البشرية. لا تنطبق عليه قاعدة دخول أي نمط من الخمسة. ماذا تفعل؟</p>
+    <div class="opts">
+      <div class="opt" data-ok>تعلّمه «جديد» وتكتب ملاحظته، وتعيد النظر في التشبع</div>
+      <div class="opt" data-why="يلوي القاعدة لتتسع للأثر: العدّ يفقد معناه حين تتغير القاعدة دون تسجيل">تضعه في أقرب نمط حتى يبقى التصنيف خمسة أنماط</div>
+      <div class="opt" data-why="يحذف دليلًا لأنه لا يناسب التصنيف: الأثر النادر قد يكون الأشد ضررًا">تستبعده من العدّ، فهو أثر واحد فقط</div>
+      <div class="opt" data-why="يترك للمهندس قرار التسمية: السبب له، واسم النمط وشدته لمالك المنتج">تسأل المهندس أي نمط يناسبه وتأخذ برأيه</div>
+    </div>
+    <div class="callout tip why"><b>لماذا.</b> قاعدة الدخول هي ما يجعل العدّ قابلًا للتكرار. أثر لا تدخله قاعدة دليل على نمط لم يُسمَّ بعد، والتشبع لم يتحقق.</div>
+  </div>
+  <aside class="notes"><p>الإجابة: أ. لاحظ أن الأثر فيه إشارة صحية: نمط بهذه الصفة شدته عالية عادة. لا تربطه بأي نمط من مضمار الآن.</p></aside>
 </section>
 
 <section class="slide lab" id="lab-1-3" data-auto="lab" data-lab="1.3">
-  <aside class="notes">REPLACE: ما تراقبه أثناء عمل المشاركين، والمشكلات المعتادة، والبديل لمن لم يُنهِ مختبرًا سابقًا</aside>
+  <aside class="notes"><p>35 دقيقة دون مساعد ذكي. أنت يزن الشمراني في الخطوة 2: أجب عن الأسباب من مفتاح المختبر ولا تقترح أسماء. مر على كل طاولة مرة. من لم يكمل 1.2 يبدأ من <code>open_notes_P001_P050.csv</code>.</p></aside>
 </section>
 
 <!-- الجلسة 4 -->
 
-<section class="slide section" id="s4" data-auto="section" data-session="4"></section>
-
-<section class="slide" id="s4-idea">
-  <div class="kicker">REPLACE: السؤال الذي تجيب عنه الشريحة</div>
-  <h2>REPLACE: فكرة واحدة في جملة</h2>
-  <div class="cols cols-2">
-    <ul class="bullets">
-      <li>REPLACE: ست نقاط على الأكثر، كل منها فكرة تامة</li>
-      <li>REPLACE: أبرز العبارة الأساسية، والأرقام من تشغيل المختبر لا من الذاكرة</li>
-    </ul>
-    <div class="card c-teal"><h4>في دراسة الحالة</h4><p class="small mb0">REPLACE: اربط الفكرة بدراسة الحالة وبياناتها</p></div>
-  </div>
-  <div class="callout warn mt"><b>أين يقع الخطأ.</b> REPLACE: الخطأ الذي سيقع فيه المشاركون، وكيف يتعرفون عليه</div>
-  <aside class="notes">REPLACE: ما تقوله، والعرض الحي، والسؤال للقاعة، والخطأ الشائع وحلّه</aside>
+<section class="slide section" id="s4" data-auto="section" data-session="4">
+  <aside class="notes"><p>نحو 35 دقيقة قبل المختبر: مراجعة المختبر 1.3 (6)، والتكرار والشدة والترتيب والتفصيل (24)، ونقطة التحقق (5)؛ ثم المختبر 1.4، 35 دقيقة.</p></aside>
 </section>
 
-<section class="slide" id="s4-steps">
-  <div class="kicker">خطوة بخطوة</div>
-  <h2>REPLACE: عملية تظهر خطوة مع كل ضغطة</h2>
-  <div class="flow">
-    <div class="step c-teal"><b>1 · REPLACE: الاسم</b>REPLACE: ما يحدث أولًا</div>
-    <div class="arrow frag" data-frag="b">←</div><div class="step c-cyan frag" data-frag="b"><b>2 · REPLACE: الاسم</b>REPLACE: الجزء التالي</div>
-    <div class="arrow frag" data-frag="c">←</div><div class="step c-coral frag" data-frag="c"><b>3 · REPLACE: الاسم</b>REPLACE: النتيجة</div>
+<section class="slide" id="debrief-1-3" data-lo="LO2">
+  <div class="kicker">ما أظهره المختبر 1.3</div>
+  <h2>سبعة أنماط في الآثار المئة، و42 أثرًا بلا فشل</h2>
+  <table class="t small">
+    <tr><th>النمط</th><th class="num">في المئة</th></tr>
+    <tr><td>F5 لغة الرد لا تطابق لغة العضو</td><td class="num">14</td></tr>
+    <tr><td>F1 سياسة قديمة مسترجعة</td><td class="num">12</td></tr>
+    <tr><td>F6 رفض طلب ضمن النطاق</td><td class="num">9</td></tr>
+    <tr><td>F2 تفصيل مختلق لا تذكره المصادر</td><td class="num">8</td></tr>
+    <tr><td>F4 تصعيد فائت (إصابة أو خلاف مالي)</td><td class="num">6</td></tr>
+    <tr><td>F3 فشل أداة أُخفي عن العضو</td><td class="num">5</td></tr>
+    <tr><td>F7 طلب بيانات شخصية غير لازمة</td><td class="num">4</td></tr>
+  </table>
+  <aside class="notes"><p>ست دقائق. الأسماء في القاعة تختلف؛ قارن التعريفات لا الكلمات. الأنماط السبعة كلها ظهرت في الآثار الخمسين الأولى، ولم يظهر جديد في الثانية. اسأل: أي نمط ستصلحونه أولًا؟ دع القاعة تقول F5 لأنه الأكثر، ثم انتقل إلى الشدة.</p></aside>
+</section>
+
+<section class="slide" id="freq-vs-sev" data-lo="LO2">
+  <div class="kicker">التكرار مقابل الشدة</div>
+  <h2>الأكثر تكرارًا ليس دائمًا ما يُصلح أولًا</h2>
+  <table class="t">
+    <tr><th></th><th>نادر</th><th>متكرر</th></tr>
+    <tr><th>شديد</th><td>يُصلح قبل الإطلاق مهما قل</td><td>يوقف الإطلاق</td></tr>
+    <tr><th>خفيف</th><td>يُتابع</td><td>يُرتب بحاصل الضرب في التكرار</td></tr>
+  </table>
+  <aside class="notes"><p>الفكرة: الترتيب بالعدد وحده يضع الإزعاج المتكرر قبل الضرر النادر. في القسم الذي يسبق الإطلاق، الضرر الجسيم أولًا. المصفوفة توضيح من المقرر.</p></aside>
+</section>
+
+<section class="slide" id="severity-scale" data-lo="LO2">
+  <div class="kicker">مقياس الشدة في المقرر</div>
+  <h2>أربع درجات، تُقاس بما يقع على العضو</h2>
+  <table class="t small">
+    <tr><th>الدرجة</th><th>ما يعنيه</th></tr>
+    <tr><td>1 شكلي</td><td>صياغة أو تنسيق، والعضو حصل على ما طلب</td></tr>
+    <tr><td>2 إزعاج</td><td>لم يحصل على ما طلب، ويعيد المحاولة أو يسأل موظفًا</td></tr>
+    <tr><td>3 تضليل أو بيانات</td><td>معلومة خاطئة عن مال أو حق، أو بيانات شخصية لا تلزم</td></tr>
+    <tr><td>4 ضرر</td><td>مال أو طلب يُعد منفذًا دون علمه، أو إصابة أو خلاف مالي لا يصل إلى إنسان</td></tr>
+  </table>
+  <div class="caption">المقياس من وضع المقرر، لا معيار وطني.</div>
+  <aside class="notes"><p>اربط الدرجة 4 بمبدأ الموثوقية والسلامة في مبادئ أخلاقيات الذكاء الاصطناعي: أن يعمل النظام وفق المواصفات المحددة، وأن تكون فيه آليات تمنع وقوع الضرر. المقياس نفسه قاعدتنا، لا نص المبادئ. المصادر: سدايا، مبادئ أخلاقيات الذكاء الاصطناعي، المبدأ الخامس.</p></aside>
+</section>
+
+<section class="slide" id="priority-rule" data-lo="LO2">
+  <div class="kicker">قاعدة الأولوية، بمثال موازٍ</div>
+  <h2>الشدة 4 أولًا، ثم حاصل نسبة التكرار في الشدة</h2>
+  <table class="t small">
+    <tr><th>مساعد الجدولة (80 أثرًا)</th><th class="num">العدد</th><th class="num">الشدة</th><th class="num">النسبة × الشدة</th></tr>
+    <tr class="hl"><td>تأكيد تبديل رفضه النظام</td><td class="num">3</td><td class="num">4</td><td class="num">0.150</td></tr>
+    <tr><td>لغة لا تطابق</td><td class="num">15</td><td class="num">2</td><td class="num">0.375</td></tr>
+    <tr><td>نادٍ غير المطلوب</td><td class="num">9</td><td class="num">3</td><td class="num">0.338</td></tr>
+    <tr><td>رفض سؤال إجازة يجيب عنه</td><td class="num">11</td><td class="num">2</td><td class="num">0.275</td></tr>
+    <tr><td>تبديل دون موافقة المدرب</td><td class="num">4</td><td class="num">3</td><td class="num">0.150</td></tr>
+  </table>
+  <div class="caption">أرقام اصطناعية من <code>labs/_tools/parallel_examples.mjs</code>.</div>
+  <aside class="notes"><p>الأكثر تكرارًا (15 مرة) ثاني في الترتيب، والأول ثلاث مرات فقط. القاعدة من وضع المقرر. سؤال: لو كان الاستخدام 10,000 طلب في الشهر، كم مرة يقع الأول؟ نحو 375 مرة، أي 375 مدربًا يظن أن نوبته تبدلت.</p></aside>
+</section>
+
+<section class="slide" id="slice-language" data-lo="LO2">
+  <div class="kicker">التفصيل</div>
+  <h2>المتوسط يخفي الفشل الذي يتركز في لغة أو فئة</h2>
+  <ul class="bullets">
+    <li>احسب النسبة داخل كل لغة، لا العدد وحده: الشرائح مختلفة الحجم</li>
+    <li>افصل الأعضاء الجدد عن القائمين: أسئلتهم مختلفة</li>
+    <li>نمط يقع في لغة واحدة له سبب واحد غالبًا، وإصلاح واحد</li>
+  </ul>
+  <div class="callout note mt"><b>من مبادئ أخلاقيات الذكاء الاصطناعي:</b> عند التطبيق تُقيَّم المجموعات الممثلة في البيانات للتأكد من أنها تتأثر بشكل متساوٍ أو مماثل.</div>
+  <aside class="notes"><p>بطاقة المقرر تطلب تفصيل النتائج بحسب اللغة ومجموعة المستخدمين حتى لا تخفي المتوسطات الإخفاقات، وتطلب في كل تقرير مقياس حماية وشريحة. المبدأ الأول، النزاهة والإنصاف، يذكر في مرحلة التطبيق والمتابعة تقييم المجموعات الممثلة في البيانات والتأكد من تأثرها بشكل متساوٍ أو مماثل. المصادر: سدايا، مبادئ أخلاقيات الذكاء الاصطناعي، المبدأ الأول.</p></aside>
+</section>
+
+<section class="slide" id="taxonomy-table" data-lo="LO2">
+  <div class="kicker">ما تسلّمه</div>
+  <h2>جدول التصنيف يذهب إلى المهندسين تذكرةً لكل نمط</h2>
+  <table class="t small">
+    <tr><th>العمود</th><th>لماذا</th></tr>
+    <tr><td>الاسم والتعريف وقاعدة الدخول</td><td>يعيد غيرك العدّ</td></tr>
+    <tr><td>ثلاثة معرّفات آثار</td><td>يفتحها المهندس ويرى الخطأ</td></tr>
+    <tr><td>العدد والنسبة من 300</td><td>حجم المشكلة</td></tr>
+    <tr><td>الشدة والترتيب</td><td>ما يُصلح أولًا</td></tr>
+    <tr><td>الشريحة الأعلى نسبة</td><td>أين يبحث عن السبب</td></tr>
+  </table>
+  <aside class="notes"><p>هذا دليل الناتج الثاني. يدخل ملف الأدلة في المشروع الختامي، ويصبح كل نمط معيارًا في مجموعة التقييم غدًا.</p></aside>
+</section>
+
+<section class="slide" id="check-priority" data-lo="LO2">
+  <div class="kicker">نقطة تحقق</div>
+  <h2>أي نمط يُصلح أولًا بقاعدة المقرر؟</h2>
+  <div class="quiz" data-type="single" data-lo="LO2">
+    <p class="lead">في 200 أثر من مساعد الجدولة: «لغة لا تطابق» 30 مرة شدتها 2، و«نادٍ غير المطلوب» 18 مرة شدتها 3، و«حذف نوبة دون إشعار المدرب» 4 مرات شدتها 4، و«رفض سؤال يجيب عنه» 22 مرة شدتها 2. ما الأول؟</p>
+    <div class="opts">
+      <div class="opt" data-why="يرتب بالتكرار وحده: النمط الأكثر عددًا شدته 2">لغة لا تطابق، 30 مرة</div>
+      <div class="opt" data-why="يرتب بحاصل الضرب وينسى أن الشدة 4 تسبق كل شيء">نادٍ غير المطلوب، أعلى حاصل ضرب</div>
+      <div class="opt" data-ok>حذف نوبة دون إشعار المدرب</div>
+      <div class="opt" data-why="يجمع التكرار مع الشدة الخفيفة: 22 مرة بشدة 2 لا تسبق ضررًا من الدرجة 4">رفض سؤال يجيب عنه، 22 مرة</div>
+    </div>
+    <div class="callout tip why"><b>لماذا.</b> قاعدة المقرر تقدّم كل نمط شدته 4 مهما قل تكراره، ثم ترتب الباقي بحاصل نسبة التكرار في الشدة.</div>
   </div>
-  <div class="callout tip mt frag"><b>الخلاصة.</b> REPLACE: الجملة التي تبقى في الذاكرة</div>
-  <aside class="notes">اضغط مرة لكل خطوة، وقل ما تضيفه كل خطوة قبل ظهور التالية. REPLACE: المثال الذي تشرحه</aside>
+  <aside class="notes"><p>الإجابة: ج. ثم رتّب الباقي مع القاعة: اللغة 30/200 × 2 = 0.30، والنادي 18/200 × 3 = 0.27، والرفض 22/200 × 2 = 0.22.</p></aside>
 </section>
 
 <section class="slide lab" id="lab-1-4" data-auto="lab" data-lab="1.4">
-  <aside class="notes">REPLACE: ما تراقبه أثناء عمل المشاركين، والمشكلات المعتادة، والبديل لمن لم يُنهِ مختبرًا سابقًا</aside>
+  <aside class="notes"><p>35 دقيقة، والمساعد المرشد للمعادلات فقط. الخطأ المعتاد: عدّ النسبة من 100 بدل 300، أو تفصيل اللغة بالعدد لا بالنسبة. من لم يكتمل وسمه يعمل على ملف الفريق وحده ويكتب ذلك.</p></aside>
 </section>
 
 <section class="slide" id="wrap-up">
   <div class="kicker">خلاصة اليوم 1</div>
   <h2>ثلاثة أمور تبقى معك</h2>
   <div class="cols cols-3">
-    <div class="card c-teal"><h4>تذكّر</h4><p class="small mb0">REPLACE: فكرة يحتفظ بها المشاركون</p></div>
-    <div class="card c-coral"><h4>تذكّر</h4><p class="small mb0">REPLACE: فكرة يحتفظ بها المشاركون</p></div>
-    <div class="card c-purple"><h4>تذكّر</h4><p class="small mb0">REPLACE: فكرة يحتفظ بها المشاركون</p></div>
+    <div class="card c-teal"><h4>محاولات متكررة</h4><p class="small mb0">نسبة المحاولة الواحدة قدرة؛ النجاح في كل المحاولات اعتمادية.</p></div>
+    <div class="card c-coral"><h4>اقرأ الأثر كله</h4><p class="small mb0">الاسترجاع وحالة الأداة قبل الرد، والملاحظة تصف ما حدث.</p></div>
+    <div class="card c-purple"><h4>الشدة قبل العدد</h4><p class="small mb0">الضرر الجسيم أولًا، ثم التكرار في الشدة، مفصلًا بحسب اللغة والفئة.</p></div>
   </div>
+  <aside class="notes"><p>اسأل كل طاولة: أي أثر من الآثار التي قرأتموها لن تنسوه؟ غالبًا أثر الإصابة دون تحويل.</p></aside>
 </section>
 
 <section class="slide dark" id="next" data-label="التالي">
   <div class="kicker">التالي</div>
-  <h2>اليوم 2: REPLACE: موضوع هذه الوحدة في كلمات قليلة</h2>
-  <p class="lead">REPLACE: ما يجهزه المشاركون قبل ذلك، والمختبرات غير المكتملة يمكن إكمالها في المنزل</p>
-  <aside class="notes">REPLACE: الحسابات أو التثبيتات أو القراءة التي يحتاجها المشاركون قبل الوحدة التالية</aside>
+  <h2>اليوم 2: مجموعة التقييم وخطة التجربة</h2>
+  <p class="lead">احتفظ بجدول التصنيف: كل نمط فيه يصبح معيارًا في مجموعة التقييم.</p>
+  <aside class="notes"><p>لا مهمة مسائية بعد اليوم الأول؛ مهام المساء بعد اليومين الثاني والثالث. من لم يكمل جدول التصنيف يجده مرجعًا في مراجعة أول الغد. ذكّر بأن الآثار لا تُنسخ إلى أي أداة ولا تُرسل.</p></aside>
 </section>

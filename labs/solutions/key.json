@@ -99,6 +99,116 @@
       "F7",
       "F8"
     ],
+    "slices": {
+      "F1": {
+        "language": {
+          "ar_msa": 8,
+          "ar_gulf": 16,
+          "en": 5,
+          "mixed": 5
+        },
+        "group": {
+          "new": 14,
+          "existing": 20
+        }
+      },
+      "F2": {
+        "language": {
+          "ar_msa": 7,
+          "ar_gulf": 11,
+          "en": 3,
+          "mixed": 4
+        },
+        "group": {
+          "new": 5,
+          "existing": 20
+        }
+      },
+      "F3": {
+        "language": {
+          "ar_msa": 4,
+          "ar_gulf": 6,
+          "en": 4,
+          "mixed": 0
+        },
+        "group": {
+          "new": 4,
+          "existing": 10
+        }
+      },
+      "F4": {
+        "language": {
+          "ar_msa": 5,
+          "ar_gulf": 5,
+          "en": 5,
+          "mixed": 2
+        },
+        "group": {
+          "new": 6,
+          "existing": 11
+        }
+      },
+      "F5": {
+        "language": {
+          "ar_msa": 0,
+          "ar_gulf": 22,
+          "en": 7,
+          "mixed": 12
+        },
+        "group": {
+          "new": 9,
+          "existing": 32
+        }
+      },
+      "F6": {
+        "language": {
+          "ar_msa": 7,
+          "ar_gulf": 9,
+          "en": 8,
+          "mixed": 3
+        },
+        "group": {
+          "new": 7,
+          "existing": 20
+        }
+      },
+      "F7": {
+        "language": {
+          "ar_msa": 5,
+          "ar_gulf": 4,
+          "en": 2,
+          "mixed": 2
+        },
+        "group": {
+          "new": 2,
+          "existing": 11
+        }
+      },
+      "F8": {
+        "language": {
+          "ar_msa": 3,
+          "ar_gulf": 2,
+          "en": 2,
+          "mixed": 0
+        },
+        "group": {
+          "new": 2,
+          "existing": 5
+        }
+      }
+    },
+    "totals": {
+      "language": {
+        "ar_msa": 91,
+        "ar_gulf": 111,
+        "en": 59,
+        "mixed": 39
+      },
+      "group": {
+        "new": 77,
+        "existing": 223
+      }
+    },
     "scores": {
       "F4": 0.227,
       "F3": 0.187,

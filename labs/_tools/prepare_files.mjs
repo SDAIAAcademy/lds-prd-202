@@ -369,6 +369,11 @@ const ranking = Object.keys(MODES).map((m) => {
   return { m, n, share: n / 300, sev: MODES[m].sev, score: Math.round((n / 300) * MODES[m].sev * 1000) / 1000 };
 }).sort((a, b) => (b.sev === 4) - (a.sev === 4) || b.score - a.score);
 key.traces.priority = ranking.map((x) => x.m);
+key.traces.slices = Object.fromEntries(Object.keys(MODES).map((m) => [m, {
+  language: Object.fromEntries(['ar_msa', 'ar_gulf', 'en', 'mixed'].map((l) => [l, traces.filter((t) => t._mode === m && t.language === l).length])),
+  group: Object.fromEntries(['new', 'existing'].map((g) => [g, traces.filter((t) => t._mode === m && t.member_group === g).length]))
+}]));
+key.traces.totals = { language: Object.fromEntries(['ar_msa', 'ar_gulf', 'en', 'mixed'].map((l) => [l, traces.filter((t) => t.language === l).length])), group: Object.fromEntries(['new', 'existing'].map((g) => [g, traces.filter((t) => t.member_group === g).length])) };
 key.traces.scores = Object.fromEntries(ranking.map((x) => [x.m, x.score]));
 
 // The trace viewer: one static page, no network, filters by id, language and text
@@ -791,7 +796,7 @@ for (const cfg of ['A', 'B', 'C']) {
 }
 put('files/gateway_runs.csv', csv([['config', 'example_id', 'trial', 'language', 'member_group', 'model_tier', 'model_calls', 'tokens_in', 'tokens_cached', 'tokens_out', 'latency_ms', 'pass', 'failed_criterion'], ...gw]));
 put('files/configurations.txt', [
-  'الإعدادات الثلاثة التي تقارنها في المختبرين 3.2 و3.3',
+  'التهيئات الثلاث التي تقارنها في المختبرين 3.2 و3.3',
   '',
   'A: نموذج كبير لكل الطلبات عند المزود أ. لا تخزين مؤقت للتعليمات.',
   'B: نموذج صغير لكل الطلبات عند المزود ب.',

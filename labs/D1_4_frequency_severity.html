@@ -1,37 +1,73 @@
 <article class="lab" data-lab="1.4">
   <div class="box goal">
-    <h3>الهدف</h3>
-    <p>REPLACE: في النهاية يستطيع المشاركون …</p>
+    <h3>ستخرج من هذا المختبر بـ</h3>
+    <ul>
+      <li>جدول التصنيف: لكل نمط تعريف ومعرّفات أمثلة وعدد ونسبة من 300 أثر وشدة.</li>
+      <li>ترتيب للإصلاح بقاعدة المقرر، وتفصيل للأنماط الثلاثة الأولى بحسب اللغة وفئة العضو.</li>
+    </ul>
   </div>
 
   <h2>ما تحتاجه</h2>
-  <ul>
-    <li>REPLACE: الملفات والأداة والحساب التي يستخدمها المختبر</li>
-  </ul>
+  <div class="files">
+    <a href="files/coding_sheet_P001_P100.csv" target="_blank"><b>coding_sheet_P001_P100.csv</b><span>وسمك للآثار المئة (المختبران 1.2 و1.3)</span></a>
+    <a href="files/team_coding_P101_P300.csv" target="_blank"><b>team_coding_P101_P300.csv</b><span>ملف البداية: وسم الفريق الهندسي للآثار المئتين الباقية</span></a>
+    <a href="files/taxonomy_v0_engineering.csv" target="_blank"><b>taxonomy_v0_engineering.csv</b><span>تصنيف الفريق الهندسي ورموزه وشدته</span></a>
+    <a href="files/traces_300.csv" target="_blank"><b>traces_300.csv</b><span>الآثار، ومنها عمودا اللغة وفئة العضو</span></a>
+  </div>
+  <p class="small">وحّد رموزك مع رموز الفريق الهندسي قبل الجمع. إن لم يكتمل وسمك فاعمل على ملف الفريق وحده (200 أثر)، واكتب ذلك فوق الجدول. سياسة الذكاء الاصطناعي: مساعد مرشد للمعادلات وحدها؛ لا تضع فيه أي سطر من الآثار، فهي «مقيد».</p>
+
+  <h2>الخطوات</h2>
 
   <div class="step">
-    <h3>REPLACE: الخطوة الأولى <span class="min">15 د</span></h3>
-    <p>REPLACE: ما يفعله المشارك ولماذا، في جملتين</p>
-    <div class="prompt" data-tool="عارض آثار التنفيذ">REPLACE: الأمر الذي ينسخه المشاركون، والأجزاء التي يغيّرونها <span class="ph">ملوّنة</span></div>
+    <h3>1 · اجمع وسمك مع ملف الفريق الهندسي <span class="min">5 د</span></h3>
+    <p>انسخ عمودي <code>trace_id</code> و<code>failure_mode</code> من الملفين في ورقة واحدة: 300 صف. ثم أضف اللغة وفئة العضو من <code>traces_300.csv</code>:</p>
+    <div class="prompt" data-tool="جدول بيانات">=XLOOKUP(A2,traces!A:A,traces!E:E)</div>
   </div>
 
   <div class="step">
-    <h3>REPLACE: الخطوة الثانية <span class="min">10 د</span></h3>
-    <p>REPLACE: ما يفعله المشارك ولماذا، في جملتين</p>
+    <h3>2 · عدّ كل نمط واحسب نسبته من 300 <span class="min">7 د</span></h3>
+    <div class="prompt" data-tool="جدول بيانات">=COUNTIF(B:B,"<span class="ph">F4</span>")</div>
+  </div>
+
+  <div class="step">
+    <h3>3 · طبّق مقياس الشدة وقاعدة الأولوية <span class="min">8 د</span></h3>
+    <p>القاعدة من وضع المقرر: كل نمط شدته 4 يُعالج قبل الإطلاق مهما قل تكراره، ثم ترتب الأنماط الباقية بحاصل ضرب نسبة التكرار في الشدة.</p>
+  </div>
+
+  <div class="step">
+    <h3>4 · فصّل الأنماط الثلاثة الأولى بحسب اللغة وفئة العضو <span class="min">8 د</span></h3>
+    <p>احسب لكل لغة نسبة آثارها التي فيها النمط، لا العدد وحده: اللغات مختلفة الحجم.</p>
+    <div class="prompt" data-tool="جدول بيانات">=COUNTIFS(B:B,"<span class="ph">F1</span>",C:C,"<span class="ph">ar_gulf</span>")/COUNTIF(C:C,"<span class="ph">ar_gulf</span>")</div>
+  </div>
+
+  <div class="step">
+    <h3>5 · اكتب جدول التصنيف <span class="min">7 د</span></h3>
+    <table>
+      <tr><th>النمط</th><th>التعريف</th><th>أمثلة</th><th>العدد</th><th>النسبة</th><th>الشدة</th><th>الترتيب</th></tr>
+      <tr><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+    </table>
   </div>
 
   <div class="step stretch">
     <h3>✱ إضافي</h3>
-    <p>REPLACE: توسعة لمن ينهي مبكرًا</p>
+    <p>قدّر كم مرة يقع النمط الأول في الشهر إذا بلغ الاستخدام 60,000 مهمة، واكتب ما يفترضه تقديرك.</p>
   </div>
 
   <h2>أسئلة تحقق</h2>
   <ol class="checks">
-    <li>REPLACE: سؤال يبيّن أن المختبر نجح</li>
+    <li>هل الترتيب بقاعدة المقرر هو ترتيب التكرار نفسه؟ ما الذي تغيّر ولماذا؟</li>
+    <li>أي نمط تتركز نسبته في لغة واحدة؟ وماذا كان المتوسط سيخفي؟</li>
+    <li>هل لكل نمط في جدولك ثلاثة معرّفات أمثلة يستطيع المهندس فتحها؟</li>
   </ol>
 
   <details class="instructor">
-    <summary>للمدرّب</summary>
-    <p>REPLACE: مفتاح الإجابة والفخاخ والأخطاء الشائعة</p>
+    <summary>للمدرّب: مفتاح المختبر</summary>
+    <ul>
+      <li><b>الأعداد من 300:</b> F5 41، F1 34، F6 27، F2 25، F4 17، F3 14، F7 13، F8 7؛ وبلا فشل 122.</li>
+      <li><b>الترتيب بقاعدة المقرر:</b> F4 ثم F3 (شدتهما 4)، ثم F1 (0.340)، ثم F5 (0.273)، ثم F2 (0.250)، ثم F6 (0.180)، ثم F7 (0.130)، ثم F8 (0.070). الأكثر تكرارًا (F5) ليس الأول.</li>
+      <li><b>التفصيل:</b> F1 في اللهجة الخليجية 16 من 111 أثرًا (14%) وفي الفصحى 8 من 91 (9%)؛ F5 لا يقع في الفصحى (0 من 91) ويقع في الخليجية 22 من 111 وفي المختلطة 12 من 39؛ F4 يتوزع على اللغات (5 و5 و5 و2). الأعضاء الجدد 77 من 300.</li>
+      <li>من عمل على ملف الفريق وحده يصل إلى الترتيب نفسه في أوله (F4 ثم F3).</li>
+      <li>التحقق: <code>node labs/solutions/check_all.mjs</code>.</li>
+    </ul>
   </details>
 </article>
