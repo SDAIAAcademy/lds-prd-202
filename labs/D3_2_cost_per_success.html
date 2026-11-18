@@ -1,37 +1,83 @@
 <article class="lab" data-lab="3.2">
   <div class="box goal">
-    <h3>الهدف</h3>
-    <p>REPLACE: في النهاية يستطيع المشاركون …</p>
+    <h3>ستخرج من هذا المختبر بـ</h3>
+    <ul>
+      <li>جدول لاقتصاديات الوحدة لثلاث تهيئات: التكلفة لكل استدعاء، والتكلفة لكل مهمة ناجحة بالنماذج وحدها ومع تكلفة الفشل، والمئينان 50 و95 لزمن المهمة.</li>
+      <li>مقارنة نسب النجاح لكل معيار بالعتبات من المختبر 2.2، في المتوسط وفي كل لغة.</li>
+    </ul>
   </div>
 
   <h2>ما تحتاجه</h2>
-  <ul>
-    <li>REPLACE: الملفات والأداة والحساب التي يستخدمها المختبر</li>
-  </ul>
+  <div class="files">
+    <a href="files/gateway_runs.csv" target="_blank"><b>gateway_runs.csv</b><span>1,080 تشغيلًا: 3 تهيئات × 120 مثالًا × 3 محاولات، بالوحدات النصية والزمن والنتيجة</span></a>
+    <a href="files/price_sheet_provider_a.csv" target="_blank"><b>price_sheet_provider_a.csv</b><span>قائمة أسعار المزود أ</span></a>
+    <a href="files/price_sheet_provider_b.csv" target="_blank"><b>price_sheet_provider_b.csv</b><span>قائمة أسعار المزود ب</span></a>
+    <a href="files/price_sheet_provider_c.csv" target="_blank"><b>price_sheet_provider_c.csv</b><span>قائمة أسعار المزود ج، بفئتين</span></a>
+    <a href="files/configurations.txt" target="_blank"><b>configurations.txt</b><span>التهيئات الثلاث، والتوجيه والتخزين المؤقت في C</span></a>
+    <a href="files/assumptions.csv" target="_blank"><b>assumptions.csv</b><span>تكلفة معالجة الفشل، ومستوى الخدمة، والموازنة، والأحجام</span></a>
+  </div>
+  <p class="small">التشغيلات من بوابة النماذج في الحالة، على مجموعة التقييم v1.0، وكلها محاكاة مكتوبة السلوك لا ردود نماذج حقيقية. سياسة الذكاء الاصطناعي: مساعد مرشد للطريقة والمعادلات؛ لا تنسخ إليه صفوف الملف.</p>
+
+  <h2>الخطوات</h2>
 
   <div class="step">
-    <h3>REPLACE: الخطوة الأولى <span class="min">15 د</span></h3>
-    <p>REPLACE: ما يفعله المشارك ولماذا، في جملتين</p>
-    <div class="prompt" data-tool="عارض آثار التنفيذ">REPLACE: الأمر الذي ينسخه المشاركون، والأجزاء التي يغيّرونها <span class="ph">ملوّنة</span></div>
+    <h3>1 · اقرأ قوائم الأسعار والتهيئات الثلاث <span class="min">4 د</span></h3>
+    <p>الأسعار بالريال لكل مليون وحدة نصية. ابنِ ورقة <code>prices</code> فيها صف لكل تهيئة وفئة: المفتاح (<code>A_large</code>، <code>B_small</code>، <code>C_small</code>، <code>C_large</code>) ثم سعر الإدخال والإدخال المخزن والإخراج.</p>
   </div>
 
   <div class="step">
-    <h3>REPLACE: الخطوة الثانية <span class="min">10 د</span></h3>
-    <p>REPLACE: ما يفعله المشارك ولماذا، في جملتين</p>
+    <h3>2 · احسب تكلفة كل تشغيل والتكلفة لكل استدعاء <span class="min">8 د</span></h3>
+    <p>اكتب التكلفة في عمود جديد N. الوحدات المخزنة جزء من وحدات الإدخال، وتُحسب بسعرها:</p>
+    <div class="prompt" data-tool="جدول بيانات">=((H2-I2)*XLOOKUP(A2&amp;"_"&amp;F2,prices!A:A,prices!B:B)+I2*XLOOKUP(A2&amp;"_"&amp;F2,prices!A:A,prices!C:C)+J2*XLOOKUP(A2&amp;"_"&amp;F2,prices!A:A,prices!D:D))/1000000</div>
+    <p>التكلفة لكل استدعاء: مجموع التكلفة للتهيئة مقسومًا على مجموع <code>model_calls</code>.</p>
+  </div>
+
+  <div class="step">
+    <h3>3 · احسب التكلفة لكل مهمة ناجحة، بالنماذج وحدها ومع تكلفة الفشل <span class="min">8 د</span></h3>
+    <p>بالنماذج وحدها: مجموع التكلفة ÷ عدد التشغيلات الناجحة. مع تكلفة الفشل: أضف 7.50 ريال لكل تشغيل فاشل يتولاه موظف، ثم اقسم على الناجحة:</p>
+    <div class="prompt" data-tool="جدول بيانات">=(SUMIFS(N:N,A:A,"<span class="ph">C</span>")+COUNTIFS(A:A,"<span class="ph">C</span>",L:L,0)*7.5)/COUNTIFS(A:A,"<span class="ph">C</span>",L:L,1)</div>
+  </div>
+
+  <div class="step">
+    <h3>4 · احسب المئين 50 والمئين 95 لزمن المهمة، وفي كل لغة <span class="min">8 د</span></h3>
+    <div class="prompt" data-tool="جدول بيانات">=PERCENTILE.INC(FILTER(K:K,(A:A="<span class="ph">C</span>")*(D:D="<span class="ph">ar_gulf</span>")),0.95)</div>
+    <p>قارن كل مئين 95 بمستوى الخدمة: 4,000 ms للمهمة كلها.</p>
+  </div>
+
+  <div class="step">
+    <h3>5 · قارن نسب النجاح لكل معيار بالعتبات، وفي كل لغة <span class="min">7 د</span></h3>
+    <p>نسبة النجاح في المعيار = 1 − (التشغيلات التي فشلت فيه ÷ 360). المعياران الأشد: لا فشل واحد. ثم نسبة النجاح الكلية لكل تهيئة في كل لغة.</p>
+    <table>
+      <tr><th>التهيئة</th><th>لكل مهمة ناجحة، مع الفشل</th><th>المئين 95</th><th>تعبر العتبات؟</th><th>أضعف لغة</th></tr>
+      <tr><td>A</td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>B</td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>C</td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+    </table>
   </div>
 
   <div class="step stretch">
     <h3>✱ إضافي</h3>
-    <p>REPLACE: توسعة لمن ينهي مبكرًا</p>
+    <p>اختر أثرًا واحدًا من <code>traces_300.csv</code>، وعدّ كلمات رسالة العضو، واقسمها على وحدات الإدخال المفوترة لكل استدعاء. ما الذي يملأ بقية الوحدات؟</p>
   </div>
 
   <h2>أسئلة تحقق</h2>
   <ol class="checks">
-    <li>REPLACE: سؤال يبيّن أن المختبر نجح</li>
+    <li>أي تهيئة أرخص لكل استدعاء، وأيها أغلى لكل مهمة ناجحة؟ لماذا انقلب الترتيب؟</li>
+    <li>أي تهيئة لا تفي بمستوى الخدمة، وفي أي لغة يقترب غيرها من الحد؟</li>
+    <li>هل حسبت تكلفة الفشل من الافتراضات، أم من رقم تذكره؟</li>
   </ol>
 
   <details class="instructor">
-    <summary>للمدرّب</summary>
-    <p>REPLACE: مفتاح الإجابة والفخاخ والأخطاء الشائعة</p>
+    <summary>للمدرّب: مفتاح المختبر</summary>
+    <ul>
+      <li><b>التكلفة لكل استدعاء:</b> A 0.0431، B 0.0023، C 0.0093 ريال. B أرخص بنحو 19 ضعفًا من A.</li>
+      <li><b>نسبة النجاح:</b> A 342 من 360 (95.0%)، B 267 (74.2%)، C 331 (91.9%).</li>
+      <li><b>لكل مهمة ناجحة:</b> بالنماذج وحدها A 0.0788، B 0.0067، C 0.0167. <b>مع تكلفة الفشل:</b> A 0.4736، B 2.619، C 0.6738. B الأرخص لكل استدعاء هو الأغلى لكل مهمة ناجحة: كل فشل 7.50 ريال من وقت موظف.</li>
+      <li><b>الزمن:</b> المئين 50/95: A 3,521/5,533 (لا يفي بالحد، وفي كل لغة فوق 4,000)، B 1,718/2,852 (المختلطة 3,714)، C 1,609/3,457 (الخليجية 3,907: تفي وتقترب من الحد).</li>
+      <li><b>العتبات:</b> A وC تعبران كل العتبات (لا فشل في K3 وK4، وK1 وK2 فوق 97%: A 98.9% و97.8%، C 98.3% و98.3%). B لا تعبر: K3 فشل 8 مرات، وK4 16 مرة، وK2 96.9%.</li>
+      <li><b>في كل لغة:</b> B في الخليجية 65.7% وفي المختلطة 59.6%؛ C في الخليجية 85.9% وهي أضعف لغاتها؛ A في الخليجية 91.9%.</li>
+      <li><b>الإضافي:</b> P001 مثلًا: رسالة من 10 كلمات، و6,723 وحدة إدخال في استدعاءين (نحو 3,360 للاستدعاء). البقية التعليمات والسياسات المسترجعة وتاريخ المحادثة. وفي الآثار الثلاثمئة: وسيط كلمات رسالة العضو 8، ووسيط وحدات الإدخال 5,869 للأثر.</li>
+      <li>التحقق: <code>node labs/solutions/check_all.mjs</code>.</li>
+    </ul>
   </details>
 </article>

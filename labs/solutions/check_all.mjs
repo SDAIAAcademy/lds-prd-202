@@ -217,5 +217,25 @@ const coC = M.costing(rows, priceCx, A);
 ok('defence: C with its large tier at x2 stays in budget', coC.C.within_budget.every(Boolean));
 ok('defence: C with its large tier at x2 costs more per success', coC.C.loaded_cost_per_success > co.C.loaded_cost_per_success);
 
+// Figures the lab pages' instructor keys quote, printed so the trainer can see where they come from
+const r4 = M.r4;
+// 3.1 balance: z of arm A's count against an even split
+const zBal = (ro.n.A - 10000) / Math.sqrt(20000 * 0.25);
+ok('3.1 balance z below 1.96', Math.abs(zBal) < 1.96);
+// 3.1 stretch: days to halve the width of the Gulf guardrail interval (four times the sessions)
+const gw = ro.guardrail_by_language.ar_gulf;
+const daysHalf = 14 * 4;
+console.log(`3.1 balance z ${r4(zBal)}; Gulf guardrail width ${r4(gw.high_pp - gw.low_pp)} points; halving it needs about ${daysHalf} days in all, ${daysHalf - 14} more`);
+// 3.3: the pass rate at which C's loaded cost per success equals A's
+const qEq = (co.C.model_cost_per_run + A.human_handling_sar) / (co.A.loaded_cost_per_success + A.human_handling_sar);
+console.log(`3.3 C matches A's loaded cost per success at a pass rate of ${r4(qEq)} (now ${co.C.pass_rate})`);
+ok('3.3 C needs a few more points of pass rate to match A', qEq > co.C.pass_rate && qEq - co.C.pass_rate < 0.05);
+// 3.3 stretch: C without prompt caching (cached tokens billed at the input price)
+const priceNoCache = JSON.parse(JSON.stringify(PRICE)); for (const t in priceNoCache.C) priceNoCache.C[t].cached = priceNoCache.C[t].in;
+const coN = M.costing(rows, priceNoCache, A);
+console.log(`3.3 C without caching: per run ${coN.C.model_cost_per_run} (was ${co.C.model_cost_per_run}), monthly ${coN.C.monthly_model_cost.join('/')}, loaded per success ${coN.C.loaded_cost_per_success}, within budget ${coN.C.within_budget.join('/')}`);
+ok('3.3 without caching C still fits the budget', coN.C.within_budget.every(Boolean));
+// defence figures
+console.log(`defence: A at -30% monthly ${coA.A.monthly_model_cost.join('/')}; C large x2 monthly ${coC.C.monthly_model_cost.join('/')}, loaded per success ${coC.C.loaded_cost_per_success}`);
 if (fails) { console.log(`${fails} check(s) failed`); process.exit(1); }
 console.log('PASS');
