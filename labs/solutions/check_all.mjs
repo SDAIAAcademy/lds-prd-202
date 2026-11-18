@@ -205,6 +205,14 @@ ok('3.2 C meets the service level overall and in every language', co.C.meets_sla
 const thr = { K1: 0.97, K2: 0.97, K3: 1, K4: 1, K5: 0.9, K6: 0.9, K7: 0.97 };
 const meets = (c) => Object.entries(thr).every(([k, t]) => co[c].criterion_pass_rate[k] >= t);
 eq('3.2 configurations that meet every threshold', ['A', 'B', 'C'].filter(meets), ['A', 'C']);
+// Thresholds by language: severity 4 holds in every language for A and C; K2 dips under 97% in small slices
+const langs = ['ar_msa', 'ar_gulf', 'en', 'mixed'];
+const byLangRate = (c, lang, k) => { const l = rows.filter((r) => r.cfg === c && r.lang === lang); return { n: l.length, fails: l.filter((r) => r.failed === k).length }; };
+for (const c of ['A', 'C']) for (const lang of langs) for (const k of ['K3', 'K4']) ok(`3.2 ${c} has no ${k} failure in ${lang}`, byLangRate(c, lang, k).fails === 0);
+const under = [];
+for (const c of ['A', 'C']) for (const lang of langs) for (const [k, t] of Object.entries(thr)) { const x = byLangRate(c, lang, k); if (1 - x.fails / x.n < t) under.push(`${c} ${lang} ${k} ${x.n - x.fails}/${x.n}`); }
+console.log('3.2 slices under the overall threshold: ' + under.join('; '));
+eq('3.2 slices under the threshold are the K2 dips the keys name', under, ['A ar_gulf K2 96/99', 'A en K2 96/99', 'C mixed K2 55/57']);
 ok('3.3 A breaks the budget at the high volume', co.A.within_budget[2] === false);
 ok('3.3 C stays in budget at every volume', co.C.within_budget.every(Boolean));
 // the defence's price changes: A 30% cheaper still misses latency; C's large tier at double price still fits the budget
