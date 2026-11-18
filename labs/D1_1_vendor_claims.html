@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-ax="lab" data-track="executives">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المختبر 1.1 · ادعاءات الموردين الأربعة · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها</title>
+<meta name="generator" content="SDAIA Academy engine 1.0.0">
+<link rel="icon" href="../_engine/icon.svg">
+<link rel="alternate" type="text/markdown" href="D1_1_vendor_claims.md">
+<link rel="describedby" href="../llms.txt">
+<link rel="stylesheet" href="../_engine/academy.css">
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="top"><div class="logo"></div><nav><a href="../index.html">صفحة المقرر</a><a href="../slides/day1.html#lab-1-1">العودة إلى الشرائح</a></nav></div>
+<span class="tag">المختبر 1.1</span>
+<h1>ادعاءات الموردين الأربعة</h1>
+<p>تطبق الأسئلة الستة على أربعة ادعاءات دقة، وتحسب من 20 مهمة أُعيد تشغيل كل منها خمس مرات الفرق بين نسبة المحاولة الأولى ونسبة النجاح في المحاولات الخمس، ثم تكتب نقدًا يسمّي ما يغفله كل ادعاء</p>
+<div class="meta"><span>35 دقيقة</span><span>اليوم 1</span><span>الجلسة 1: مخرجات متغيرة تحتاج محاولات متكررة</span></div>
+</div>
+</header>
+<main class="wrap">
+<article class="lab" data-lab="1.1">
+  <div class="box goal">
+    <h3>ستخرج من هذا المختبر بـ</h3>
+    <ul>
+      <li>ثلاثة أرقام من 20 مهمة أعادت أندية خطى تشغيل كل منها خمس مرات: نسبة المحاولة الأولى، ونسبة المحاولات كلها، ونسبة المهام التي نجحت في المحاولات الخمس.</li>
+      <li>نقد مكتوب لأربعة ادعاءات دقة يسمّي ما يغفله كل ادعاء، بأرقام الأسئلة الستة.</li>
+    </ul>
+  </div>
+
+  <h2>ما تحتاجه</h2>
+  <div class="files">
+    <a href="files/vendor_claims.txt" target="_blank"><b>vendor_claims.txt</b><span>الادعاءات الأربعة والأسئلة الستة</span></a>
+    <a href="files/repeated_trials.csv" target="_blank"><b>repeated_trials.csv</b><span>20 مهمة، خمس محاولات لكل منها: نجحت (1) أو فشلت (0)</span></a>
+  </div>
+  <p class="small">جدول بيانات (LibreOffice Calc أو Microsoft Excel أو Google Sheets). سياسة الذكاء الاصطناعي: مساعد مرشد، تسأله عن معادلة أو عن معنى سؤال، ولا تطلب منه النقد. الملفان اصطناعيان ومصنفان «عام». المهام العشرون من العرض التجريبي لأحد الموردين، أعاد الفريق الهندسي تشغيلها في بيئة الاختبار، وصححها فريق المراجعة البشرية.</p>
+
+  <h2>الخطوات</h2>
+
+  <div class="step">
+    <h3>1 · اقرأ الادعاءات الأربعة والأسئلة الستة <span class="min">5 د</span></h3>
+    <p>اقرأ كل ادعاء وهامشه. لا تحكم بعد: علّم فقط أي الأسئلة الستة يجيب عنها الهامش.</p>
+  </div>
+
+  <div class="step">
+    <h3>2 · احسب نسبة النجاح في المحاولة الأولى وفي المحاولات المئة <span class="min">7 د</span></h3>
+    <p>المحاولة الأولى هي ما يقيسه عرض تجريبي يشغّل كل مهمة مرة واحدة.</p>
+    <div class="prompt" data-tool="جدول بيانات">=COUNTIFS(C:C, 1, D:D, 1)/20
+=AVERAGE(D2:D101)</div>
+  </div>
+
+  <div class="step">
+    <h3>3 · عدّ المهام التي نجحت في المحاولات الخمس، وفصّلها بحسب اللغة <span class="min">8 د</span></h3>
+    <p>اجمع المحاولات الناجحة لكل مهمة بجدول محوري (المهمة في الصفوف، ومجموع <code>pass</code> في القيم)، ثم عدّ المهام التي مجموعها 5. ثم احسب نسبة النجاح لكل لغة.</p>
+    <div class="prompt" data-tool="جدول بيانات">=AVERAGEIFS(D:D, B:B, "<span class="ph">ar_gulf</span>")</div>
+  </div>
+
+  <div class="step">
+    <h3>4 · اكتب لكل ادعاء ما يغفله، بأرقام أسئلته الستة <span class="min">10 د</span></h3>
+    <table>
+      <tr><th>الادعاء</th><th>الأسئلة التي لا يجيب عنها</th><th>أخطر ما يغفله، في جملة</th></tr>
+      <tr><td>1 · دقة 96%</td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>2 · حل 85% دون إنسان</td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>3 · هلوسة أقل من 1%</td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>4 · رضا أعلى 30%</td><td class="fill"></td><td class="fill"></td></tr>
+    </table>
+  </div>
+
+  <div class="step">
+    <h3>5 · اكتب سؤالًا واحدًا ترسله إلى كل مورد <span class="min">5 د</span></h3>
+    <p>سؤال يجيب عنه المورد برقم أو بملف، لا بوعد. مثال لصياغة السؤال: «كم حالة، ومن أين، وكم محاولة لكل حالة؟».</p>
+  </div>
+
+  <div class="step stretch">
+    <h3>✱ إضافي</h3>
+    <p>أعد كتابة الادعاء الأول بصيغة تقبلها: المهمة والمعيار وعدد الحالات والمحاولات والمصحح والتفصيل.</p>
+  </div>
+
+  <h2>أسئلة تحقق</h2>
+  <ol class="checks">
+    <li>ما الفرق بين نسبة المحاولة الأولى ونسبة المهام التي نجحت في المحاولات الخمس؟ وأيهما يعني العضو؟</li>
+    <li>في أي لغة تهبط النسبة أكثر؟ وهل يظهر ذلك في أي ادعاء من الأربعة؟</li>
+    <li>أي ادعاء صحّحه مصحح لم يُقس اتفاقه مع حكم بشري؟</li>
+  </ol>
+
+  <details class="instructor">
+    <summary>للمدرّب: مفتاح المختبر</summary>
+    <ul>
+      <li><b>الأرقام:</b> المحاولة الأولى 17 من 20 (85%)؛ المحاولات كلها 82 من 100 (82%)؛ المهام الناجحة في المحاولات الخمس 11 من 20 (55%). بحسب اللغة: الإنجليزية 34 من 35، والفصحى 33 من 35، واللهجة الخليجية 11 من 20، والمختلطة 4 من 10.</li>
+      <li><b>الادعاء 1:</b> لا مهمة ولا معيار (1)، ولا عدد ولا مصدر (2)، ولا محاولات (3)، ولا تفصيل (5). أخطره: «اختبار داخلي» يعني غالبًا حالات العرض نفسه في محاولة واحدة.</li>
+      <li><b>الادعاء 2:</b> «دون تدخل بشري» تعدّ المحادثة المتروكة والتصعيد الفائت حلًا (1 و6)، والعينة عملاء آخرون (2). أخطره: ما يجب أن يصل إلى إنسان يُحسب نجاحًا.</li>
+      <li><b>الادعاء 3:</b> المصحح نموذج المورد نفسه دون معايرة بحكم بشري (4)، ولا تعريف للهلوسة (1).</li>
+      <li><b>الادعاء 4:</b> استبيان يجيب عنه من أراد (2)، والمقارنة ليست على الطلبات نفسها (1)، ولا مقياس حماية (6).</li>
+      <li><b>الفصل بين المهام:</b> من صنع المساعد لا يصحح نتائجه وحده. الادعاء 3 صححه نموذج المورد نفسه دون حكم بشري مستقل، فلا يُقبل دليلًا. في أندية خطى يطلب مالك المنتج التحقق، ويقيسه فريق المراجعة (نوف البيشي)، لا المورد ولا الفريق الهندسي.</li>
+      <li>الأخطاء المعتادة: حساب المتوسط 82% والقول إن المساعد «ينجح 82% من الوقت»، والنظر إلى المتوسط دون اللغات. التحقق: <code>node labs/solutions/check_all.mjs</code>.</li>
+    </ul>
+  </details>
+</article>
+<nav class="pager"><span></span><a href="D1_2_open_coding.html" rel="next">المختبر التالي ←</a></nav>
+</main>
+<footer><div class="wrap">أكاديمية سدايا · مسار التنفيذيين والقادة · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها<br><span class="muted">إصدار المقرر 2027.1.0 · المحرّك 1.0.0 · بُني في ⁦2026-11-18⁩ · الإيداع 5b3a497</span></div></footer>
+<script type="application/json" id="academy-data">{"v":1,"engine":"1.0.0","build":{"at":"2026-11-18T06:07:40Z","version":"2027.1.0","commit":"5b3a497"},"course":{"id":"lds-prd-202","code":"LDS-PRD-202","title":"تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها","track":"executives","lang":"ar","dir":"rtl","url":"https://sdaiaacademy.github.io/lds-prd-202/","repo":"SDAIAAcademy/lds-prd-202","home":"../index.html"},"lab":{"id":"1.1","title":"ادعاءات الموردين الأربعة","summary":"تطبق الأسئلة الستة على أربعة ادعاءات دقة، وتحسب من 20 مهمة أُعيد تشغيل كل منها خمس مرات الفرق بين نسبة المحاولة الأولى ونسبة النجاح في المحاولات الخمس، ثم تكتب نقدًا يسمّي ما يغفله كل ادعاء","minutes":35,"day":1,"unit":"اليوم 1","session":1,"deck":"../slides/day1.html#lab-1-1","prev":null,"next":"D1_2_open_coding.html","alt":{}},"ai":{"context":{"course":"../context/course.md","courseJs":"../context/course.js","day":null,"llms":"../llms.txt"},"tasks":[],"tools":[]},"features":{},"strings":{}}</script>
+<script src="../_engine/academy.js"></script>
+</body>
+</html>

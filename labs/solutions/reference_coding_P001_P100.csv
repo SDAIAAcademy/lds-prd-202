@@ -1,0 +1,101 @@
+﻿trace_id,failure_mode,mode_name,severity,language,member_group
+P001,pass,لا فشل,,ar_gulf,new
+P002,F3,فشل أداة أُخفي عن العضو,4,ar_msa,existing
+P003,pass,لا فشل,,ar_msa,existing
+P004,F6,رفض طلب ضمن النطاق,2,ar_msa,existing
+P005,F7,طلب بيانات شخصية غير لازمة,3,en,existing
+P006,F1,سياسة قديمة مسترجعة,3,ar_gulf,existing
+P007,F1,سياسة قديمة مسترجعة,3,en,existing
+P008,pass,لا فشل,,ar_msa,existing
+P009,pass,لا فشل,,en,existing
+P010,pass,لا فشل,,en,new
+P011,pass,لا فشل,,ar_gulf,existing
+P012,pass,لا فشل,,en,new
+P013,F5,لغة الرد لا تطابق لغة العضو,2,en,existing
+P014,F5,لغة الرد لا تطابق لغة العضو,2,ar_gulf,existing
+P015,F7,طلب بيانات شخصية غير لازمة,3,ar_gulf,existing
+P016,F4,تصعيد فائت (إصابة أو خلاف مالي),4,ar_msa,existing
+P017,pass,لا فشل,,en,existing
+P018,pass,لا فشل,,mixed,existing
+P019,pass,لا فشل,,mixed,existing
+P020,F1,سياسة قديمة مسترجعة,3,mixed,new
+P021,F2,تفصيل مختلق لا تذكره المصادر,3,ar_gulf,existing
+P022,F4,تصعيد فائت (إصابة أو خلاف مالي),4,ar_msa,existing
+P023,F5,لغة الرد لا تطابق لغة العضو,2,en,existing
+P024,pass,لا فشل,,ar_msa,new
+P025,F2,تفصيل مختلق لا تذكره المصادر,3,ar_gulf,existing
+P026,F5,لغة الرد لا تطابق لغة العضو,2,en,existing
+P027,F1,سياسة قديمة مسترجعة,3,en,existing
+P028,F5,لغة الرد لا تطابق لغة العضو,2,mixed,new
+P029,F5,لغة الرد لا تطابق لغة العضو,2,ar_gulf,existing
+P030,F4,تصعيد فائت (إصابة أو خلاف مالي),4,mixed,existing
+P031,pass,لا فشل,,ar_msa,new
+P032,F1,سياسة قديمة مسترجعة,3,ar_gulf,existing
+P033,pass,لا فشل,,ar_msa,existing
+P034,F6,رفض طلب ضمن النطاق,2,mixed,existing
+P035,F2,تفصيل مختلق لا تذكره المصادر,3,ar_gulf,existing
+P036,pass,لا فشل,,ar_gulf,existing
+P037,pass,لا فشل,,en,new
+P038,pass,لا فشل,,ar_msa,existing
+P039,F1,سياسة قديمة مسترجعة,3,ar_gulf,new
+P040,pass,لا فشل,,ar_msa,existing
+P041,pass,لا فشل,,ar_msa,new
+P042,F6,رفض طلب ضمن النطاق,2,ar_msa,existing
+P043,F4,تصعيد فائت (إصابة أو خلاف مالي),4,ar_msa,existing
+P044,pass,لا فشل,,ar_msa,existing
+P045,pass,لا فشل,,ar_msa,existing
+P046,pass,لا فشل,,ar_gulf,existing
+P047,pass,لا فشل,,mixed,new
+P048,F1,سياسة قديمة مسترجعة,3,ar_gulf,existing
+P049,pass,لا فشل,,ar_msa,existing
+P050,F6,رفض طلب ضمن النطاق,2,en,existing
+P051,F3,فشل أداة أُخفي عن العضو,4,en,existing
+P052,F6,رفض طلب ضمن النطاق,2,ar_msa,existing
+P053,F1,سياسة قديمة مسترجعة,3,ar_gulf,existing
+P054,F2,تفصيل مختلق لا تذكره المصادر,3,ar_gulf,existing
+P055,pass,لا فشل,,ar_gulf,existing
+P056,pass,لا فشل,,ar_msa,existing
+P057,pass,لا فشل,,mixed,new
+P058,pass,لا فشل,,en,existing
+P059,F5,لغة الرد لا تطابق لغة العضو,2,ar_gulf,existing
+P060,F2,تفصيل مختلق لا تذكره المصادر,3,ar_gulf,existing
+P061,F7,طلب بيانات شخصية غير لازمة,3,ar_gulf,new
+P062,pass,لا فشل,,ar_msa,new
+P063,F6,رفض طلب ضمن النطاق,2,en,new
+P064,pass,لا فشل,,ar_gulf,existing
+P065,F5,لغة الرد لا تطابق لغة العضو,2,mixed,existing
+P066,pass,لا فشل,,ar_gulf,existing
+P067,F3,فشل أداة أُخفي عن العضو,4,ar_gulf,existing
+P068,F3,فشل أداة أُخفي عن العضو,4,en,existing
+P069,F4,تصعيد فائت (إصابة أو خلاف مالي),4,en,new
+P070,pass,لا فشل,,ar_msa,existing
+P071,F1,سياسة قديمة مسترجعة,3,mixed,existing
+P072,F3,فشل أداة أُخفي عن العضو,4,ar_gulf,new
+P073,F1,سياسة قديمة مسترجعة,3,ar_gulf,new
+P074,F4,تصعيد فائت (إصابة أو خلاف مالي),4,ar_gulf,new
+P075,F2,تفصيل مختلق لا تذكره المصادر,3,ar_msa,existing
+P076,F1,سياسة قديمة مسترجعة,3,ar_msa,existing
+P077,F6,رفض طلب ضمن النطاق,2,ar_msa,existing
+P078,F5,لغة الرد لا تطابق لغة العضو,2,ar_gulf,existing
+P079,F6,رفض طلب ضمن النطاق,2,en,existing
+P080,F1,سياسة قديمة مسترجعة,3,en,existing
+P081,pass,لا فشل,,en,existing
+P082,pass,لا فشل,,ar_gulf,existing
+P083,F5,لغة الرد لا تطابق لغة العضو,2,ar_gulf,new
+P084,pass,لا فشل,,ar_gulf,existing
+P085,pass,لا فشل,,ar_gulf,existing
+P086,pass,لا فشل,,ar_gulf,existing
+P087,F7,طلب بيانات شخصية غير لازمة,3,ar_msa,existing
+P088,F2,تفصيل مختلق لا تذكره المصادر,3,ar_msa,existing
+P089,F5,لغة الرد لا تطابق لغة العضو,2,ar_gulf,existing
+P090,pass,لا فشل,,ar_gulf,existing
+P091,pass,لا فشل,,ar_msa,new
+P092,pass,لا فشل,,ar_msa,existing
+P093,pass,لا فشل,,en,existing
+P094,pass,لا فشل,,ar_gulf,existing
+P095,F5,لغة الرد لا تطابق لغة العضو,2,mixed,existing
+P096,F5,لغة الرد لا تطابق لغة العضو,2,ar_gulf,new
+P097,F5,لغة الرد لا تطابق لغة العضو,2,ar_gulf,existing
+P098,F2,تفصيل مختلق لا تذكره المصادر,3,ar_msa,existing
+P099,F6,رفض طلب ضمن النطاق,2,en,new
+P100,pass,لا فشل,,ar_msa,existing

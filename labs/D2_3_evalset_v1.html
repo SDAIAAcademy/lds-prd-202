@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-ax="lab" data-track="executives">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المختبر 2.3 · مجموعة التقييم v1.0 · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها</title>
+<meta name="generator" content="SDAIA Academy engine 1.0.0">
+<link rel="icon" href="../_engine/icon.svg">
+<link rel="alternate" type="text/markdown" href="D2_3_evalset_v1.md">
+<link rel="describedby" href="../llms.txt">
+<link rel="stylesheet" href="../_engine/academy.css">
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="top"><div class="logo"></div><nav><a href="../index.html">صفحة المقرر</a><a href="../slides/day2.html#lab-2-3">العودة إلى الشرائح</a></nav></div>
+<span class="tag">المختبر 2.3</span>
+<h1>مجموعة التقييم v1.0</h1>
+<p>تنظّف 146 مثالًا مرشحًا من التسرب والتكرار حتى يبقى 120، وتتحقق من التغطية بالقواعد، وتكتب سجل تغييرات الإصدار v1.0 بفجوته المعروفة، وتخطط للإصدار التالي من آثار التشغيل</p>
+<div class="meta"><span>35 دقيقة</span><span>اليوم 2</span><span>الجلسة 3: الإصدارات والتسرب والتحديث من التشغيل</span></div>
+</div>
+</header>
+<main class="wrap">
+<article class="lab" data-lab="2.3">
+  <div class="box goal">
+    <h3>ستخرج من هذا المختبر بـ</h3>
+    <ul>
+      <li>مجموعة التقييم v1.0: 120 مثالًا بعد حذف المتسرب من أمثلة التعليمات والمكرر، وجدول تغطيتها مقارنًا بالقواعد.</li>
+      <li>سجل تغييرات للإصدار v1.0 يذكر الفجوة المعروفة، وخطة للإصدار v1.1 من آثار التشغيل.</li>
+    </ul>
+  </div>
+
+  <h2>ما تحتاجه</h2>
+  <div class="files">
+    <a href="files/eval_candidates.csv" target="_blank"><b>eval_candidates.csv</b><span>146 مرشحًا: المصدر واللغة وفئة العضو والنمط المستهدف والرسالة والسلوك المتوقع</span></a>
+    <a href="files/prompt_examples.txt" target="_blank"><b>prompt_examples.txt</b><span>الأمثلة الخمسة عشر المكتوبة في تعليمات «مضمار»</span></a>
+    <a href="files/evalset_rules.txt" target="_blank"><b>evalset_rules.txt</b><span>الحجم والتنظيف والتغطية الدنيا والإصدار والفصل بين المهام</span></a>
+    <a href="files/evalset_changelog_template.csv" target="_blank"><b>evalset_changelog_template.csv</b><span>قالب سجل التغييرات</span></a>
+    <a href="files/team_coding_P101_P300.csv" target="_blank"><b>team_coding_P101_P300.csv</b><span>وسم آثار التشغيل الأحدث، للخطوة 5</span></a>
+  </div>
+  <p class="small">المرشحون رسائل أعضاء، وهي «مقيد» في أندية خطى: لا تنسخ أي سطر منها إلى أداة ذكاء اصطناعي توليدي. المساعد المرشد للمعادلات وحدها.</p>
+
+  <h2>الخطوات</h2>
+
+  <div class="step">
+    <h3>1 · احذف كل مرشح نصه من أمثلة التعليمات <span class="min">6 د</span></h3>
+    <p>الصق الأمثلة الخمسة عشر في ورقة اسمها <code>examples</code>، وافصل الرمز عن النص عند « | ». ثم علّم كل مرشح نصه مطابق لنص مثال:</p>
+    <div class="prompt" data-tool="جدول بيانات">=SUMPRODUCT(--(examples!B$1:B$15=G2))&gt;0</div>
+  </div>
+
+  <div class="step">
+    <h3>2 · احذف المكرر، وأبقِ النسخة الأولى <span class="min">6 د</span></h3>
+    <p>المكرر مرشح نصه ظهر في صف قبله. المعادلة تقارن الصف بما فوقه فقط، فتبقى النسخة الأولى:</p>
+    <div class="prompt" data-tool="جدول بيانات">=SUMPRODUCT(--(G$2:G2=G2))&gt;1</div>
+    <p>صفِّ الجدول على المرشحين الذين لم يُعلَّموا في الخطوتين، وانسخهم إلى ورقة جديدة اسمها <code>kept</code>. عدّهم: ينبغي أن يبقى 120. اعمل في الخطوة 3 على <code>kept</code>: المعادلات على الورقة الأصلية تعدّ المحذوف أيضًا ولو كان مخفيًا.</p>
+  </div>
+
+  <div class="step">
+    <h3>3 · ابنِ جدول التغطية وقارنه بالقواعد <span class="min">8 د</span></h3>
+    <table>
+      <tr><th>البند</th><th>العدد بعد التنظيف</th><th>الحد الأدنى في القواعد</th><th>يفي؟</th></tr>
+      <tr><td>كل نمط من F1 إلى F7</td><td class="fill"></td><td>8</td><td class="fill"></td></tr>
+      <tr><td>التصعيد الإلزامي، ومنه بالإنجليزية</td><td class="fill"></td><td>12، منها 3</td><td class="fill"></td></tr>
+      <tr><td>الإنجليزية، والخليجية، والأعضاء الجدد</td><td class="fill"></td><td>25%، 20%، 30%</td><td class="fill"></td></tr>
+    </table>
+    <div class="prompt" data-tool="جدول بيانات">=COUNTIFS(F:F, "<span class="ph">F4*</span>", C:C, "<span class="ph">en</span>")</div>
+  </div>
+
+  <div class="step">
+    <h3>4 · اكتب سجل التغييرات للإصدار v1.0 مع الفجوة المعروفة <span class="min">8 د</span></h3>
+    <p>سطر واحد للإصدار: التاريخ، وما فيه (العدد وما حُذف ولماذا)، وكل بند لا يفي بالقواعد مكتوبًا فجوةً معروفة، ومن اقترح ومن اعتمد. قاعدة الفصل بين المهام في <code>evalset_rules.txt</code>.</p>
+  </div>
+
+  <div class="step">
+    <h3>5 · خطط للإصدار v1.1 من آثار التشغيل <span class="min">7 د</span></h3>
+    <p>افتح وسم الفريق للآثار P101 إلى P300، وجد كل نمط لم يكن في عينة المئة الأولى. اكتب ما يدخل v1.1: النمط، وعدد الأمثلة، ومن أين تأتي، ومتى.</p>
+  </div>
+
+  <div class="step stretch">
+    <h3>✱ إضافي</h3>
+    <p>القاعدة تحذف المطابق تمامًا. جد المرشحين الباقين الذين لا يختلفون عن مثال من التعليمات إلا بكلمة الشكر في آخره، واكتب هل تحذفهم وما أثر ذلك في التغطية.</p>
+  </div>
+
+  <h2>أسئلة تحقق</h2>
+  <ol class="checks">
+    <li>كم حذفت للتسرب وكم للتكرار، وهل بقي 120؟</li>
+    <li>أي بند في التغطية لا يفي بالقواعد؟ وهل كتبته في السجل بدل أن تخفيه؟</li>
+    <li>من اعتمد الإصدار في سجلك؟ وهل هو من يعدّل التعليمات؟</li>
+  </ol>
+
+  <details class="instructor">
+    <summary>للمدرّب: مفتاح المختبر</summary>
+    <ul>
+      <li><b>التنظيف:</b> 146 مرشحًا؛ 12 تسربًا (منها E030 لـEX02، وE073 لـEX07، وE116 لـEX06) و14 مكررًا (منها E068 نسخة من E037، وE143 من E002)؛ يبقى 120. المرجع في <code>solutions/evalset_v1_reference.csv</code>.</li>
+      <li><b>التغطية:</b> F1 12، F2 10، F3 9، F4 13، F5 12، F6 10، F7 8: كلها تفي. التصعيد الإلزامي 13 (يفي)، <b>منه بالإنجليزية 2 والحد 3: هذه الفجوة</b>. الإنجليزية 33 (27.5%)، الخليجية 33 (27.5%)، الأعضاء الجدد 39 (32.5%): تفي.</li>
+      <li><b>السجل:</b> v1.0، 120 مثالًا، حُذف 12 تسربًا و14 مكررًا؛ فجوة معروفة: مثالان إنجليزيان للتصعيد الإلزامي والحد 3. يقترحه مالك المنتج أو فريق المراجعة، وتعتمده نوف البيشي. لا يقترحه يزن الشمراني ولا يعتمده، فهو يعدّل التعليمات.</li>
+      <li><b>v1.1:</b> النمط F8 (حجز في نادٍ غير الذي سماه العضو) لم يظهر في المئة الأولى، وظهر 7 مرات في P101 إلى P300. يدخل بثمانية أمثلة على الأقل من آثار التشغيل، مع مثال إنجليزي واحد على الأقل للتصعيد الإلزامي. في المختبر 3.2 تُقرأ نتائج v1.0، فالفجوتان تُكتبان حدودًا في المذكرة.</li>
+      <li><b>الإضافي:</b> ثمانية مرشحين يطابقون مثالًا بعد حذف «شكرًا.» أو «Thanks.»: E001 وE012 وE013 وE036 وE064 وE087 وE095 وE119. القاعدة تبقيهم، والحكم المعقول أنهم تسرب فعلي يُستبدل في v1.1. لا تغيّر القاعدة في القاعة: نتائج اليوم الثالث محسوبة على 120 مثالًا كما في المرجع.</li>
+    </ul>
+  </details>
+</article>
+<nav class="pager"><a href="D2_2_grader_calibration.html" rel="prev">→ المختبر السابق</a><a href="D2_4_experiment_plan.html" rel="next">المختبر التالي ←</a></nav>
+</main>
+<footer><div class="wrap">أكاديمية سدايا · مسار التنفيذيين والقادة · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها<br><span class="muted">إصدار المقرر 2027.1.0 · المحرّك 1.0.0 · بُني في ⁦2026-11-18⁩ · الإيداع 5b3a497</span></div></footer>
+<script type="application/json" id="academy-data">{"v":1,"engine":"1.0.0","build":{"at":"2026-11-18T06:07:40Z","version":"2027.1.0","commit":"5b3a497"},"course":{"id":"lds-prd-202","code":"LDS-PRD-202","title":"تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها","track":"executives","lang":"ar","dir":"rtl","url":"https://sdaiaacademy.github.io/lds-prd-202/","repo":"SDAIAAcademy/lds-prd-202","home":"../index.html"},"lab":{"id":"2.3","title":"مجموعة التقييم v1.0","summary":"تنظّف 146 مثالًا مرشحًا من التسرب والتكرار حتى يبقى 120، وتتحقق من التغطية بالقواعد، وتكتب سجل تغييرات الإصدار v1.0 بفجوته المعروفة، وتخطط للإصدار التالي من آثار التشغيل","minutes":35,"day":2,"unit":"اليوم 2","session":3,"deck":"../slides/day2.html#lab-2-3","prev":"D2_2_grader_calibration.html","next":"D2_4_experiment_plan.html","alt":{}},"ai":{"context":{"course":"../context/course.md","courseJs":"../context/course.js","day":null,"llms":"../llms.txt"},"tasks":[],"tools":[]},"features":{},"strings":{}}</script>
+<script src="../_engine/academy.js"></script>
+</body>
+</html>

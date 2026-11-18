@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-ax="lab" data-track="executives">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المختبر 3.2 · تكلفة ثلاث تهيئات · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها</title>
+<meta name="generator" content="SDAIA Academy engine 1.0.0">
+<link rel="icon" href="../_engine/icon.svg">
+<link rel="alternate" type="text/markdown" href="D3_2_cost_per_success.md">
+<link rel="describedby" href="../llms.txt">
+<link rel="stylesheet" href="../_engine/academy.css">
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="top"><div class="logo"></div><nav><a href="../index.html">صفحة المقرر</a><a href="../slides/day3.html#lab-3-2">العودة إلى الشرائح</a></nav></div>
+<span class="tag">المختبر 3.2</span>
+<h1>تكلفة ثلاث تهيئات</h1>
+<p>تحسب من سجل بوابة النماذج وقوائم الأسعار الثلاث، لكل تهيئة، التكلفة لكل استدعاء ولكل مهمة ناجحة بتكلفة النماذج وحدها ومع تكلفة المهمة الفاشلة، والمئين 95 لزمن المهمة، ونسب النجاح لكل معيار ولكل لغة</p>
+<div class="meta"><span>35 دقيقة</span><span>اليوم 3</span><span>الجلسة 2: الوحدات المفوترة والتكلفة لكل مهمة ناجحة</span></div>
+</div>
+</header>
+<main class="wrap">
+<article class="lab" data-lab="3.2">
+  <div class="box goal">
+    <h3>ستخرج من هذا المختبر بـ</h3>
+    <ul>
+      <li>جدول لاقتصاديات الوحدة لثلاث تهيئات: التكلفة لكل استدعاء، والتكلفة لكل مهمة ناجحة بالنماذج وحدها ومع تكلفة الفشل، والمئينان 50 و95 لزمن المهمة.</li>
+      <li>مقارنة نسب النجاح لكل معيار بالعتبات من المختبر 2.2، في المتوسط وفي كل لغة.</li>
+    </ul>
+  </div>
+
+  <h2>ما تحتاجه</h2>
+  <div class="files">
+    <a href="files/gateway_runs.csv" target="_blank"><b>gateway_runs.csv</b><span>1,080 تشغيلًا: 3 تهيئات × 120 مثالًا × 3 محاولات، بالوحدات النصية والزمن والنتيجة</span></a>
+    <a href="files/price_sheet_provider_a.csv" target="_blank"><b>price_sheet_provider_a.csv</b><span>قائمة أسعار المزود أ</span></a>
+    <a href="files/price_sheet_provider_b.csv" target="_blank"><b>price_sheet_provider_b.csv</b><span>قائمة أسعار المزود ب</span></a>
+    <a href="files/price_sheet_provider_c.csv" target="_blank"><b>price_sheet_provider_c.csv</b><span>قائمة أسعار المزود ج، بفئتين</span></a>
+    <a href="files/configurations.txt" target="_blank"><b>configurations.txt</b><span>التهيئات الثلاث، والتوجيه والتخزين المؤقت في C</span></a>
+    <a href="files/assumptions.csv" target="_blank"><b>assumptions.csv</b><span>تكلفة معالجة الفشل، ومستوى الخدمة، والموازنة، والأحجام</span></a>
+  </div>
+  <p class="small">التهيئات الثلاث ليست ذراعي التجربة في المختبر 3.1: التهيئة A تشبه الذراع A (نموذج كبير لكل الطلبات)، والتهيئة B نموذج صغير لكل الطلبات، والتهيئة C توجيه آخر. قاعدة التوجيه الإصدار 0 في الذراع B لم تُشغَّل على مجموعة التقييم. التشغيلات من بوابة النماذج في الحالة، على مجموعة التقييم v1.0، وكلها محاكاة مكتوبة السلوك لا ردود نماذج حقيقية. سياسة الذكاء الاصطناعي: مساعد مرشد للطريقة والمعادلات؛ لا تنسخ إليه صفوف الملف.</p>
+
+  <h2>الخطوات</h2>
+
+  <div class="step">
+    <h3>1 · اقرأ قوائم الأسعار والتهيئات الثلاث <span class="min">4 د</span></h3>
+    <p>الأسعار بالريال لكل مليون وحدة نصية. ابنِ ورقة <code>prices</code> فيها صف لكل تهيئة وفئة: المفتاح (<code>A_large</code>، <code>B_small</code>، <code>C_small</code>، <code>C_large</code>) ثم سعر الإدخال والإدخال المخزن والإخراج.</p>
+  </div>
+
+  <div class="step">
+    <h3>2 · احسب تكلفة كل تشغيل والتكلفة لكل استدعاء <span class="min">8 د</span></h3>
+    <p>اكتب التكلفة في عمود جديد N. الوحدات المخزنة جزء من وحدات الإدخال، وتُحسب بسعرها:</p>
+    <div class="prompt" data-tool="جدول بيانات">=((H2-I2) * XLOOKUP(A2&amp;"_"&amp;F2, prices!A:A, prices!B:B) + I2 * XLOOKUP(A2&amp;"_"&amp;F2, prices!A:A, prices!C:C) + J2 * XLOOKUP(A2&amp;"_"&amp;F2, prices!A:A, prices!D:D))/1000000</div>
+    <p class="small">إن لم يكن في جدول بياناتك <code>XLOOKUP</code>، فضع مكان كل واحدة <code>INDEX(prices!B:B, MATCH(A2&amp;"_"&amp;F2, prices!A:A, 0))</code> بعمودها <code>B</code> أو <code>C</code> أو <code>D</code>.</p>
+    <p>التكلفة لكل استدعاء: مجموع التكلفة للتهيئة مقسومًا على مجموع <code>model_calls</code>.</p>
+  </div>
+
+  <div class="step">
+    <h3>3 · احسب التكلفة لكل مهمة ناجحة، بالنماذج وحدها ومع تكلفة الفشل <span class="min">8 د</span></h3>
+    <p>بالنماذج وحدها: مجموع التكلفة ÷ عدد التشغيلات الناجحة. مع تكلفة الفشل: أضف 7.50 ريال لكل تشغيل فاشل يتولاه موظف، ثم اقسم على الناجحة:</p>
+    <div class="prompt" data-tool="جدول بيانات">=(SUMIFS(N:N, A:A, "<span class="ph">C</span>") + COUNTIFS(A:A, "<span class="ph">C</span>", L:L, 0) * 7.5) / COUNTIFS(A:A, "<span class="ph">C</span>", L:L, 1)</div>
+  </div>
+
+  <div class="step">
+    <h3>4 · احسب المئين 50 والمئين 95 لزمن المهمة، وفي كل لغة <span class="min">8 د</span></h3>
+    <div class="prompt" data-tool="جدول بيانات">=PERCENTILE.INC(FILTER(K:K, (A:A="<span class="ph">C</span>") * (D:D="<span class="ph">ar_gulf</span>")), 0.95)</div>
+    <p class="small">إن لم يكن فيه <code>FILTER</code>: صفِّ الجدول على التهيئة واللغة، وانسخ عمود <code>latency_ms</code> المرئي إلى ورقة جديدة، واحسب <code>PERCENTILE.INC</code> عليه.</p>
+    <p>قارن كل مئين 95 بمستوى الخدمة: 4,000 ms للمهمة كلها.</p>
+  </div>
+
+  <div class="step">
+    <h3>5 · قارن نسب النجاح لكل معيار بالعتبات، وفي كل لغة <span class="min">7 د</span></h3>
+    <p>نسبة النجاح في المعيار = 1 − (التشغيلات التي فشلت فيه ÷ 360). المعياران الأشد: لا فشل واحد. ثم نسبة النجاح الكلية لكل تهيئة في كل لغة.</p>
+    <table>
+      <tr><th>التهيئة</th><th>لكل مهمة ناجحة، مع الفشل</th><th>المئين 95</th><th>تعبر العتبات؟</th><th>أضعف لغة</th></tr>
+      <tr><td>A</td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>B</td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>C</td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+    </table>
+  </div>
+
+  <div class="step stretch">
+    <h3>✱ إضافي</h3>
+    <p>اختر أثرًا واحدًا من <code>traces_300.csv</code>، وعدّ كلمات رسالة العضو، واقسمها على وحدات الإدخال المفوترة لكل استدعاء. ما الذي يملأ بقية الوحدات؟</p>
+  </div>
+
+  <h2>أسئلة تحقق</h2>
+  <ol class="checks">
+    <li>أي تهيئة أرخص لكل استدعاء، وأيها أغلى لكل مهمة ناجحة؟ لماذا انقلب الترتيب؟</li>
+    <li>أي تهيئة لا تفي بمستوى الخدمة، وفي أي لغة يقترب غيرها من الحد؟</li>
+    <li>هل حسبت تكلفة الفشل من الافتراضات، أم من رقم تذكره؟</li>
+  </ol>
+
+  <details class="instructor">
+    <summary>للمدرّب: مفتاح المختبر</summary>
+    <ul>
+      <li><b>التكلفة لكل استدعاء:</b> A 0.0431، B 0.0023، C 0.0093 ريال. B أرخص بنحو 19 ضعفًا من A.</li>
+      <li><b>نسبة النجاح:</b> A 342 من 360 (95.0%)، B 267 (74.2%)، C 331 (91.9%).</li>
+      <li><b>لكل مهمة ناجحة:</b> بالنماذج وحدها A 0.0788، B 0.0067، C 0.0167. <b>مع تكلفة الفشل:</b> A 0.4736، B 2.619، C 0.6738. B الأرخص لكل استدعاء هو الأغلى لكل مهمة ناجحة: كل فشل 7.50 ريال من وقت موظف.</li>
+      <li><b>الزمن:</b> المئين 50/95: A 3,521/5,533 (لا يفي بالحد، وفي كل لغة فوق 4,000)، B 1,718/2,852 (المختلطة 3,714)، C 1,609/3,457 (الخليجية 3,907: تفي وتقترب من الحد).</li>
+      <li><b>العتبات على المجموعة كلها:</b> A وC تعبران كل العتبات (لا فشل في K3 وK4، وK1 وK2 فوق 97%: A 98.9% و97.8%، C 98.3% و98.3%). B لا تعبر: K3 فشل 8 مرات، وK4 16 مرة، وK2 96.9%.</li>
+      <li><b>العتبات في كل لغة:</b> لا فشل في K3 وK4 لـA ولا لـC في أي لغة. لكن K2 يقل عن 97% في بعض الشرائح: C في المختلطة 96.5% (فشلان من 57)، وA في الخليجية والإنجليزية 96.97% (3 من 99 في كل منهما). العتبة في قاعدة المقرر على المجموعة كلها؛ الشرائح الصغيرة تتأرجح بفشل واحد، فتُكتب في المذكرة حدًا وتدخل المراقبة. من حكم بأن C أو A «لا تعبر» بسبب شريحة، فاسأله عن عدد الحالات فيها.</li>
+      <li><b>في كل لغة:</b> B في الخليجية 65.7% وفي المختلطة 59.6%؛ C في الخليجية 85.9% وهي أضعف لغاتها؛ A في الخليجية 91.9%.</li>
+      <li><b>الإضافي:</b> P001 مثلًا: رسالة من 10 كلمات، و6,723 وحدة إدخال في استدعاءين (نحو 3,360 للاستدعاء). البقية التعليمات والسياسات المسترجعة وتاريخ المحادثة. وفي الآثار الثلاثمئة: وسيط كلمات رسالة العضو 8، ووسيط وحدات الإدخال 5,869 للأثر.</li>
+      <li><b>الفصل بين المهام:</b> جدول اقتصاديات الوحدة يعدّه مالك المنتج من سجلات البوابة التي يقدّمها يزن الشمراني. افتراض تكلفة الفشل والموازنة يعتمدهما إياد الخثلان (المالية)، ومستوى الخدمة تعتمده عهود الرشيدي، ونتائج المعايير على مجموعة التقييم تعتمدها نوف البيشي. لا يعتمد يزن مقارنة بنى هو تشغيلاتها.</li>
+      <li>التحقق: <code>node labs/solutions/check_all.mjs</code>.</li>
+    </ul>
+  </details>
+</article>
+<nav class="pager"><a href="D3_1_experiment_readout.html" rel="prev">→ المختبر السابق</a><a href="D3_3_cost_sensitivity.html" rel="next">المختبر التالي ←</a></nav>
+</main>
+<footer><div class="wrap">أكاديمية سدايا · مسار التنفيذيين والقادة · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها<br><span class="muted">إصدار المقرر 2027.1.0 · المحرّك 1.0.0 · بُني في ⁦2026-11-18⁩ · الإيداع 5b3a497</span></div></footer>
+<script type="application/json" id="academy-data">{"v":1,"engine":"1.0.0","build":{"at":"2026-11-18T06:07:40Z","version":"2027.1.0","commit":"5b3a497"},"course":{"id":"lds-prd-202","code":"LDS-PRD-202","title":"تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها","track":"executives","lang":"ar","dir":"rtl","url":"https://sdaiaacademy.github.io/lds-prd-202/","repo":"SDAIAAcademy/lds-prd-202","home":"../index.html"},"lab":{"id":"3.2","title":"تكلفة ثلاث تهيئات","summary":"تحسب من سجل بوابة النماذج وقوائم الأسعار الثلاث، لكل تهيئة، التكلفة لكل استدعاء ولكل مهمة ناجحة بتكلفة النماذج وحدها ومع تكلفة المهمة الفاشلة، والمئين 95 لزمن المهمة، ونسب النجاح لكل معيار ولكل لغة","minutes":35,"day":3,"unit":"اليوم 3","session":2,"deck":"../slides/day3.html#lab-3-2","prev":"D3_1_experiment_readout.html","next":"D3_3_cost_sensitivity.html","alt":{}},"ai":{"context":{"course":"../context/course.md","courseJs":"../context/course.js","day":null,"llms":"../llms.txt"},"tasks":[],"tools":[]},"features":{},"strings":{}}</script>
+<script src="../_engine/academy.js"></script>
+</body>
+</html>

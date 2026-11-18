@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-ax="lab" data-track="executives">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المختبر 1.2 · الوسم المفتوح لخمسين أثرًا · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها</title>
+<meta name="generator" content="SDAIA Academy engine 1.0.0">
+<link rel="icon" href="../_engine/icon.svg">
+<link rel="alternate" type="text/markdown" href="D1_2_open_coding.md">
+<link rel="describedby" href="../llms.txt">
+<link rel="stylesheet" href="../_engine/academy.css">
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="top"><div class="logo"></div><nav><a href="../index.html">صفحة المقرر</a><a href="../slides/day1.html#lab-1-2">العودة إلى الشرائح</a></nav></div>
+<span class="tag">المختبر 1.2</span>
+<h1>الوسم المفتوح لخمسين أثرًا</h1>
+<p>تقرأ الآثار P001 إلى P050 في عارض آثار التنفيذ دون مساعد ذكي، وتكتب لكل أثر ملاحظة مفتوحة تصف أول خطأ فيه وتقديرًا أوليًا لشدته</p>
+<div class="meta"><span>35 دقيقة</span><span>اليوم 1</span><span>الجلسة 2: ما يسجله أثر التنفيذ، والوسم المفتوح</span></div>
+</div>
+</header>
+<main class="wrap">
+<article class="lab" data-lab="1.2">
+  <div class="box goal">
+    <h3>ستخرج من هذا المختبر بـ</h3>
+    <ul>
+      <li>ملاحظة مفتوحة لكل أثر من P001 إلى P050: ما الذي حدث أولًا وخطأً، بكلماتك.</li>
+      <li>تقدير أولي لشدة كل فشل بمقياس المقرر، وقائمة بالخلافات مع زميلك.</li>
+    </ul>
+  </div>
+
+  <h2>ما تحتاجه</h2>
+  <div class="files">
+    <a href="tools/traces.html" target="_blank"><b>tools/traces.html</b><span>عارض آثار التنفيذ: 300 أثر، بحث وتصفية</span></a>
+    <a href="files/coding_sheet_P001_P100.csv" target="_blank"><b>coding_sheet_P001_P100.csv</b><span>ورقة الوسم: ملاحظة ونمط وشدة لكل أثر</span></a>
+    <a href="files/policies_current.txt" target="_blank"><b>policies_current.txt</b><span>السياسات السارية (الإصدار 2)</span></a>
+    <a href="files/severity_scale.txt" target="_blank"><b>severity_scale.txt</b><span>مقياس الشدة من 1 إلى 4</span></a>
+  </div>
+  <div class="callout warn"><b>دون مساعد ذكي.</b> الوسم الأول بيدك، كما تنص سياسة المقرر. والآثار مصنفة «مقيد» في أندية خطى لأنها تحفظ رسائل الأعضاء كما كتبوها، وبعضها يذكر إصابة: لا تنسخ أي جزء منها إلى أداة ذكاء اصطناعي توليدي، ولا تخرجها من جهازك.</div>
+
+  <h2>الخطوات</h2>
+
+  <div class="step">
+    <h3>1 · افتح العارض وورقة الوسم، واقرأ خمسة آثار مع الميسِّر <span class="min">5 د</span></h3>
+    <p>اختر في العارض «P001 إلى P050». لكل أثر خمسة أجزاء: رسالة العضو، وما استرجعه المساعد، واستدعاء الأداة وحالته، والرد، والتحويل إلى موظف. اقرأها بهذا الترتيب، وقارن كل رقم في الرد بالسياسات السارية.</p>
+  </div>
+
+  <div class="step">
+    <h3>2 · اكتب ملاحظة مفتوحة للآثار P001 إلى P025 <span class="min">10 د</span></h3>
+    <p>جملة واحدة لكل أثر تصف <b>ما حدث</b>، لا سببه المفترض ولا اسم نمط: «الرد يقول تم الحجز، والأداة أعادت خطأ» لا «مشكلة في الأدوات». الأثر السليم: «لا ملاحظة».</p>
+  </div>
+
+  <div class="step">
+    <h3>3 · اكتب ملاحظة مفتوحة للآثار P026 إلى P050 <span class="min">10 د</span></h3>
+    <p>إن رأيت في الأثر أكثر من خطأ، فاكتب الأول في السلسلة: الخطأ الذي لو لم يقع لما وقع ما بعده.</p>
+  </div>
+
+  <div class="step">
+    <h3>4 · علّم في كل ملاحظة أول خطأ وتقديرًا أوليًا للشدة <span class="min">5 د</span></h3>
+    <p>اكتب الشدة من 1 إلى 4 في عمود <code>severity</code>. اترك عمود <code>failure_mode</code> فارغًا: الأنماط في الجلسة التالية.</p>
+  </div>
+
+  <div class="step">
+    <h3>5 · قارن خمس ملاحظات مع زميل، وسجّل كل خلاف <span class="min">5 د</span></h3>
+    <p>اختارا خمسة آثار علّمتماها بشدتين مختلفتين، أو كتب أحدكما «لا ملاحظة» وكتب الآخر ملاحظة. سجّلا سبب الخلاف في سطر.</p>
+  </div>
+
+  <div class="step stretch">
+    <h3>✱ إضافي</h3>
+    <p>جد أثرًا قيّمه العضو بالإعجاب (<code>up</code>) وفيه فشل، واكتب ما يقوله ذلك عن تقييمات الأعضاء مقياسًا للجودة.</p>
+  </div>
+
+  <h2>أسئلة تحقق</h2>
+  <ol class="checks">
+    <li>في كم أثرًا من الخمسين لم تحتج إلا رسالة العضو والرد لترى الخطأ؟ وفي كم احتجت حالة الأداة أو الاسترجاع؟</li>
+    <li>أي ملاحظاتك تصف سببًا لا حدثًا؟ أعد كتابتها.</li>
+    <li>ما الذي لم تنسخه من الآثار، ولماذا؟</li>
+  </ol>
+
+  <details class="instructor">
+    <summary>للمدرّب: مفتاح المختبر</summary>
+    <ul>
+      <li>الوسم المرجعي للآثار المئة في <code>solutions/reference_coding_P001_P100.csv</code>، وملاحظات قائد الفريق الهندسي المفتوحة للآثار الخمسين في <code>files/open_notes_P001_P050.csv</code> (ملف البداية للمختبر 1.3). لا تعرضهما قبل المراجعة.</li>
+      <li>أمثلة تقرأها مع القاعة في الخطوة 1: P002 (الأداة أعادت <code>membership_locked</code> والرد يقول تم النقل)، وP006 (رسوم من الإصدار 1)، وP016 (إصابة دون تحويل)، وP004 (رفض حجز حصة)، وP013 (لغة الرد لا تطابق).</li>
+      <li>الأخطاء المعتادة: كتابة اسم نمط بدل ملاحظة؛ إغفال حالة الأداة لأن الرد يبدو سليمًا؛ عدّ الرد بالإنجليزية لعضو كتب بالعامية «سليمًا لأن المعلومة صحيحة».</li>
+      <li><b>الفصل بين المهام:</b> الوسم المفتوح يكتبه المشاركون في دور مالك المنتج، ويعتمد الوسم المرجعي فريق المراجعة (نوف البيشي). الفريق الهندسي يشرح ما في الأثر، ولا يعتمد وسم أخطاء ما بناه.</li>
+      <li>لا يُستعمل مساعد ذكي في هذا المختبر. من سأل: الآثار «مقيد»، والوسم الأول مهارة تُبنى باليد.</li>
+    </ul>
+  </details>
+</article>
+<nav class="pager"><a href="D1_1_vendor_claims.html" rel="prev">→ المختبر السابق</a><a href="D1_3_axial_coding.html" rel="next">المختبر التالي ←</a></nav>
+</main>
+<footer><div class="wrap">أكاديمية سدايا · مسار التنفيذيين والقادة · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها<br><span class="muted">إصدار المقرر 2027.1.0 · المحرّك 1.0.0 · بُني في ⁦2026-11-18⁩ · الإيداع 5b3a497</span></div></footer>
+<script type="application/json" id="academy-data">{"v":1,"engine":"1.0.0","build":{"at":"2026-11-18T06:07:40Z","version":"2027.1.0","commit":"5b3a497"},"course":{"id":"lds-prd-202","code":"LDS-PRD-202","title":"تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها","track":"executives","lang":"ar","dir":"rtl","url":"https://sdaiaacademy.github.io/lds-prd-202/","repo":"SDAIAAcademy/lds-prd-202","home":"../index.html"},"lab":{"id":"1.2","title":"الوسم المفتوح لخمسين أثرًا","summary":"تقرأ الآثار P001 إلى P050 في عارض آثار التنفيذ دون مساعد ذكي، وتكتب لكل أثر ملاحظة مفتوحة تصف أول خطأ فيه وتقديرًا أوليًا لشدته","minutes":35,"day":1,"unit":"اليوم 1","session":2,"deck":"../slides/day1.html#lab-1-2","prev":"D1_1_vendor_claims.html","next":"D1_3_axial_coding.html","alt":{}},"ai":{"context":{"course":"../context/course.md","courseJs":"../context/course.js","day":null,"llms":"../llms.txt"},"tasks":[],"tools":[]},"features":{},"strings":{}}</script>
+<script src="../_engine/academy.js"></script>
+</body>
+</html>

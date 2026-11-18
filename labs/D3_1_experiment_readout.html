@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-ax="lab" data-track="executives">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المختبر 3.1 · تقرير التجربة · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها</title>
+<meta name="generator" content="SDAIA Academy engine 1.0.0">
+<link rel="icon" href="../_engine/icon.svg">
+<link rel="alternate" type="text/markdown" href="D3_1_experiment_readout.md">
+<link rel="describedby" href="../llms.txt">
+<link rel="stylesheet" href="../_engine/academy.css">
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="top"><div class="logo"></div><nav><a href="../index.html">صفحة المقرر</a><a href="../slides/day3.html#lab-3-1">العودة إلى الشرائح</a></nav></div>
+<span class="tag">المختبر 3.1</span>
+<h1>تقرير التجربة</h1>
+<p>تحلل سجل الجلسات العشرين ألفًا بخطة مسجلة مسبقًا: توازن الذراعين، والمقياس الأساسي بفترته، والتصعيد الفائت في المتوسط وبحسب اللغة، وفئة العضو والشكاوى والتكلفة، والنظر المبكر في اليوم الثالث، ثم القرار الذي يدعمه التقرير</p>
+<div class="meta"><span>35 دقيقة</span><span>اليوم 3</span><span>الجلسة 1: قراءة نتائج التجربة</span></div>
+</div>
+</header>
+<main class="wrap">
+<article class="lab" data-lab="3.1">
+  <div class="box goal">
+    <h3>ستخرج من هذا المختبر بـ</h3>
+    <ul>
+      <li>تقرير نتائج للتجربة على 20,000 جلسة: الفرق في نسبة الحل بفترة ثقته، ومقياسا الحماية في المتوسط وفي كل لغة وفئة، والتكلفة لكل جلسة.</li>
+      <li>سطر قرار يدعمه التقرير بقاعدة الخطة المكتوبة قبل البيانات.</li>
+    </ul>
+  </div>
+
+  <h2>ما تحتاجه</h2>
+  <div class="files">
+    <a href="files/experiment_plan_reference.csv" target="_blank"><b>experiment_plan_reference.csv</b><span>ملف البداية: الخطة المرجعية المعتمدة قبل التجربة</span></a>
+    <a href="files/sessions_20000.csv" target="_blank"><b>sessions_20000.csv</b><span>سجل الجلسات: الذراع واليوم واللغة وفئة العضو والحل والتصعيد والشكوى والتكلفة والزمن</span></a>
+    <a href="files/experiment_brief.txt" target="_blank"><b>experiment_brief.txt</b><span>موجز التجربة</span></a>
+  </div>
+  <p class="small">اعمل بالخطة المرجعية حتى إن اختلفت خطتك عنها: التقرير يُقرأ بالخطة المعتمدة. سياسة الذكاء الاصطناعي: مساعد مرشد للطريقة والمعادلات. سجل الجلسات «مقيد» على مستوى الصف، فلا تنسخ صفوفه إلى أي أداة؛ الجداول المجمعة التي تحسبها «عام».</p>
+
+  <h2>الخطوات</h2>
+
+  <div class="step">
+    <h3>1 · افتح الخطة المرجعية وتحقق من توازن الذراعين <span class="min">4 د</span></h3>
+    <p>عدّ الجلسات في كل ذراع. التوزيع 50/50، فإن ابتعد العدد عن النصف أكثر مما تسمح به الصدفة فالخلل في التوزيع لا في المساعد:</p>
+    <div class="prompt" data-tool="جدول بيانات">=(COUNTIF(C:C, "A")-10000) / SQRT(20000 * 0.25)</div>
+    <p>قيمة بين −1.96 و1.96 تعني أن الفرق بين العددين في حدود الصدفة.</p>
+  </div>
+
+  <div class="step">
+    <h3>2 · احسب نسبة الحل في كل ذراع والفرق بفترته <span class="min">8 د</span></h3>
+    <p>ضع لكل ذراع النسبة <span class="ph">p</span> والعدد <span class="ph">n</span>. الفرق B ناقص A بالنقاط المئوية، والفترة ±1.96 من خطئه المعياري:</p>
+    <div class="prompt" data-tool="جدول بيانات">=AVERAGEIFS(F:F, C:C, "<span class="ph">B</span>")</div>
+    <div class="prompt" data-tool="جدول بيانات">=1.96 * SQRT(<span class="ph">pA</span>*(1-<span class="ph">pA</span>)/<span class="ph">nA</span>+<span class="ph">pB</span>*(1-<span class="ph">pB</span>)/<span class="ph">nB</span>)</div>
+    <p>ثم احسب الفرق نفسه لكل لغة.</p>
+  </div>
+
+  <div class="step">
+    <h3>3 · احسب التصعيد الفائت في المتوسط وفي كل لغة <span class="min">8 د</span></h3>
+    <p>المقام الجلسات التي تحتاج تصعيدًا (<code>escalation_needed</code> = 1)، لا كل الجلسات:</p>
+    <div class="prompt" data-tool="جدول بيانات">=SUMIFS(H:H, C:C, "<span class="ph">B</span>", D:D, "<span class="ph">ar_gulf</span>") / SUMIFS(I:I, C:C, "<span class="ph">B</span>", D:D, "<span class="ph">ar_gulf</span>")</div>
+    <table>
+      <tr><th>الشريحة</th><th>A</th><th>B</th><th>الفرق بالنقاط</th><th>الفترة</th></tr>
+      <tr><td>الكل</td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>كل لغة من الأربع</td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+    </table>
+  </div>
+
+  <div class="step">
+    <h3>4 · افحص فئة العضو والشكاوى والتكلفة لكل جلسة <span class="min">6 د</span></h3>
+    <p>الفرق في نسبة الحل والتصعيد الفائت للأعضاء الجدد والقائمين، ونسبة الجلسات التي فيها شكوى، ومتوسط <code>cost_sar</code> لكل ذراع.</p>
+  </div>
+
+  <div class="step">
+    <h3>5 · قارن نتيجة الأيام الثلاثة الأولى بالنتيجة النهائية <span class="min">4 د</span></h3>
+    <p>أعد الخطوة 2 على الجلسات التي <code>day</code> فيها 3 أو أقل. اكتب ما كان سيقرره من أخذ بطلب المبيعات قرارًا مبكرًا.</p>
+  </div>
+
+  <div class="step">
+    <h3>6 · اكتب سطر القرار الذي يدعمه التقرير <span class="min">5 د</span></h3>
+    <p>طبّق قاعدتي الإطلاق والإيقاف كما كتبتهما الخطة، لا كما تتمنى. السطر: القرار، والرقمان اللذان حسماه، والشرط إن وُجد، ومن يتخذ القرار.</p>
+  </div>
+
+  <div class="step stretch">
+    <h3>✱ إضافي</h3>
+    <p>قدّر كم يومًا يلزم لتصبح فترة التصعيد الفائت في اللهجة الخليجية نصف عرضها الحالي، واكتب هل يستحق الانتظار.</p>
+  </div>
+
+  <h2>أسئلة تحقق</h2>
+  <ol class="checks">
+    <li>هل الحد الأدنى لفترة الفرق في نسبة الحل فوق الصفر؟ وفي كل لغة؟</li>
+    <li>أي شريحة يسوء فيها مقياس الحماية بفترة كلها فوق الصفر، وماذا كان المتوسط سيخفي؟</li>
+    <li>هل في سطر قرارك مقياس حماية وشريحة، كما تطلب بطاقة المقرر في كل تقرير نتائج؟</li>
+  </ol>
+
+  <details class="instructor">
+    <summary>للمدرّب: مفتاح المختبر</summary>
+    <ul>
+      <li><b>التوازن:</b> A 10,094 وB 9,906؛ z = 1.33، في حدود الصدفة.</li>
+      <li><b>المقياس الأساسي:</b> A 62.29% وB 65.90%؛ الفرق +3.61 نقطة (2.28 إلى 4.93). في كل لغة فوق الصفر (الفصحى +3.99، الخليجية +3.24، الإنجليزية +2.90، المختلطة +4.89). الجدد +5.33 (3.01 إلى 7.66)، والقائمون +2.75 (1.14 إلى 4.37).</li>
+      <li><b>التصعيد الفائت:</b> في المتوسط A 9.48% من 833 وB 11.81% من 864: +2.32 (−0.61 إلى 5.25)، الفترة تشمل الصفر. <b>في اللهجة الخليجية: A 8.37% من 215 وB 21.43% من 252، +13.06 (6.78 إلى 19.33)</b>: أسوأ بوضوح. الفصحى −1.17 والإنجليزية −3.75 والمختلطة −0.69، وفتراتها تشمل الصفر.</li>
+      <li><b>الشكاوى:</b> 1.45% و1.44%، لا فرق. <b>التكلفة لكل جلسة:</b> A 0.0751 وB 0.0353 ريال. المئين 95 لزمن الجلسة: A 4,920 وB 4,668 ms (زمن الجلسة كلها بأكثر من استدعاء؛ مستوى الخدمة يُقاس للمهمة في المختبر 3.2).</li>
+      <li><b>النظرة المبكرة:</b> الأيام 1 إلى 3: +5.27 (2.44 إلى 8.11)، أكبر بنحو 1.7 نقطة من النتيجة النهائية (+3.61).</li>
+      <li><b>القرار الذي يدعمه التقرير:</b> لا يُطلق الذراع B كما هو: قاعدة الإطلاق تمنعه لأن التصعيد الفائت في الخليجية يسوء بفترة كلها فوق الصفر، رغم أن المقياس الأساسي يعبر. مواصلة التحسين: توجيه اللهجة الخليجية إلى النموذج الكبير (كما تفعل التهيئة C في المختبر 3.2)، والتحقق من K4 بالخليجية قبل الإطلاق. يعدّ التقرير مالك المنتج، وتقرر عهود الرشيدي.</li>
+      <li><b>الإضافي:</b> عرض الفترة الآن 12.5 نقطة. نصفه يحتاج أربعة أضعاف الجلسات: نحو 56 يومًا، أي 42 يومًا إضافية. الفرق الحالي واضح فلا داعي للانتظار؛ الإصلاح أولًا ثم تجربة جديدة.</li>
+      <li>التحقق: <code>node labs/solutions/check_all.mjs</code> يطبع هذه الأرقام ويعيد حسابها.</li>
+    </ul>
+  </details>
+</article>
+<nav class="pager"><a href="D2_4_experiment_plan.html" rel="prev">→ المختبر السابق</a><a href="D3_2_cost_per_success.html" rel="next">المختبر التالي ←</a></nav>
+</main>
+<footer><div class="wrap">أكاديمية سدايا · مسار التنفيذيين والقادة · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها<br><span class="muted">إصدار المقرر 2027.1.0 · المحرّك 1.0.0 · بُني في ⁦2026-11-18⁩ · الإيداع 5b3a497</span></div></footer>
+<script type="application/json" id="academy-data">{"v":1,"engine":"1.0.0","build":{"at":"2026-11-18T06:07:40Z","version":"2027.1.0","commit":"5b3a497"},"course":{"id":"lds-prd-202","code":"LDS-PRD-202","title":"تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها","track":"executives","lang":"ar","dir":"rtl","url":"https://sdaiaacademy.github.io/lds-prd-202/","repo":"SDAIAAcademy/lds-prd-202","home":"../index.html"},"lab":{"id":"3.1","title":"تقرير التجربة","summary":"تحلل سجل الجلسات العشرين ألفًا بخطة مسجلة مسبقًا: توازن الذراعين، والمقياس الأساسي بفترته، والتصعيد الفائت في المتوسط وبحسب اللغة، وفئة العضو والشكاوى والتكلفة، والنظر المبكر في اليوم الثالث، ثم القرار الذي يدعمه التقرير","minutes":35,"day":3,"unit":"اليوم 3","session":1,"deck":"../slides/day3.html#lab-3-1","prev":"D2_4_experiment_plan.html","next":"D3_2_cost_per_success.html","alt":{}},"ai":{"context":{"course":"../context/course.md","courseJs":"../context/course.js","day":null,"llms":"../llms.txt"},"tasks":[],"tools":[]},"features":{},"strings":{}}</script>
+<script src="../_engine/academy.js"></script>
+</body>
+</html>

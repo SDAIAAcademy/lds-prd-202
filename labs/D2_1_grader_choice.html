@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-ax="lab" data-track="executives">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المختبر 2.1 · مصحح لكل معيار · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها</title>
+<meta name="generator" content="SDAIA Academy engine 1.0.0">
+<link rel="icon" href="../_engine/icon.svg">
+<link rel="alternate" type="text/markdown" href="D2_1_grader_choice.md">
+<link rel="describedby" href="../llms.txt">
+<link rel="stylesheet" href="../_engine/academy.css">
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="top"><div class="logo"></div><nav><a href="../index.html">صفحة المقرر</a><a href="../slides/day2.html#lab-2-1">العودة إلى الشرائح</a></nav></div>
+<span class="tag">المختبر 2.1</span>
+<h1>مصحح لكل معيار</h1>
+<p>تقرأ معايير القبول الثمانية لمضمار وأنواع المصححات وتكاليفها، فتسند إلى كل معيار مصححًا، وتقدّر تكلفة جولة التقييم، وتكتب من يصحح ومن يعدّل</p>
+<div class="meta"><span>35 دقيقة</span><span>اليوم 2</span><span>الجلسة 1: الفحص البرمجي والمصحح النموذجي والمراجعة البشرية</span></div>
+</div>
+</header>
+<main class="wrap">
+<article class="lab" data-lab="2.1">
+  <div class="box goal">
+    <h3>ستخرج من هذا المختبر بـ</h3>
+    <ul>
+      <li>جدول يسند إلى كل معيار من المعايير الثمانية مصححًا: فحصًا برمجيًا أو مصححًا نموذجيًا أو مراجعة بشرية، مع سبب كل اختيار.</li>
+      <li>تقدير لتكلفة جولة تقييم كاملة ووقتها، وسطر يفصل بين من يسمّي الأمثلة ومن يعدّل التعليمات.</li>
+    </ul>
+  </div>
+
+  <h2>ما تحتاجه</h2>
+  <div class="files">
+    <a href="files/acceptance_criteria.csv" target="_blank"><b>acceptance_criteria.csv</b><span>المعايير الثمانية K1 إلى K8، وأنماط الفشل التي تقابلها وشدتها</span></a>
+    <a href="files/grader_options.txt" target="_blank"><b>grader_options.txt</b><span>أنواع المصححات الثلاثة وتكلفتها، وقاعدة الاختيار</span></a>
+    <a href="files/policies_current.txt" target="_blank"><b>policies_current.txt</b><span>السياسات السارية: ما يمكن أن تقارن به قاعدة برمجية</span></a>
+    <a href="files/owners.csv" target="_blank"><b>owners.csv</b><span>الأشخاص في الحالة وما يعتمده كل منهم</span></a>
+  </div>
+  <p class="small">المعايير مأخوذة من جدول التصنيف في اليوم الأول: كل نمط من F1 إلى F7 صار معيارًا ثنائيًا. سياسة الذكاء الاصطناعي: مساعد مرشد تسأله عن الطريقة وحدها؛ ملفات هذا المختبر لا تحوي رسائل أعضاء، ومع ذلك لا تنسخ إليه شيئًا من آثار التنفيذ.</p>
+
+  <h2>الخطوات</h2>
+
+  <div class="step">
+    <h3>1 · اقرأ المعايير الثمانية وأنواع المصححات <span class="min">5 د</span></h3>
+    <p>لكل معيار اسأل: هل أستطيع أن أكتب قاعدة تحكم عليه دون أن تقرأ المعنى؟ مقارنة رقم بجدول قاعدة؛ الحكم على «تفصيل لا يوجد في المصادر» قراءة.</p>
+  </div>
+
+  <div class="step">
+    <h3>2 · أسند قاعدة برمجية إلى كل معيار تصفه قاعدة <span class="min">8 د</span></h3>
+    <p>اكتب القاعدة في سطر بلغة عادية: ما الذي تقارنه بماذا. إن احتاجت القاعدة قائمة (أسعار، أو كلمات)، فاذكر من أين تأتي القائمة.</p>
+    <table>
+      <tr><th>المعيار</th><th>نوع المصحح</th><th>القاعدة أو ما يقرؤه المصحح</th><th>السبب</th></tr>
+      <tr><td>K1</td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>…</td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+      <tr><td>K8</td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+    </table>
+  </div>
+
+  <div class="step">
+    <h3>3 · أسند مصححًا نموذجيًا أو مراجعة بشرية إلى الباقي، بسبب كل اختيار <span class="min">8 د</span></h3>
+    <p>المصحح النموذجي مرشح حتى تُقاس معايرته في المختبر التالي. لكل معيار أسندته إلى مصحح نموذجي، اكتب ما يحل محله إن لم يعبر المعايرة، وانتبه لشدة المعيار.</p>
+  </div>
+
+  <div class="step">
+    <h3>4 · قدّر تكلفة جولة كاملة: 120 مثالًا في ثلاث محاولات <span class="min">7 د</span></h3>
+    <p>الجولة 360 ردًا. احسب تكلفة كل مصحح ووقته بأرقام <code>grader_options.txt</code>، ثم احسبها مرة ثانية إن صارت المراجعة البشرية بديل معيار واحد.</p>
+    <div class="prompt" data-tool="جدول بيانات">=<span class="ph">عدد المعايير</span>*360*<span class="ph">تكلفة الرد</span></div>
+  </div>
+
+  <div class="step">
+    <h3>5 · اكتب من يسمّي الأمثلة ومن يعدّل التعليمات <span class="min">7 د</span></h3>
+    <p>من <code>owners.csv</code>: سمِّ من يكتب التسميات البشرية التي تُعاير عليها المصححات، ومن يعتمدها، ومن يعدّل التعليمات ويشغّل التقييم. اكتب لماذا لا يكونون الشخص نفسه.</p>
+  </div>
+
+  <div class="step stretch">
+    <h3>✱ إضافي</h3>
+    <p>المراجعة البشرية لكل الردود الـ360 غالية. اقترح كيف تقصرها على الأمثلة التي ينطبق عليها المعيار، واحسب التكلفة الجديدة.</p>
+  </div>
+
+  <h2>أسئلة تحقق</h2>
+  <ol class="checks">
+    <li>هل اخترت لكل معيار أرخص مصحح يصح له؟ أي معيار أسندته إلى مصحح نموذجي وكانت تكفيه قاعدة؟</li>
+    <li>لأي معيار شدته 4 أسندت مصححًا نموذجيًا، وما البديل إن لم يعبر المعايرة؟</li>
+    <li>هل في جدولك شخص يعدّل التعليمات ويعتمد نتائج التقييم معًا؟</li>
+  </ol>
+
+  <details class="instructor">
+    <summary>للمدرّب: مفتاح المختبر</summary>
+    <ul>
+      <li><b>قواعد برمجية (4):</b> K1 كل رقم في الرد يُقارن بجدول أرقام الإصدار 2 (99 و60 و50 و1,200)، ويفشل إذا ظهر رقم من الإصدار 1 (149 و30 و75 و1,500)؛ K3 حالة الأداة في الأثر مقابل عبارات الإتمام في الرد؛ K5 لغة الرسالة مقابل لغة الرد بكاشف لغة؛ K7 قائمة كلمات (الهوية، صورة، تقرير طبي، ID).</li>
+      <li><b>مرشحة لمصحح نموذجي (4):</b> K2 (تفصيل لا يوجد في المصادر) وK6 (رفض طلب تجيب عنه السياسات) وK4 (الإصابة أو الخلاف المالي يحتاج فهم الرسالة، وباللهجة أحيانًا) وK8 (وضوح الخطوة التالية). البديل: المراجعة البشرية، وهي الإجابة الصحيحة لـK4 إن لم يعبر، لأن شدته 4.</li>
+      <li><b>التكلفة:</b> القواعد قرابة الصفر. المصححات النموذجية الأربعة: 4 × 360 × 0.004 = 5.76 ريال. إن حلت المراجعة البشرية محل K4 لكل الردود: 360 × 2.50 = 900 ريال و540 دقيقة (9 ساعات). مقصورة على أمثلة التصعيد الإلزامي (13 مثالًا في المجموعة × 3 محاولات = 39 ردًا): 97.50 ريالًا ونحو 59 دقيقة. هذا جواب الإضافي.</li>
+      <li><b>الفصل بين المهام:</b> فريق نوف البيشي يكتب التسميات البشرية وتعتمدها نوف؛ يزن الشمراني يعدّل التعليمات ويشغّل التقييم ولا يعتمد نتائجه ولا يسمّي الأمثلة. مالك المنتج يقترح ولا يعتمد توصيته.</li>
+      <li>الخطأ المعتاد: مصحح نموذجي لكل شيء «لأنه أسهل»، ومنه K1 وK7 اللذان تكفيهما قاعدة أرخص وأثبت.</li>
+    </ul>
+  </details>
+</article>
+<nav class="pager"><a href="D1_4_frequency_severity.html" rel="prev">→ المختبر السابق</a><a href="D2_2_grader_calibration.html" rel="next">المختبر التالي ←</a></nav>
+</main>
+<footer><div class="wrap">أكاديمية سدايا · مسار التنفيذيين والقادة · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها<br><span class="muted">إصدار المقرر 2027.1.0 · المحرّك 1.0.0 · بُني في ⁦2026-11-18⁩ · الإيداع 5b3a497</span></div></footer>
+<script type="application/json" id="academy-data">{"v":1,"engine":"1.0.0","build":{"at":"2026-11-18T06:07:40Z","version":"2027.1.0","commit":"5b3a497"},"course":{"id":"lds-prd-202","code":"LDS-PRD-202","title":"تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها","track":"executives","lang":"ar","dir":"rtl","url":"https://sdaiaacademy.github.io/lds-prd-202/","repo":"SDAIAAcademy/lds-prd-202","home":"../index.html"},"lab":{"id":"2.1","title":"مصحح لكل معيار","summary":"تقرأ معايير القبول الثمانية لمضمار وأنواع المصححات وتكاليفها، فتسند إلى كل معيار مصححًا، وتقدّر تكلفة جولة التقييم، وتكتب من يصحح ومن يعدّل","minutes":35,"day":2,"unit":"اليوم 2","session":1,"deck":"../slides/day2.html#lab-2-1","prev":"D1_4_frequency_severity.html","next":"D2_2_grader_calibration.html","alt":{}},"ai":{"context":{"course":"../context/course.md","courseJs":"../context/course.js","day":null,"llms":"../llms.txt"},"tasks":[],"tools":[]},"features":{},"strings":{}}</script>
+<script src="../_engine/academy.js"></script>
+</body>
+</html>

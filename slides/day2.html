@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-ax="deck" data-track="executives">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>اليوم 2 · مجموعة التقييم وخطة التجربة · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها</title>
+<meta name="generator" content="SDAIA Academy engine 1.0.0">
+<link rel="icon" href="../_engine/icon.svg">
+<link rel="alternate" type="text/markdown" href="day2.md">
+<link rel="describedby" href="../llms.txt">
+<link rel="stylesheet" href="../_engine/academy.css">
+</head>
+<body>
+<div class="deck" data-course="تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها" data-track="executives" data-day="اليوم 2">
+<section class="slide title" id="title" data-auto="title" data-label="الترحيب" data-n="1">
+  <div class="kicker">أكاديمية سدايا · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها</div>
+  <h1>مجموعة التقييم وخطة التجربة</h1>
+  <p class="lead mt">اليوم 2: مصحح لكل معيار بعد معايرته، ومجموعة تقييم من 120 مثالًا بإصدار وسجل تغييرات، ثم خطة تجربة تُكتب قبل البيانات</p>
+  <div class="meta"><span class="track">مسار التنفيذيين والقادة</span><span>3 أيام تدريبية + يوم للمشروع الختامي</span><span>4 جلسات · 4 مختبرات</span><span>LDS-PRD-202</span></div>
+  <aside class="notes"><p>رحّب بالقاعة واسأل: من رأى رقم جودة لمساعد ذكي ولم يعرف من صححه؟ اليوم نبني المسطرة نفسها: من يصحح كل معيار، وهل قيس، وما الأمثلة، ثم نكتب خطة التجربة قبل أن نرى بياناتها. إيقاع اليوم كالأمس: أربع جلسات، في كل منها نحو 35 دقيقة شرح ونقطة تحقق، ثم مختبر 35 دقيقة.</p></aside>
+</section>
+
+<section class="slide" id="agenda" data-auto="agenda" data-label="جدول اليوم" data-n="2">
+  <div class="kicker">اليوم</div>
+  <h2>مجموعة التقييم وخطة التجربة</h2>
+  <div class="agenda"><div class="item"><div><b>الجلسة 1 · الفحص البرمجي والمصحح النموذجي والمراجعة البشرية</b><small>يسند إلى كل معيار أرخص مصحح يصح له، ويفصل بين من يصحح ومن يعدّل</small></div></div><div class="item"><div><b>الجلسة 2 · اتفاق المصحح مع الحكم البشري</b><small>يقرأ اتفاق المصحح مع الحكم البشري بحسب اللغة، ويضع عتبة لكل معيار</small></div></div><div class="item"><div><b>الجلسة 3 · الإصدارات والتسرب والتحديث من التشغيل</b><small>يحذف التسرب والتكرار، ويتحقق من التغطية، ويصدر v1.0 بسجل تغييرات وخطة تحديث</small></div></div><div class="item"><div><b>الجلسة 4 · تخطيط تجربة مباشرة</b><small>يكتب خطة تجربة بذراعين قبل البيانات: المقاييس وأقل أثر يهم وحجم العينة ومتى يُنظر</small></div></div></div>
+  <aside class="notes"><p>الجلسات الثلاث الأولى تبني مجموعة التقييم: المصححات، ثم معايرتها، ثم الأمثلة وإصدارها. الرابعة تنتقل من التقييم قبل الإطلاق إلى التجربة مع الأعضاء. المساعد المرشد مسموح اليوم للطريقة والمعادلات، ولا يدخله أي سطر من رسائل الأعضاء.</p></aside>
+</section>
+
+<section class="slide" id="review-day1" data-lo="LO2" data-n="3">
+  <div class="kicker">مراجعة اليوم 1</div>
+  <h2>أي اسم نمط يتبع قاعدة التسمية؟</h2>
+  <div class="quiz" data-type="single" data-lo="LO2" data-id="review-day1-q1">
+    <p class="lead">فريق التسويق يصنّف آثار مساعد نصوص العروض. اقترح أعضاء الفريق أربعة أسماء لنمط واحد. أيها يتبع قاعدة المقرر في التسمية؟</p>
+    <div class="opts">
+      <div class="opt" data-why="يسمّي سببًا مفترضًا: الفهرس قد يكون السبب، لكن الاسم لا يقول ما رآه العميل" data-k="أ">مشكلة في فهرس العروض القديمة</div>
+      <div class="opt" data-why="يسمّي سببًا عن النموذج، ولا يصف ما في النص الذي وصل إلى العميل" data-k="ب">النموذج الصغير لا يفهم التواريخ</div>
+      <div class="opt" data-ok data-k="ج">النص يذكر خصمًا انتهى موعده</div>
+      <div class="opt" data-why="اسم واسع يجمع أنماطًا مختلفة الشدة، ولا يحكم به زميل لم يحضر النقاش" data-k="د">أخطاء متنوعة في العرض</div>
+    </div>
+    <div class="callout tip why"><b>لماذا.</b> النمط يُسمّى بما يراه المستخدم أو يقع عليه. السبب يأتي من المهندسين بعد ذلك، وقد يكون لنمطين سبب واحد.</div>
+  </div>
+  <aside class="notes"><p>الإجابة: ج. ثلاث دقائق. من اختار أ اسأله: لو أصلح المهندسون الفهرس وبقي الخصم المنتهي يظهر، فكيف يعدّه فريقك؟ الاسم بما يراه العميل يبقى صالحًا مهما تغيّر السبب.</p></aside>
+</section>
+
+<section class="slide" id="debrief-1-4" data-lo="LO2" data-n="4">
+  <div class="kicker">ما أظهره المختبر 1.4</div>
+  <h2>الأكثر تكرارًا F5 جاء رابعًا، وF4 وF3 أولًا</h2>
+  <table class="t small">
+    <tr><th>النمط بالترتيب</th><th class="num">العدد</th><th class="num">الشدة</th><th class="num">النسبة × الشدة</th></tr>
+    <tr class="hl"><td>1 · F4</td><td class="num">17</td><td class="num">4</td><td class="num">أولًا</td></tr>
+    <tr class="hl"><td>2 · F3</td><td class="num">14</td><td class="num">4</td><td class="num">أولًا</td></tr>
+    <tr><td>3 · F1</td><td class="num">34</td><td class="num">3</td><td class="num">0.340</td></tr>
+    <tr><td>4 · F5</td><td class="num">41</td><td class="num">2</td><td class="num">0.273</td></tr>
+  </table>
+  <div class="callout warn mt small"><b>والتفصيل:</b> F5 لا يقع في الفصحى (0 من 91)، ويقع في 22 من 111 أثرًا بالخليجية و12 من 39 مختلطًا. وF1 في الخليجية 14% وفي الفصحى 9%.</div>
+  <aside class="notes"><p>ست دقائق. الأنماط: F4 تصعيد فائت، F3 فشل أداة أُخفي، F1 سياسة قديمة، F5 لغة لا تطابق؛ والعدد من 300 أثر. اسأل: لماذا لا يقع F5 في الفصحى؟ F5 في الحالة رد بالإنجليزية على رسالة عربية، أو بالعربية على رسالة إنجليزية، ويقع في رسائل اللهجة الخليجية والمختلطة؛ ويزن قال أمس إن التعليمات الإصدار 3 كتبت بالإنجليزية. لذلك يكفيه فحص برمجي للغة الرد. نمط يتركز في لغة يدل على سبب واحد وإصلاح واحد. الباقي: F2 0.250، F6 0.180، F7 0.130، F8 0.070. كل نمط في هذا الجدول صار معيارًا في <code>acceptance_criteria.csv</code>.</p></aside>
+</section>
+
+<!-- الجلسة 1 -->
+
+<section class="slide section" id="s1" data-auto="section" data-session="1" data-n="5">
+  <div class="kicker">الجلسة 1</div>
+  <h1>الفحص البرمجي والمصحح النموذجي والمراجعة البشرية</h1>
+  <ul class="bullets outcomes"><li>يميّز المعيار الذي تصححه قاعدة برمجية من الذي يحتاج حكمًا</li><li>يقدّر تكلفة جولة تقييم كاملة بكل نوع من المصححات</li><li>يفصل بين من يكتب التعليمات ومن يصحح نتائجها</li></ul>
+  <div class="sess-no">01</div>
+  <aside class="notes"><p>نحو 35 دقيقة قبل المختبر: مراجعة اليوم الأول ونتائج 1.4 (9)، وأنواع المصححات وكيف يُختار كل منها (21)، ونقطة التحقق (5)؛ ثم المختبر 2.1.</p></aside>
+</section>
+
+<section class="slide" id="taxonomy-to-criteria" data-lo="LO3" data-n="6" data-session="1">
+  <div class="kicker">من التصنيف إلى المعايير</div>
+  <h2>كل نمط فشل يصبح معيارًا ثنائيًا يُصحَّح</h2>
+  <div class="flow">
+    <div class="step c-teal"><b>1 · النمط</b>«الرد يذكر رسومًا قديمة»</div>
+    <div class="arrow">←</div><div class="step c-cyan"><b>2 · المعيار</b>«كل رقم في الرد يطابق السياسة السارية»</div>
+    <div class="arrow">←</div><div class="step c-coral"><b>3 · المصحح</b>من يحكم: نجح أو فشل</div>
+  </div>
+  <div class="callout tip mt"><b>المعيار يقول ما يجب أن يكون؛</b> النمط يقول ما وقع. ثمانية معايير في الحالة، K1 إلى K8.</div>
+  <aside class="notes"><p>المعيار K8 (الخطوة التالية واضحة) لا يقابله نمط في التصنيف، وشدته 1: ليس كل معيار يمنع الإطلاق. اطلب من القاعة أن تحوّل F6 (رفض طلب ضمن النطاق) إلى معيار بصيغة «لا يرفض الرد...».</p></aside>
+</section>
+
+<section class="slide" id="grader-types" data-lo="LO3" data-n="7" data-session="1">
+  <div class="kicker">ثلاثة مصححات</div>
+  <h2>أرخص مصحح يصح للمعيار، بهذا الترتيب</h2>
+  <table class="t small">
+    <tr><th>المصحح</th><th>يصلح لـ</th><th class="num">التكلفة للرد</th></tr>
+    <tr><td>فحص برمجي</td><td>ما تصفه قاعدة: رقم مقابل جدول، حالة أداة مقابل نص</td><td class="num">قرابة الصفر</td></tr>
+    <tr><td>مصحح نموذجي</td><td>ما يحتاج قراءة المعنى، بعد أن يُعاير</td><td class="num">نحو 0.004 ريال</td></tr>
+    <tr><td>مراجعة بشرية</td><td>الملتبس والخطير، وما لم يعبر فيه المصحح المعايرة</td><td class="num">نحو 2.50 ريال</td></tr>
+  </table>
+  <div class="caption">التكاليف من ملف الحالة <code>grader_options.txt</code>، وهي اصطناعية.</div>
+  <aside class="notes"><p>القاعدة من وضع المقرر، وتتفق مع ما يوصي به Husain وShankar: ابدأ بالفحص البرمجي حيث يمكن، واحتفظ بالمصحح النموذجي لما لا تصفه قاعدة، وقِس اتفاقه مع حكم بشري قبل أن تثق به. الفرق في التكلفة بين المصحح النموذجي والمراجعة البشرية أكثر من ستمئة ضعف. المصادر: Hamel Husain وShreya Shankar، AI Evals FAQ.</p></aside>
+</section>
+
+<section class="slide" id="code-first" data-lo="LO3" data-n="8" data-session="1">
+  <div class="kicker">مثال موازٍ: مساعد جدولة المدربين</div>
+  <h2>إن وصفته قاعدة، فلا حاجة إلى نموذج يقرأه</h2>
+  <div class="cols cols-2">
+    <div class="card c-teal"><h4>قاعدة تكفي</h4><p class="small mb0">«يذكر الرد رقم النوبة الموجود في الجدول»: يُستخرج الرقم من الرد ويُقارن بجدول النوبات.</p></div>
+    <div class="card c-cyan"><h4>يحتاج قراءة</h4><p class="small mb0">«لا يعِد الرد المدرب بشيء لا يملكه النظام»: الوعد يُصاغ بألف طريقة، فيحتاج مصححًا نموذجيًا مُعايرًا.</p></div>
+  </div>
+  <div class="callout warn mt"><b>أين يقع الخطأ:</b> مصحح نموذجي لكل المعايير لأنه «أسهل». هو أغلى، ويخطئ أحيانًا فيما تحكم عليه القاعدة دون خطأ.</div>
+  <aside class="notes"><p>اسأل: أي معيار من المعايير الثمانية في ملفكم يشبه رقم النوبة؟ لا تجب عنهم؛ هذا عمل المختبر. أشر فقط إلى أن القاعدة تحتاج مصدرًا: جدول أرقام، أو قائمة كلمات، أو حالة الأداة في الأثر.</p></aside>
+</section>
+
+<section class="slide" id="model-grader" data-lo="LO3" data-n="9" data-session="1">
+  <div class="kicker">المصحح النموذجي</div>
+  <h2>يقرأ معيارًا واحدًا ويجيب: نجح أو فشل</h2>
+  <div class="chat">
+    <div class="msg user"><span class="who">ما يصل إلى المصحح</span>المعيار، ورسالة المستخدم، والمصادر المسترجعة، والرد. وأمثلة قليلة على نجح وفشل كتبها مراجعون.</div>
+    <div class="msg ai good"><span class="who">ما يعيده</span>«فشل»، وسطر يسمّي الجزء الذي حكم به.</div>
+  </div>
+  <ul class="bullets mt">
+    <li>معيار واحد لكل مصحح، لا «قيّم الجودة»</li>
+    <li>الأمثلة فيه ليست من مجموعة التقييم</li>
+  </ul>
+  <aside class="notes"><p>ثلاث دقائق. مصحح لكل معيار يجعل فشله مفهومًا ومعايرته ممكنة. مصحح واحد لكل شيء يعطي رقمًا لا يُعرف ما يقيسه. الأمثلة داخل تعليمات المصحح إن جاءت من المجموعة فقد رآها، فيبدو أدق مما هو.</p></aside>
+</section>
+
+<section class="slide" id="human-review" data-lo="LO3" data-n="10" data-session="1">
+  <div class="kicker">المراجعة البشرية</div>
+  <h2>تُصرف حيث ينطبق المعيار، لا على كل رد</h2>
+  <div class="cols cols-2">
+    <div class="stat center"><div class="big">360</div><div class="lbl">ردًا في جولة كاملة: 120 مثالًا × 3 محاولات</div></div>
+    <div class="card c-purple"><h4>اسأل قبل أن تحسب</h4><p class="small mb0">على أي الأمثلة ينطبق المعيار أصلًا؟ معيار عن التحويل إلى موظف لا يُراجع في سؤال عن ساعات العمل.</p></div>
+  </div>
+  <div class="callout note mt"><b>والشدة تحكم:</b> معيار شدة فشله 4 لا يُترك لمصحح لم يعبر المعايرة.</div>
+  <aside class="notes"><p>دقيقتان. المراجعة البشرية غالية ووقتها طويل، لكنها ليست كلها أو لا شيء. في المختبر ستحسب تكلفة الجولة مرة لكل الردود ومرة لمعيار واحد، والإضافي يطلب قصرها على ما ينطبق عليه المعيار.</p></aside>
+</section>
+
+<section class="slide" id="segregation" data-lo="LO3" data-n="11" data-session="1">
+  <div class="kicker">الفصل بين المهام</div>
+  <h2>من يعدّل التعليمات لا يسمّي الأمثلة ولا يعتمد النتائج</h2>
+  <table class="t small">
+    <tr><th>العمل</th><th>من يقوم به في الحالة</th></tr>
+    <tr><td>يكتب التسميات البشرية ويعتمدها</td><td>فريق المراجعة، وتعتمدها قائدته</td></tr>
+    <tr><td>يعدّل التعليمات ويشغّل التقييم</td><td>الفريق الهندسي</td></tr>
+    <tr><td>يقترح معايير الإطلاق ويقرأ النتائج</td><td>مالك المنتج</td></tr>
+    <tr><td>يعتمد قرار الإطلاق</td><td>المالكة التجارية</td></tr>
+  </table>
+  <aside class="notes"><p>السبب ليس الشك في الأشخاص: من عدّل التعليمات يرى ما يريد أن يراه في الردود، ومن يعتمد عمله يمر عليه خطؤه. الأسماء في <code>owners.csv</code>. هذا الفصل يعود في كل مخرج: سجل المجموعة، وتقرير التجربة، ومعايير الإطلاق.</p></aside>
+</section>
+
+<section class="slide" id="check-grader" data-lo="LO3" data-n="12" data-session="1">
+  <div class="kicker">نقطة تحقق</div>
+  <h2>أي مصحح لهذا المعيار؟</h2>
+  <div class="quiz" data-type="single" data-lo="LO3" data-id="check-grader-q1">
+    <p class="lead">معيار في مساعد جدولة المدربين: «لا يذكر الرد ناديًا غير المذكور في طلب المدرب». أسماء الأندية الستة ثابتة، وكل طلب فيه اسم نادٍ واحد. ما المصحح الأنسب أولًا؟</p>
+    <div class="opts">
+      <div class="opt" data-ok data-k="أ">قاعدة تقارن أسماء الأندية في الرد باسم النادي في الطلب</div>
+      <div class="opt" data-why="يدفع ثمن القراءة فيما تحكم عليه قائمة ثابتة من ستة أسماء، ويحتاج معايرة لا يحتاجها الفحص" data-k="ب">مصحح نموذجي يقرأ الطلب والرد كاملين ويحكم على اسم النادي</div>
+      <div class="opt" data-why="الأغلى والأبطأ لمعيار تصفه قاعدة بلا التباس" data-k="ج">مراجعة بشرية من فريق التدريب لكل الردود</div>
+      <div class="opt" data-why="يضيف طبقتين فوق معيار تحسمه مقارنة واحدة" data-k="د">مصحح نموذجي، ثم مراجعة بشرية لكل ما يرفضه</div>
+    </div>
+    <div class="callout tip why"><b>لماذا.</b> قائمة الأندية ثابتة واسم النادي في الطلب، فالقاعدة تحكم دون خطأ وبتكلفة قريبة من الصفر. أرخص مصحح يصح هو الأول.</div>
+  </div>
+  <aside class="notes"><p>الإجابة: أ. إن اختار كثيرون المصحح النموذجي، فاسأل: ما الذي يقرؤه النموذج هنا ولا تقرؤه القاعدة؟ متى يصبح المصحح النموذجي ضروريًا؟ لو كتب المدربون أسماء الأندية بصيغ كثيرة غير ثابتة.</p></aside>
+</section>
+
+<section class="slide lab top" id="lab-2-1" data-auto="lab" data-lab="2.1" data-label="المختبر 2.1" data-n="13" data-session="1">
+  <div class="cols cols-2 mid"><div><div class="lab-tag">المختبر 2.1 · 35 دقيقة</div><h2>مصحح لكل معيار</h2><p class="lead small">تقرأ معايير القبول الثمانية لمضمار وأنواع المصححات وتكاليفها، فتسند إلى كل معيار مصححًا، وتقدّر تكلفة جولة التقييم، وتكتب من يصحح ومن يعدّل</p><a class="nb" href="../labs/D2_1_grader_choice.html">D2_1_grader_choice.html</a></div><ul class="checklist"><li>اقرأ المعايير الثمانية وأنواع المصححات <span class="min">5 د</span></li><li>أسند قاعدة برمجية إلى كل معيار تصفه قاعدة <span class="min">8 د</span></li><li>أسند مصححًا نموذجيًا أو مراجعة بشرية إلى الباقي، بسبب كل اختيار <span class="min">8 د</span></li><li>قدّر تكلفة جولة كاملة: 120 مثالًا في ثلاث محاولات <span class="min">7 د</span></li><li>اكتب من يسمّي الأمثلة ومن يعدّل التعليمات <span class="min">7 د</span></li><li class="stretch">✱ إضافي: المراجعة البشرية لكل الردود الـ360 غالية. اقترح كيف تقصرها على الأمثلة التي ينطبق عليها المعيار، واحسب التكلفة الجديدة</li></ul></div>
+  <aside class="notes"><p>35 دقيقة، والمساعد المرشد للطريقة. مر على الطاولات في الخطوة 3: من أسند K4 إلى مصحح نموذجي، اسأله عن البديل إن لم يعبر المعايرة، وعن شدة K4. في الخطوة 5 تأكد أن أحدًا لم يجعل الفريق الهندسي يعتمد نتائج التقييم.</p></aside>
+</section>
+
+<!-- الجلسة 2 -->
+
+<section class="slide section" id="s2" data-auto="section" data-session="2" data-n="14">
+  <div class="kicker">الجلسة 2</div>
+  <h1>اتفاق المصحح مع الحكم البشري</h1>
+  <ul class="bullets outcomes"><li>يحسب نسبة التقاط الفشل ونسبة قبول النجاح، لا الاتفاق وحده</li><li>يكشف المصحح الذي يبدو جيدًا في المتوسط ويخفق في لغة</li><li>يضع عتبة إطلاق لكل معيار بحسب شدة فشله</li></ul>
+  <div class="sess-no">02</div>
+  <aside class="notes"><p>نحو 35 دقيقة قبل المختبر: مراجعة المختبر 2.1 (6)، والأرقام الثلاثة للمعايرة وتفصيلها والعتبات (24)، ونقطة التحقق (5)؛ ثم المختبر 2.2.</p></aside>
+</section>
+
+<section class="slide" id="debrief-2-1" data-lo="LO3" data-n="15" data-session="2">
+  <div class="kicker">ما أظهره المختبر 2.1</div>
+  <h2>أربعة معايير تكفيها قاعدة، وأربعة تنتظر المعايرة</h2>
+  <div class="cols cols-2">
+    <div class="card c-teal"><h4>فحص برمجي</h4><p class="small mb0">K1 الأرقام مقابل الإصدار 2، وK3 حالة الأداة مقابل الرد، وK5 لغة الرد، وK7 قائمة كلمات.</p></div>
+    <div class="card c-cyan"><h4>مصحح نموذجي مرشح</h4><p class="small mb0">K2 وK4 وK6 وK8. للجولة: 4 × 360 × 0.004 = 5.76 ريال.</p></div>
+  </div>
+  <div class="callout warn mt small"><b>وإن حلت المراجعة البشرية محل معيار واحد لكل الردود:</b> 900 ريال وتسع ساعات. مقصورة على أمثلة التصعيد الإلزامي: نحو 98 ريالًا وساعة.</div>
+  <aside class="notes"><p>ست دقائق. اسأل: من أسند K1 إلى مصحح نموذجي؟ لماذا؟ ثم: من كتب أن يزن الشمراني يعتمد النتائج؟ القاعدة: يعدّل التعليمات ويشغّل التقييم، ولا يعتمد ما أنتجه. حساب الإضافي: 13 مثالًا × 3 محاولات = 39 ردًا × 2.50 = 97.50 ريالًا، و39 × 1.5 دقيقة نحو 59 دقيقة.</p></aside>
+</section>
+
+<section class="slide" id="agreement-trap" data-lo="LO3" data-n="16" data-session="2">
+  <div class="kicker">مثال موازٍ: مصحح «يذكر الرد نادي المدرب»</div>
+  <h2>اتفاق 91% يخفي مصححًا يفوته ربع الفشل</h2>
+  <div class="cols cols-3">
+    <div class="stat center"><div class="big">0.907</div><div class="lbl">الاتفاق: 49 من 54 حكمًا</div></div>
+    <div class="stat center"><div class="big">0.75</div><div class="lbl">التقاط الفشل: 12 من 16</div></div>
+    <div class="stat center"><div class="big">0.974</div><div class="lbl">قبول النجاح: 37 من 38</div></div>
+  </div>
+  <div class="callout tip mt"><b>لماذا يرتفع الاتفاق:</b> حالات النجاح أكثر من ضعفي حالات الفشل، والمصحح يقبلها كلها تقريبًا.</div>
+  <div class="caption">أرقام اصطناعية من <code>labs/_tools/parallel_examples.mjs</code>.</div>
+  <aside class="notes"><p>الاتفاق يخلط نوعين من الخطأ. التقاط الفشل وقبول النجاح يفصلانهما. Husain وShankar يوصيان بقياس النسبتين، لا الاتفاق وحده، لأن حالات الفشل قليلة عادة. اسأل: لو قبل المصحح كل شيء دون قراءة، فكم يكون اتفاقه هنا؟ 38 من 54، أي 70%.</p></aside>
+</section>
+
+<section class="slide" id="three-numbers" data-lo="LO3" data-n="17" data-session="2">
+  <div class="kicker">ثلاثة أرقام</div>
+  <h2>الحكم البشري مرجع، والمصحح يُقاس عليه</h2>
+  <table class="t small">
+    <tr><th></th><th>البشر: فشل</th><th>البشر: نجح</th></tr>
+    <tr><th>المصحح: فشل</th><td>التقطه</td><td>رفض ردًا سليمًا</td></tr>
+    <tr><th>المصحح: نجح</th><td>فاته</td><td>قبله</td></tr>
+  </table>
+  <ul class="bullets mt">
+    <li><b>التقاط الفشل</b> = ما التقطه ÷ كل ما حكم البشر بفشله</li>
+    <li><b>قبول النجاح</b> = ما قبله ÷ كل ما حكم البشر بنجاحه</li>
+  </ul>
+  <aside class="notes"><p>اقرأ الجدول خانة خانة. الخانة الخطرة «فاته»: رد فاشل يمر في التقييم. الخانة المكلفة «رفض ردًا سليمًا»: يعيد الفريق العمل على ما لا يحتاجه. التسميات البشرية تأتي من فريق المراجعة، لا ممن يعدّل التعليمات.</p></aside>
+</section>
+
+<section class="slide" id="slice-grader" data-lo="LO3" data-n="18" data-session="2">
+  <div class="kicker">والتفصيل بحسب اللغة</div>
+  <h2>المصحح نفسه يلتقط كل الفشل بالفصحى، وثلثه بالخليجية</h2>
+  <div class="bars">
+    <div class="row"><span>الفصحى</span><div class="bar c-teal" style="--w:100%"></div><span class="val">6 من 6</span></div>
+    <div class="row"><span>الإنجليزية</span><div class="bar c-cyan" style="--w:100%"></div><span class="val">4 من 4</span></div>
+    <div class="row"><span>الخليجية</span><div class="bar c-coral" style="--w:33%"></div><span class="val">2 من 6</span></div>
+  </div>
+  <div class="callout warn mt small"><b>اكتب العدد بجانب النسبة:</b> ست حالات فشل في لغة لا تعطي نسبة ثابتة، لكنها تكفي لتقول إن المصحح لا يُعتمد فيها وحده.</div>
+  <aside class="notes"><p>المثال الموازي نفسه، مفصلًا. المتوسط 0.75 كان سيُقرأ «قريبًا من المقبول»، والتفصيل يقول إن مدربي اللهجة الخليجية لن يُحمَوا. الطلب نفسه في بطاقة المقرر: تقسيم النتائج بحسب اللغة حتى لا تخفي المتوسطات الإخفاقات.</p></aside>
+</section>
+
+<section class="slide" id="acceptance-rule" data-lo="LO3" data-n="19" data-session="2">
+  <div class="kicker">قاعدة قبول المصحح في المقرر</div>
+  <h2>يُعتمد إذا عبر الشروط الثلاثة معًا</h2>
+  <div class="cols cols-3">
+    <div class="card c-teal"><h4>يلتقط</h4><p class="small mb0">85% فأكثر من حالات الفشل البشرية.</p></div>
+    <div class="card c-cyan"><h4>يقبل</h4><p class="small mb0">90% فأكثر من حالات النجاح البشرية.</p></div>
+    <div class="card c-purple"><h4>في كل لغة</h4><p class="small mb0">لا لغة يفوته فيها أكثر من نصف حالات الفشل.</p></div>
+  </div>
+  <div class="callout note mt"><b>وما لا يعبر</b> لا يقرر وحده: تحل محله المراجعة البشرية، أو يصبح فرزًا أوليًا تراجعه البشرية.</div>
+  <aside class="notes"><p>القاعدة من وضع المقرر، في <code>threshold_rule.txt</code>، وليست معيارًا وطنيًا. اسأل: هل يُعتمد مصحح مثالنا الموازي؟ لا: التقاطه 0.75، ويفوته في الخليجية أربع من ست.</p></aside>
+</section>
+
+<section class="slide" id="thresholds" data-lo="LO3" data-n="20" data-session="2">
+  <div class="kicker">عتبات الإطلاق</div>
+  <h2>العتبة تأتي من شدة الفشل، لا من آخر نتيجة</h2>
+  <table class="t small">
+    <tr><th>شدة فشل المعيار</th><th>العتبة في مجموعة التقييم</th></tr>
+    <tr class="hl"><td>4</td><td>لا فشل واحد، في كل محاولة من الثلاث</td></tr>
+    <tr><td>3</td><td>نسبة النجاح 97% فأكثر</td></tr>
+    <tr><td>2</td><td>نسبة النجاح 90% فأكثر</td></tr>
+    <tr><td>1</td><td>يُتابع ولا يمنع الإطلاق</td></tr>
+  </table>
+  <p class="small mt">العتبة على المجموعة كلها، ونسبة كل لغة تُكتب بجانبها: الشريحة التي تقل عنها حد يُكتب ويُراقب.</p>
+  <aside class="notes"><p>الخطأ المعتاد: وضع العتبة تحت النتيجة الحالية بقليل حتى «ينجح» الإصدار. العتبة تُكتب قبل التشغيل، من الضرر. وتُحسب على المجموعة كلها: شريحة من 57 أو 99 تشغيلًا تتأرجح بفشل واحد، فتُكتب حدًا وتُراقب، ولا تمنع الإطلاق وحدها؛ أما الشدة 4 فلا فشل فيها في أي لغة أصلًا. في المختبر ستضع لكل معيار من الثمانية عتبته ومصححه بعد المعايرة.</p></aside>
+</section>
+
+<section class="slide" id="check-calibration" data-lo="LO3" data-n="21" data-session="2">
+  <div class="kicker">نقطة تحقق</div>
+  <h2>أي مصحح يُعتمد بقاعدة المقرر؟</h2>
+  <div class="quiz" data-type="single" data-lo="LO3" data-id="check-calibration-q1">
+    <p class="lead">أربعة مصححات نموذجية لمعايير في مساعد نصوص العروض، كل منها عُوير على 60 حكمًا بشريًا. أيها يُعتمد؟</p>
+    <div class="opts">
+      <div class="opt" data-why="الاتفاق مرتفع، لكن الالتقاط 70% تحت حد 85%" data-k="أ">اتفاق 94%، والتقاط 70%، وقبول 99%، وأضعف لغة 3 من 5</div>
+      <div class="opt" data-why="الالتقاط والقبول فوق الحد، لكنه يفوته أكثر من نصف الفشل بالإنجليزية" data-k="ب">اتفاق 92%، والتقاط 88%، وقبول 93%، وأضعف لغة 1 من 4</div>
+      <div class="opt" data-why="الالتقاط فوق الحد، لكن القبول 85% تحت حد 90%، فيرفض ردودًا سليمة كثيرة" data-k="ج">اتفاق 86%، والتقاط 90%، وقبول 85%، وأضعف لغة 4 من 6</div>
+      <div class="opt" data-ok data-k="د">اتفاق 90%، والتقاط 87%، وقبول 91%، وأضعف لغة 3 من 5</div>
+    </div>
+    <div class="callout tip why"><b>لماذا.</b> القاعدة ثلاثة شروط معًا: التقاط 85% فأكثر، وقبول 90% فأكثر، ولا لغة يفوته فيها أكثر من النصف. وحده الرابع يعبرها كلها، وليس أعلاها اتفاقًا.</div>
+  </div>
+  <aside class="notes"><p>الإجابة: د. الأرقام في الخيارات افتراضية للتمرين. نبّه إلى أن صاحب أعلى اتفاق (أ) أسوأها في الالتقاط. من اختار ب: ثلاث حالات فشل من أربع بالإنجليزية فاتته.</p></aside>
+</section>
+
+<section class="slide lab top" id="lab-2-2" data-auto="lab" data-lab="2.2" data-label="المختبر 2.2" data-n="22" data-session="2">
+  <div class="cols cols-2 mid"><div><div class="lab-tag">المختبر 2.2 · 35 دقيقة</div><h2>تقرير المعايرة والعتبات</h2><p class="lead small">تحسب من تقرير المعايرة، لكل معيار يصححه نموذج، الاتفاق ونسبة التقاط الفشل ونسبة قبول النجاح، وتفصّلها بحسب اللغة، فتقرر أي مصحح يُعتمد، وتضع عتبة لكل معيار من المعايير الثمانية</p><a class="nb" href="../labs/D2_2_grader_calibration.html">D2_2_grader_calibration.html</a></div><ul class="checklist"><li>اقرأ تقرير المعايرة وقاعدة القبول <span class="min">4 د</span></li><li>احسب الاتفاق والتقاط الفشل وقبول النجاح لكل معيار <span class="min">10 د</span></li><li>فصّل التقاط الفشل بحسب اللغة <span class="min">8 د</span></li><li>قرر لكل معيار: يُعتمد المصحح أم تحل محله المراجعة البشرية <span class="min">5 د</span></li><li>ضع عتبة الإطلاق لكل معيار بقاعدة الشدة <span class="min">8 د</span></li><li class="stretch">✱ إضافي: اكتب لنوف البيشي ثلاثة أسطر: ما الحالات التي تضيفها إلى عينة المعايرة القادمة للمصحح الذي رفضته، ولماذا</li></ul></div>
+  <aside class="notes"><p>35 دقيقة، والمساعد المرشد للمعادلات. الخطأ المعتاد: حساب الالتقاط من كل الصفوف بدل صفوف المعيار، أو قسمة على عدد أحكام المصحح بدل الأحكام البشرية. من انتهى من الخطوة 3 مبكرًا اسأله: أي معيار كان سيُعتمد لو نظرت إلى الاتفاق وحده؟</p></aside>
+</section>
+
+<!-- الجلسة 3 -->
+
+<section class="slide section" id="s3" data-auto="section" data-session="3" data-n="23">
+  <div class="kicker">الجلسة 3</div>
+  <h1>الإصدارات والتسرب والتحديث من التشغيل</h1>
+  <ul class="bullets outcomes"><li>يكشف التسرب: أمثلة التقييم التي رآها المساعد في تعليماته</li><li>يتحقق من تغطية الأنماط واللغات والفئات بقواعد مكتوبة</li><li>يكتب سجل تغييرات وخطة تحديث من آثار التشغيل</li></ul>
+  <div class="sess-no">03</div>
+  <aside class="notes"><p>نحو 35 دقيقة قبل المختبر: مراجعة المختبر 2.2 (6)، والمجموعة منتجًا له إصدارات، والتسرب والتكرار والتغطية والتحديث من التشغيل (24)، ونقطة التحقق (5)؛ ثم المختبر 2.3.</p></aside>
+</section>
+
+<section class="slide" id="debrief-2-2" data-lo="LO3" data-n="24" data-session="3">
+  <div class="kicker">ما أظهره المختبر 2.2</div>
+  <h2>K4 اتفاقه 87%، ويلتقط 9 من 16 حالة فشل</h2>
+  <table class="t small">
+    <tr><th>المعيار</th><th class="num">الاتفاق</th><th class="num">الالتقاط</th><th>القرار</th></tr>
+    <tr><td>K2</td><td class="num">0.933</td><td class="num">0.900</td><td>يُعتمد</td></tr>
+    <tr class="hl"><td>K4</td><td class="num">0.867</td><td class="num">0.563</td><td>بشرية</td></tr>
+    <tr><td>K6</td><td class="num">0.967</td><td class="num">0.917</td><td>يُعتمد</td></tr>
+    <tr><td>K8</td><td class="num">0.750</td><td class="num">0.600</td><td>فرز</td></tr>
+  </table>
+  <div class="callout warn mt small"><b>وفي اللهجة الخليجية</b> يلتقط مصحح K4 حالتين من ثماني حالات فشل: الإصابة المكتوبة بالعامية تمر.</div>
+  <aside class="notes"><p>ست دقائق. K4 شدته 4، فعتبته لا فشل واحد، ومصححه يفوته 7 من 16 حالة فشل. القرار: مراجعة بشرية لأمثلة التصعيد الإلزامي. قبول النجاح: K2 0.950، وK4 0.977، وK6 0.979، وK8 0.800. K8 شدته 1، فلا يمنع الإطلاق، ويكفيه فرز أولي تراجع البشرية عينة منه. العتبات: K3 وK4 لا فشل؛ K1 وK2 وK7 97%؛ K5 وK6 90%؛ K8 يُتابع.</p></aside>
+</section>
+
+<section class="slide" id="evalset-product" data-lo="LO3" data-n="25" data-session="3">
+  <div class="kicker">مجموعة التقييم</div>
+  <h2>المجموعة منتج له إصدارات ومالك وسجل</h2>
+  <div class="cols cols-3">
+    <div class="card c-teal"><h4>إصدار</h4><p class="small mb0">v1.0 ثم v1.1: كل نتيجة تُذكر مع إصدار المجموعة الذي قيست عليه.</p></div>
+    <div class="card c-cyan"><h4>سجل تغييرات</h4><p class="small mb0">ما تغيّر ولماذا، ومن اقترح ومن اعتمد، والفجوات المعروفة.</p></div>
+    <div class="card c-purple"><h4>مالك</h4><p class="small mb0">يعتمد الإصدار من لا يعدّل التعليمات.</p></div>
+  </div>
+  <div class="callout warn mt"><b>أين يقع الخطأ:</b> نتيجتان على مجموعتين مختلفتين تُقارنان كأنهما على مجموعة واحدة.</div>
+  <aside class="notes"><p>إن أُضيفت أمثلة صعبة إلى المجموعة فقد تنخفض النتيجة دون أن يسوء المساعد. لذلك يُكتب الإصدار بجانب كل رقم في التقرير والمذكرة.</p></aside>
+</section>
+
+<section class="slide" id="leakage" data-lo="LO3" data-n="26" data-session="3">
+  <div class="kicker">التسرب</div>
+  <h2>مثال في التعليمات يقيس ما حفظه المساعد، لا قدرته</h2>
+  <div class="chat">
+    <div class="msg user"><span class="who">مثال في تعليمات مساعد العروض</span>«اكتب عرضًا لباقة رمضان للأعضاء الجدد.» ومعه النص المطلوب.</div>
+    <div class="msg ai bad"><span class="who">المثال نفسه في مجموعة التقييم</span>ينجح المساعد فيه دائمًا: النص أمامه في تعليماته.</div>
+  </div>
+  <ul class="bullets mt">
+    <li>يُحذف كل مثال نصه من أمثلة التعليمات</li>
+    <li>والقريب جدًا منه يُراجع: كلمة زائدة لا تجعله مثالًا جديدًا</li>
+  </ul>
+  <aside class="notes"><p>التسرب يرفع النتيجة دون أن يتحسن شيء. مصدر آخر له: أمثلة المصحح النموذجي إن أُخذت من المجموعة. القاعدة في الحالة تحذف المطابق تمامًا، والإضافي في المختبر يسأل عن القريب.</p></aside>
+</section>
+
+<section class="slide" id="duplicates-coverage" data-lo="LO3" data-n="27" data-session="3">
+  <div class="kicker">التكرار والتغطية</div>
+  <h2>المكرر يضاعف وزن مثال، والتغطية تقول ما لا تقيسه المجموعة</h2>
+  <div class="flow">
+    <div class="step c-teal"><b>1 · احذف المتسرب</b>المطابق لأمثلة التعليمات</div>
+    <div class="arrow">←</div><div class="step c-cyan"><b>2 · احذف المكرر</b>وأبقِ النسخة الأولى</div>
+    <div class="arrow">←</div><div class="step c-coral"><b>3 · عدّ التغطية</b>لكل نمط ولغة وفئة</div>
+  </div>
+  <div class="callout tip mt"><b>مثال موازٍ:</b> مجموعة مساعد العروض، 90 مرشحًا: 6 متسربة و9 مكررة، فيبقى 75.</div>
+  <aside class="notes"><p>الترتيب مهم: لو حذفت المكرر أولًا لبقيت نسخة من مثال متسرب. التغطية جدول بسيط: كم مثالًا لكل نمط، ولكل لغة، وللأعضاء الجدد، ومقارنة كل رقم بالحد. ما لا يفي يُكتب فجوة معروفة، ولا يُخفى. الأرقام من <code>labs/_tools/parallel_examples.mjs</code>.</p></aside>
+</section>
+
+<section class="slide" id="refresh-production" data-lo="LO3" data-n="28" data-session="3">
+  <div class="kicker">التحديث من التشغيل</div>
+  <h2>كل نمط جديد في الآثار يدخل الإصدار التالي</h2>
+  <ul class="bullets">
+    <li>الآثار بعد الإطلاق تُقرأ كما قرأناها أمس، بعينة دورية</li>
+    <li>نمط لم يكن في المجموعة: أمثلة له في الإصدار التالي، بعدد أدنى</li>
+    <li>المجموعة التي لا تتغير تقيس مساعد الأمس</li>
+  </ul>
+  <div class="callout note mt"><b>من الإطار الوطني لإدارة مخاطر الذكاء الاصطناعي:</b> مرحلة المتابعة والمراجعة تقوم على المراقبة المستمرة للأداء والمخاطر في سياق الاستخدام الفعلي.</div>
+  <aside class="notes"><p>العينة التي وسمناها أمس (P001 إلى P100) هي الأقدم. ما بعدها قد يحوي ما لم نره. هذا سؤال 3 في المختبر 1.3 عائدًا. في الإطار الوطني لإدارة مخاطر الذكاء الاصطناعي، مرحلة المتابعة والمراجعة تشمل رصد مؤشرات الانحراف والتدهور، ومنها ارتفاع معدلات الأخطاء أو الشكاوى. نعود إليه في مواصفات المراقبة في اليوم الثالث. المصدر: سدايا، الإطار الوطني لإدارة مخاطر الذكاء الاصطناعي، النص العربي، مرحلة المتابعة والمراجعة.</p></aside>
+</section>
+
+<section class="slide" id="repeated-trials" data-lo="LO3" data-n="29" data-session="3">
+  <div class="kicker">ثلاث محاولات لكل مثال</div>
+  <h2>المعيار الخطير يُحكم عليه في كل المحاولات</h2>
+  <div class="cols cols-2">
+    <div class="card c-teal"><h4>شدة 3 و2</h4><p class="small mb0">نسبة النجاح على كل الردود: 120 × 3.</p></div>
+    <div class="card c-coral"><h4>شدة 4</h4><p class="small mb0">مثال فشل في محاولة واحدة من ثلاث يكفي ليمنع الإطلاق.</p></div>
+  </div>
+  <div class="callout tip mt"><b>كما في اليوم الأول:</b> النجاح في محاولة واحدة قدرة، والنجاح في كل المحاولات اعتمادية.</div>
+  <aside class="notes"><p>اربط بمختبر 1.1: المهام التي نجحت في المحاولات الخمس كانت 11 من 20. في مجموعة التقييم نطبق الفكرة نفسها على المعايير الأشد.</p></aside>
+</section>
+
+<section class="slide" id="check-evalset" data-lo="LO3" data-n="30" data-session="3">
+  <div class="kicker">نقطة تحقق</div>
+  <h2>ماذا يكتب سجل التغييرات هنا؟</h2>
+  <div class="quiz" data-type="single" data-lo="LO3" data-id="check-evalset-q1">
+    <p class="lead">بعد تنظيف مجموعة مساعد العروض بقي 75 مثالًا، والقواعد تطلب 10 أمثلة لنمط «خصم منتهٍ»، والموجود 7. موعد التقييم غدًا. ما الصحيح؟</p>
+    <div class="opts">
+      <div class="opt" data-why="يغيّر ما تقيسه المجموعة دون سجل: ثلاث نسخ تضاعف وزن مثال" data-k="أ">يكرر ثلاثة أمثلة من النمط حتى يبلغ العدد 10</div>
+      <div class="opt" data-ok data-k="ب">يصدر v1.0 ويكتب النقص فجوة معروفة، ويضيف الأمثلة في v1.1</div>
+      <div class="opt" data-why="يخفي حدًا يعرفه الفريق، فيُقرأ رقم النمط كأنه مقيس كما ينبغي" data-k="ج">يصدر v1.0 دون ذكر النقص، فالمجموعة كبيرة بما يكفي</div>
+      <div class="opt" data-why="يعيد ثلاثة أمثلة سبق حذفها لأنها في تعليمات المساعد: تسرب" data-k="د">يعيد إلى المجموعة ثلاثة أمثلة من النمط حُذفت للتسرب من التعليمات</div>
+    </div>
+    <div class="callout tip why"><b>لماذا.</b> سجل التغييرات يكتب ما تعرفه عن حدود المجموعة. الفجوة المكتوبة تُقرأ مع النتيجة، والإصدار التالي يسدها.</div>
+  </div>
+  <aside class="notes"><p>الإجابة: ب. اسأل: من يعتمد v1.1؟ من لا يعدّل التعليمات.</p></aside>
+</section>
+
+<section class="slide lab top" id="lab-2-3" data-auto="lab" data-lab="2.3" data-label="المختبر 2.3" data-n="31" data-session="3">
+  <div class="cols cols-2 mid"><div><div class="lab-tag">المختبر 2.3 · 35 دقيقة</div><h2>مجموعة التقييم v1.0</h2><p class="lead small">تنظّف 146 مثالًا مرشحًا من التسرب والتكرار حتى يبقى 120، وتتحقق من التغطية بالقواعد، وتكتب سجل تغييرات الإصدار <span class="ltr" dir="ltr">v1.0</span> بفجوته المعروفة، وتخطط للإصدار التالي من آثار التشغيل</p><a class="nb" href="../labs/D2_3_evalset_v1.html">D2_3_evalset_v1.html</a></div><ul class="checklist"><li>احذف كل مرشح نصه من أمثلة التعليمات <span class="min">6 د</span></li><li>احذف المكرر، وأبقِ النسخة الأولى <span class="min">6 د</span></li><li>ابنِ جدول التغطية وقارنه بالقواعد <span class="min">8 د</span></li><li>اكتب سجل التغييرات للإصدار <span class="ltr" dir="ltr">v1.0</span> مع الفجوة المعروفة <span class="min">8 د</span></li><li>خطط للإصدار <span class="ltr" dir="ltr">v1.1</span> من آثار التشغيل <span class="min">7 د</span></li><li class="stretch">✱ إضافي: جد المرشحين الباقين الذين لا يختلفون عن مثال من التعليمات إلا بكلمة الشكر في آخره، واكتب هل تحذفهم وما أثر ذلك في التغطية</li></ul></div>
+  <aside class="notes"><p>35 دقيقة. المرشحون رسائل أعضاء، «مقيد»: لا تدخل أي أداة ذكاء اصطناعي. الخطأ المعتاد: COUNTIF يعامل علامة الاستفهام الإنجليزية رمزًا عامًا، لذلك المعادلات في الصفحة بـSUMPRODUCT. من لم يصل إلى 120، فليراجع ترتيب الحذف.</p></aside>
+</section>
+
+<!-- الجلسة 4 -->
+
+<section class="slide section" id="s4" data-auto="section" data-session="4" data-n="32">
+  <div class="kicker">الجلسة 4</div>
+  <h1>تخطيط تجربة مباشرة</h1>
+  <ul class="bullets outcomes"><li>يميّز تجربة A/B من التشغيل الظلي وما يقيسه كل منهما</li><li>يحسب حجم العينة من خط الأساس وأقل أثر يهم</li><li>يكتب قواعد القرار ومتى يُنظر في النتائج قبل بدء التجربة</li></ul>
+  <div class="sess-no">04</div>
+  <aside class="notes"><p>نحو 35 دقيقة قبل المختبر: مراجعة المختبر 2.3 (6)، ومن التقييم إلى التجربة، والمقاييس، وأقل أثر وحجم العينة، والنظر المبكر، والخطة المسبقة (24)، ونقطة التحقق (5)؛ ثم المختبر 2.4، والمساعد المرشد مسموح.</p></aside>
+</section>
+
+<section class="slide" id="debrief-2-3" data-lo="LO3" data-n="33" data-session="4">
+  <div class="kicker">ما أظهره المختبر 2.3</div>
+  <h2>120 مثالًا، وفجوة معروفة، ونمط جديد ينتظر v1.1</h2>
+  <div class="cols cols-3">
+    <div class="stat center"><div class="big">26</div><div class="lbl">حُذفت: 12 تسربًا و14 مكررًا من 146</div></div>
+    <div class="stat center"><div class="big">2</div><div class="lbl">مثالان إنجليزيان للتصعيد الإلزامي، والحد 3</div></div>
+    <div class="stat center"><div class="big">7</div><div class="lbl">مرات ظهر F8 في P101 إلى P300، ولا مرة في المئة الأولى</div></div>
+  </div>
+  <div class="callout tip mt small"><b>السجل:</b> v1.0 تعتمده نوف البيشي، والفجوة مكتوبة. v1.1: ثمانية أمثلة لـF8 على الأقل، ومثال إنجليزي ثالث للتصعيد.</div>
+  <aside class="notes"><p>ست دقائق. باقي التغطية يفي: كل نمط 8 فأكثر، والإنجليزية والخليجية 27.5% لكل منهما، والأعضاء الجدد 32.5%. اسأل من حل الإضافي: كم مرشحًا يختلف عن مثال في التعليمات بكلمة الشكر وحدها؟ ثمانية. القاعدة تبقيهم في v1.0، ويستحقون الاستبدال في v1.1.</p></aside>
+</section>
+
+<section class="slide" id="offline-online" data-lo="LO4" data-n="34" data-session="4">
+  <div class="kicker">من التقييم إلى التجربة</div>
+  <h2>مجموعة التقييم تقول: هل يمكن. التجربة تقول: هل حدث</h2>
+  <table class="t small">
+    <tr><th></th><th>مجموعة التقييم</th><th>التشغيل الظلي</th><th>تجربة بذراعين</th></tr>
+    <tr><td>على من</td><td>120 مثالًا ثابتًا</td><td>طلبات حقيقية، ولا يرى العضو الرد</td><td>أعضاء حقيقيون، نصفهم لكل ذراع</td></tr>
+    <tr><td>ما يقيسه</td><td>المعايير</td><td>الفرق في الردود والتكلفة والزمن</td><td>ما يحدث للأعضاء: الحل والتصعيد والشكاوى</td></tr>
+  </table>
+  <aside class="notes"><p>التشغيل الظلي: الإصدار الجديد يرد على الطلبات نفسها في الخلفية، ولا يصل رده إلى العضو؛ آمن، لكنه لا يقيس سلوك العضو. التجربة بذراعين تقيسه، ولذلك تحتاج خطة ومقاييس حماية قبل أن تبدأ.</p></aside>
+</section>
+
+<section class="slide" id="metrics-three" data-lo="LO4" data-n="35" data-session="4">
+  <div class="kicker">ثلاثة أنواع من المقاييس</div>
+  <h2>مقياس أساسي واحد، ومقاييس حماية، ومقياس تكلفة</h2>
+  <div class="cols cols-3">
+    <div class="card c-teal"><h4>أساسي</h4><p class="small mb0">ما يُتخذ به القرار. واحد، ويُكتب قبل البيانات.</p></div>
+    <div class="card c-coral"><h4>حماية</h4><p class="small mb0">ما يجب ألا يسوء، ويُقرأ في كل شريحة.</p></div>
+    <div class="card c-purple"><h4>تكلفة</h4><p class="small mb0">ما يدفعه الفريق لكل وحدة، والزمن.</p></div>
+  </div>
+  <div class="callout warn mt"><b>انتبه للمقام:</b> مقياس عن التصعيد يُحسب من الطلبات التي تحتاج تصعيدًا، لا من كل الطلبات.</div>
+  <aside class="notes"><p>مثال موازٍ من التسويق، اختبار رسالتي تذكير بالحصص: الأساسي الحضور، والحماية إلغاء الاشتراك في الرسائل، والتكلفة تكلفة الرسالة. بطاقة المقرر تطلب في كل تقرير نتائج مقياس حماية وشريحة لفئة فرعية.</p></aside>
+</section>
+
+<section class="slide" id="mde-sample" data-lo="LO4" data-n="36" data-session="4">
+  <div class="kicker">مثال موازٍ: رسالة التذكير</div>
+  <h2>أصغر أثر يهمك يحدد عدد من تحتاجهم</h2>
+  <div class="cols cols-2">
+    <div class="stat center"><div class="big">4,231</div><div class="lbl">لكل ذراع لرؤية 3 نقاط فوق حضور 40%</div></div>
+    <div class="stat center"><div class="big">9,490</div><div class="lbl">لكل ذراع لرؤية نقطتين</div></div>
+  </div>
+  <div class="callout tip mt"><b>الأثر الأصغر يحتاج عينة أكبر بكثير:</b> ثلثا الأثر، وأكثر من ضعفي العدد. مستوى دلالة 5% وقوة 80%.</div>
+  <div class="caption">محسوبة في <code>labs/_tools/parallel_examples.mjs</code> بمعادلة الفرق بين نسبتين.</div>
+  <aside class="notes"><p>أقل أثر يهم قرار تجاري: ما الفرق الذي يغيّر الاستثمار؟ لا يُختار ليناسب العدد المتاح. المعادلة في صفحة المختبر بالثابتين 1.96 و0.8416. المصدر: Evan Miller، How Not To Run an A/B Test، وفيه أن حجم العينة يُحدد قبل التجربة ولا يُنظر في الدلالة قبل بلوغه.</p></aside>
+</section>
+
+<section class="slide" id="peeking" data-lo="LO4" data-n="37" data-session="4">
+  <div class="kicker">النظر المبكر</div>
+  <h2>من ينظر كل يوم يعلن أثرًا غير موجود بأكثر من أربعة أضعاف</h2>
+  <div class="bars">
+    <div class="row"><span>نظرة واحدة في اليوم 14</span><div class="bar c-teal" style="--w:5%"></div><span class="val">4.8%</span></div>
+    <div class="row"><span>نظرة كل يوم</span><div class="bar c-coral" style="--w:22%"></div><span class="val">21.8%</span></div>
+  </div>
+  <div class="callout warn mt small"><b>محاكاة:</b> 2,000 تجربة لا فرق فيها بين الذراعين، 700 عضو لكل ذراع يوميًا. النسبة: تجارب أُعلن فيها فرق «دال».</div>
+  <aside class="notes"><p>الأرقام محاكاة في <code>labs/_tools/parallel_examples.mjs</code>. القاعدة: يُنظر في المقياس الأساسي مرة في الموعد المكتوب. المراجعة اليومية للسلامة مشروعة، والإيقاف للضرر وحده. الاختبار المتسلسل يسمح بالنظر المتكرر، وهو في SPC-EXP-301. المصدر: Evan Miller، How Not To Run an A/B Test.</p></aside>
+</section>
+
+<section class="slide" id="pre-registration" data-lo="LO4" data-n="38" data-session="4">
+  <div class="kicker">الخطة المسبقة</div>
+  <h2>تُكتب الخطة وتُعتمد قبل أول جلسة</h2>
+  <table class="t small">
+    <tr><th>البند</th><th>السؤال</th></tr>
+    <tr><td>الفرضية</td><td>ما الذي يتغير، وبكم، وما الذي يبقى؟</td></tr>
+    <tr><td>المقاييس</td><td>الأساسي، والحماية بمقامها، والتكلفة</td></tr>
+    <tr><td>العدد والمدة</td><td>من أقل أثر يهم، وأسابيع كاملة</td></tr>
+    <tr><td>قاعدة القرار</td><td>بفترة الثقة، وفي كل شريحة</td></tr>
+    <tr><td>الأدوار</td><td>من يعدّ التقرير، ومن يعتمد الخطة</td></tr>
+  </table>
+  <aside class="notes"><p>الخطة المكتوبة تمنع اختيار المقياس بعد رؤية النتائج. الأسابيع الكاملة لأن طلبات النادي تختلف بين أيام الأسبوع. ومن بنى الإصدار الجديد لا يعدّ تقريره.</p></aside>
+</section>
+
+<section class="slide" id="check-experiment" data-lo="LO4" data-n="39" data-session="4">
+  <div class="kicker">نقطة تحقق</div>
+  <h2>ماذا تقول لقسم التسويق؟</h2>
+  <div class="quiz" data-type="single" data-lo="LO4" data-id="check-experiment-q1">
+    <p class="lead">خطة اختبار رسالة التذكير تقول: 14 يومًا، ونظرة واحدة في نهايتها. في اليوم الثالث تُظهر اللوحة أن الرسالة الجديدة ترفع الحضور 5 نقاط بفرق «دال». يطلب التسويق إيقاف الاختبار واعتماد الرسالة. ما الرد الذي تدعمه الخطة؟</p>
+    <div class="opts">
+      <div class="opt" data-why="النظر اليومي يرفع احتمال إعلان أثر غير موجود، والفرق الكبير في الأيام الأولى كثيرًا ما يصغر" data-k="أ">نوقف الآن: الفرق أكبر من أقل أثر يهم</div>
+      <div class="opt" data-why="يغيّر المقياس بعد رؤية البيانات، وهذا ما تمنعه الخطة المسبقة" data-k="ب">نكمل، ونجعل الإلغاء المقياس الأساسي</div>
+      <div class="opt" data-ok data-k="ج">نكمل إلى اليوم 14، ونوقف قبله لضرر فقط</div>
+      <div class="opt" data-why="يقصّر التجربة إلى أسبوع لا يغطي العدد المحسوب، فتضعف قدرتها على رؤية الأثر" data-k="د">نكمل إلى نهاية الأسبوع الأول، ثم نقرر</div>
+    </div>
+    <div class="callout tip why"><b>لماذا.</b> الخطة حددت موعد النظر وحجم العينة قبل البيانات. فرق اليوم الثالث نظرة مبكرة، والإيقاف المبكر مكتوب للضرر وحده.</div>
+  </div>
+  <aside class="notes"><p>الإجابة: ج. اسأل: ما الضرر الذي يبرر الإيقاف المبكر في اختبار رسالة تذكير؟ قفزة في إلغاء الاشتراك تؤكدها المراجعة اليومية، مثلًا.</p></aside>
+</section>
+
+<section class="slide lab top" id="lab-2-4" data-auto="lab" data-lab="2.4" data-label="المختبر 2.4" data-n="40" data-session="4">
+  <div class="cols cols-2 mid"><div><div class="lab-tag">المختبر 2.4 · 35 دقيقة</div><h2>خطة مسجلة مسبقًا</h2><p class="lead small">تكتب خطة تجربة مضمار قبل البيانات: الفرضية والمقياس الأساسي وأقل أثر يهم وحجم العينة والمدة ومقياسي الحماية ومقياس التكلفة والشرائح وقاعدة القرار ومتى يُنظر في النتائج ومن يعتمد الخطة</p><a class="nb" href="../labs/D2_4_experiment_plan.html">D2_4_experiment_plan.html</a></div><ul class="checklist"><li>اقرأ موجز التجربة <span class="min">4 د</span></li><li>اكتب الفرضية والمقياس الأساسي وأقل أثر يهم <span class="min">6 د</span></li><li>احسب حجم العينة لكل ذراع والمدة <span class="min">8 د</span></li><li>اختر مقياسي الحماية ومقياس التكلفة والشرائح <span class="min">8 د</span></li><li>اكتب قاعدة القرار ومتى يُنظر في النتائج <span class="min">6 د</span></li><li>سمِّ من يعدّ التقرير ومن يعتمد الخطة <span class="min">3 د</span></li><li class="stretch">✱ إضافي: لو لم تتسع المدة إلا لسبعة أيام، فما أقل أثر تستطيع التجربة أن تراه؟ جرّب قيمًا لـ<span class="ltr" dir="ltr">d</span> حتى يتسع العدد</li></ul></div>
+  <aside class="notes"><p>35 دقيقة، والمساعد المرشد مسموح للطريقة. مر على الطاولات في الخطوة 3: من وضع d = 2 بدل 0.02، أو نسي أن العدد لكل ذراع. في الخطوة 5 اسأل: ما ردك على طلب المبيعات قرارًا مبكرًا؟ الخطة المرجعية تبدأ بها المختبر 3.1 غدًا.</p></aside>
+</section>
+
+<section class="slide" id="wrap-up" data-n="41" data-session="4">
+  <div class="kicker">خلاصة اليوم 2</div>
+  <h2>ثلاثة أمور تبقى معك</h2>
+  <div class="cols cols-3">
+    <div class="card c-teal"><h4>المصحح يُقاس</h4><p class="small mb0">التقاط الفشل وقبول النجاح في كل لغة، لا الاتفاق وحده.</p></div>
+    <div class="card c-coral"><h4>المجموعة منتج</h4><p class="small mb0">إصدار وسجل وفجوات مكتوبة، ومالك لا يعدّل التعليمات.</p></div>
+    <div class="card c-purple"><h4>الخطة قبل البيانات</h4><p class="small mb0">أقل أثر يهم يحدد العدد، ويُنظر في الموعد.</p></div>
+  </div>
+  <aside class="notes"><p>اسأل كل طاولة: أي رقم من اليوم كنتم ستصدقونه لو لم تفصّلوه؟ غالبًا اتفاق مصحح K4.</p></aside>
+</section>
+
+<section class="slide dark" id="next" data-label="التالي" data-n="42" data-session="4">
+  <div class="kicker">مهمة المساء · 60 دقيقة</div>
+  <h2>أكمل سجل التغييرات v1.0 وخطة التجربة</h2>
+  <p class="lead">اليوم 3: نقرأ نتائج التجربة على 20,000 جلسة، ونحسب التكلفة لكل مهمة ناجحة، ونكتب معايير الإطلاق.</p>
+  <aside class="notes"><p>مهمة المساء 60 دقيقة: سجل التغييرات بالفجوة المعروفة وخطة v1.1، وخطة التجربة كاملة ببنودها الستة عشر. يدخلان ملف الأدلة في المشروع الختامي. صباح الغد مراجعة اليوم الثاني، ثم نقارن الخطط بالخطة المرجعية.</p></aside>
+</section>
+</div>
+<script type="application/json" id="academy-data">{"v":1,"engine":"1.0.0","build":{"at":"2026-11-18T06:07:40Z","version":"2027.1.0","commit":"5b3a497"},"course":{"id":"lds-prd-202","code":"LDS-PRD-202","title":"تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها","track":"executives","lang":"ar","dir":"rtl","url":"https://sdaiaacademy.github.io/lds-prd-202/","repo":"SDAIAAcademy/lds-prd-202","home":"../index.html"},"deck":{"id":"day2","kind":"day","day":2,"label":"اليوم 2","title":"مجموعة التقييم وخطة التجربة","prev":"day1.html","next":"day3.html","md":"day2.md","alt":{}},"sessions":[{"n":1,"label":"الجلسة 1","title":"الفحص البرمجي والمصحح النموذجي والمراجعة البشرية","slide":"s1","outcomes":["يميّز المعيار الذي تصححه قاعدة برمجية من الذي يحتاج حكمًا","يقدّر تكلفة جولة تقييم كاملة بكل نوع من المصححات","يفصل بين من يكتب التعليمات ومن يصحح نتائجها"],"minutes":70,"lab":{"id":"2.1","title":"مصحح لكل معيار","minutes":35,"href":"../labs/D2_1_grader_choice.html"}},{"n":2,"label":"الجلسة 2","title":"اتفاق المصحح مع الحكم البشري","slide":"s2","outcomes":["يحسب نسبة التقاط الفشل ونسبة قبول النجاح، لا الاتفاق وحده","يكشف المصحح الذي يبدو جيدًا في المتوسط ويخفق في لغة","يضع عتبة إطلاق لكل معيار بحسب شدة فشله"],"minutes":70,"lab":{"id":"2.2","title":"تقرير المعايرة والعتبات","minutes":35,"href":"../labs/D2_2_grader_calibration.html"}},{"n":3,"label":"الجلسة 3","title":"الإصدارات والتسرب والتحديث من التشغيل","slide":"s3","outcomes":["يكشف التسرب: أمثلة التقييم التي رآها المساعد في تعليماته","يتحقق من تغطية الأنماط واللغات والفئات بقواعد مكتوبة","يكتب سجل تغييرات وخطة تحديث من آثار التشغيل"],"minutes":70,"lab":{"id":"2.3","title":"مجموعة التقييم v1.0","minutes":35,"href":"../labs/D2_3_evalset_v1.html"}},{"n":4,"label":"الجلسة 4","title":"تخطيط تجربة مباشرة","slide":"s4","outcomes":["يميّز تجربة A/B من التشغيل الظلي وما يقيسه كل منهما","يحسب حجم العينة من خط الأساس وأقل أثر يهم","يكتب قواعد القرار ومتى يُنظر في النتائج قبل بدء التجربة"],"minutes":70,"lab":{"id":"2.4","title":"خطة مسجلة مسبقًا","minutes":35,"href":"../labs/D2_4_experiment_plan.html"}}],"slides":[{"id":"title","n":1,"title":"مجموعة التقييم وخطة التجربة","kind":"title","session":0,"hash":"738f8d5a","md":"#### [day2#title] مجموعة التقييم وخطة التجربة\n\n*أكاديمية سدايا · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها*\n\nاليوم 2: مصحح لكل معيار بعد معايرته، ومجموعة تقييم من 120 مثالًا بإصدار وسجل تغييرات، ثم خطة تجربة تُكتب قبل البيانات\n\nمسار التنفيذيين والقادة · 3 أيام تدريبية + يوم للمشروع الختامي · 4 جلسات · 4 مختبرات · LDS-PRD-202","notes":"رحّب بالقاعة واسأل: من رأى رقم جودة لمساعد ذكي ولم يعرف من صححه؟ اليوم نبني المسطرة نفسها: من يصحح كل معيار، وهل قيس، وما الأمثلة، ثم نكتب خطة التجربة قبل أن نرى بياناتها. إيقاع اليوم كالأمس: أربع جلسات، في كل منها نحو 35 دقيقة شرح ونقطة تحقق، ثم مختبر 35 دقيقة.","minutes":null,"lo":[]},{"id":"agenda","n":2,"title":"مجموعة التقييم وخطة التجربة","kind":"content","session":0,"hash":"d3455519","md":"#### [day2#agenda] مجموعة التقييم وخطة التجربة\n\n*اليوم*\n\n- **الجلسة 1 · الفحص البرمجي والمصحح النموذجي والمراجعة البشرية**: يسند إلى كل معيار أرخص مصحح يصح له، ويفصل بين من يصحح ومن يعدّل\n- **الجلسة 2 · اتفاق المصحح مع الحكم البشري**: يقرأ اتفاق المصحح مع الحكم البشري بحسب اللغة، ويضع عتبة لكل معيار\n- **الجلسة 3 · الإصدارات والتسرب والتحديث من التشغيل**: يحذف التسرب والتكرار، ويتحقق من التغطية، ويصدر v1.0 بسجل تغييرات وخطة تحديث\n- **الجلسة 4 · تخطيط تجربة مباشرة**: يكتب خطة تجربة بذراعين قبل البيانات: المقاييس وأقل أثر يهم وحجم العينة ومتى يُنظر","notes":"الجلسات الثلاث الأولى تبني مجموعة التقييم: المصححات، ثم معايرتها، ثم الأمثلة وإصدارها. الرابعة تنتقل من التقييم قبل الإطلاق إلى التجربة مع الأعضاء. المساعد المرشد مسموح اليوم للطريقة والمعادلات، ولا يدخله أي سطر من رسائل الأعضاء.","minutes":null,"lo":[]},{"id":"review-day1","n":3,"title":"أي اسم نمط يتبع قاعدة التسمية؟","kind":"quiz","session":0,"hash":"786c43a5","md":"#### [day2#review-day1] أي اسم نمط يتبع قاعدة التسمية؟\n\n*مراجعة اليوم 1*\n\n**سؤال:** فريق التسويق يصنّف آثار مساعد نصوص العروض. اقترح أعضاء الفريق أربعة أسماء لنمط واحد. أيها يتبع قاعدة المقرر في التسمية؟\n\n- أ. مشكلة في فهرس العروض القديمة\n- ب. النموذج الصغير لا يفهم التواريخ\n- ج. النص يذكر خصمًا انتهى موعده\n- د. أخطاء متنوعة في العرض","notes":"الإجابة: ج. ثلاث دقائق. من اختار أ اسأله: لو أصلح المهندسون الفهرس وبقي الخصم المنتهي يظهر، فكيف يعدّه فريقك؟ الاسم بما يراه العميل يبقى صالحًا مهما تغيّر السبب.","minutes":null,"lo":["LO2"]},{"id":"debrief-1-4","n":4,"title":"الأكثر تكرارًا F5 جاء رابعًا، وF4 وF3 أولًا","kind":"content","session":0,"hash":"e6754766","md":"#### [day2#debrief-1-4] الأكثر تكرارًا F5 جاء رابعًا، وF4 وF3 أولًا\n\n*ما أظهره المختبر 1.4*\n\n| النمط بالترتيب | العدد | الشدة | النسبة × الشدة |\n| --- | --- | --- | --- |\n| 1 · F4 | 17 | 4 | أولًا |\n| 2 · F3 | 14 | 4 | أولًا |\n| 3 · F1 | 34 | 3 | 0.340 |\n| 4 · F5 | 41 | 2 | 0.273 |\n\n> **والتفصيل:** F5 لا يقع في الفصحى (0 من 91)، ويقع في 22 من 111 أثرًا بالخليجية و12 من 39 مختلطًا. وF1 في الخليجية 14% وفي الفصحى 9%.","notes":"ست دقائق. الأنماط: F4 تصعيد فائت، F3 فشل أداة أُخفي، F1 سياسة قديمة، F5 لغة لا تطابق؛ والعدد من 300 أثر. اسأل: لماذا لا يقع F5 في الفصحى؟ F5 في الحالة رد بالإنجليزية على رسالة عربية، أو بالعربية على رسالة إنجليزية، ويقع في رسائل اللهجة الخليجية والمختلطة؛ ويزن قال أمس إن التعليمات الإصدار 3 كتبت بالإنجليزية. لذلك يكفيه فحص برمجي للغة الرد. نمط يتركز في لغة يدل على سبب واحد وإصلاح واحد. الباقي: F2 0.250، F6 0.180، F7 0.130، F8 0.070. كل نمط في هذا الجدول صار معيارًا في `acceptance_criteria.csv`.","minutes":null,"lo":["LO2"]},{"id":"s1","n":5,"title":"الفحص البرمجي والمصحح النموذجي والمراجعة البشرية","kind":"section","session":1,"hash":"4f972615","md":"#### [day2#s1] الفحص البرمجي والمصحح النموذجي والمراجعة البشرية\n\n*الجلسة 1*\n\n- يميّز المعيار الذي تصححه قاعدة برمجية من الذي يحتاج حكمًا\n- يقدّر تكلفة جولة تقييم كاملة بكل نوع من المصححات\n- يفصل بين من يكتب التعليمات ومن يصحح نتائجها","notes":"نحو 35 دقيقة قبل المختبر: مراجعة اليوم الأول ونتائج 1.4 (9)، وأنواع المصححات وكيف يُختار كل منها (21)، ونقطة التحقق (5)؛ ثم المختبر 2.1.","minutes":null,"lo":["LO3"]},{"id":"taxonomy-to-criteria","n":6,"title":"كل نمط فشل يصبح معيارًا ثنائيًا يُصحَّح","kind":"content","session":1,"hash":"5ae528c2","md":"#### [day2#taxonomy-to-criteria] كل نمط فشل يصبح معيارًا ثنائيًا يُصحَّح\n\n*من التصنيف إلى المعايير*\n\n1. **1 · النمط** «الرد يذكر رسومًا قديمة»\n2. **2 · المعيار** «كل رقم في الرد يطابق السياسة السارية»\n3. **3 · المصحح** من يحكم: نجح أو فشل\n\n> **المعيار يقول ما يجب أن يكون؛** النمط يقول ما وقع. ثمانية معايير في الحالة، K1 إلى K8.","notes":"المعيار K8 (الخطوة التالية واضحة) لا يقابله نمط في التصنيف، وشدته 1: ليس كل معيار يمنع الإطلاق. اطلب من القاعة أن تحوّل F6 (رفض طلب ضمن النطاق) إلى معيار بصيغة «لا يرفض الرد...».","minutes":null,"lo":["LO3"]},{"id":"grader-types","n":7,"title":"أرخص مصحح يصح للمعيار، بهذا الترتيب","kind":"content","session":1,"hash":"16ce83b4","md":"#### [day2#grader-types] أرخص مصحح يصح للمعيار، بهذا الترتيب\n\n*ثلاثة مصححات*\n\n| المصحح | يصلح لـ | التكلفة للرد |\n| --- | --- | --- |\n| فحص برمجي | ما تصفه قاعدة: رقم مقابل جدول، حالة أداة مقابل نص | قرابة الصفر |\n| مصحح نموذجي | ما يحتاج قراءة المعنى، بعد أن يُعاير | نحو 0.004 ريال |\n| مراجعة بشرية | الملتبس والخطير، وما لم يعبر فيه المصحح المعايرة | نحو 2.50 ريال |\n\nالتكاليف من ملف الحالة `grader_options.txt`، وهي اصطناعية.","notes":"القاعدة من وضع المقرر، وتتفق مع ما يوصي به Husain وShankar: ابدأ بالفحص البرمجي حيث يمكن، واحتفظ بالمصحح النموذجي لما لا تصفه قاعدة، وقِس اتفاقه مع حكم بشري قبل أن تثق به. الفرق في التكلفة بين المصحح النموذجي والمراجعة البشرية أكثر من ستمئة ضعف. المصادر: Hamel Husain وShreya Shankar، AI Evals FAQ.","minutes":null,"lo":["LO3"]},{"id":"code-first","n":8,"title":"إن وصفته قاعدة، فلا حاجة إلى نموذج يقرأه","kind":"content","session":1,"hash":"c5fc38be","md":"#### [day2#code-first] إن وصفته قاعدة، فلا حاجة إلى نموذج يقرأه\n\n*مثال موازٍ: مساعد جدولة المدربين*\n\n- **قاعدة تكفي.** «يذكر الرد رقم النوبة الموجود في الجدول»: يُستخرج الرقم من الرد ويُقارن بجدول النوبات.\n- **يحتاج قراءة.** «لا يعِد الرد المدرب بشيء لا يملكه النظام»: الوعد يُصاغ بألف طريقة، فيحتاج مصححًا نموذجيًا مُعايرًا.\n\n> **أين يقع الخطأ:** مصحح نموذجي لكل المعايير لأنه «أسهل». هو أغلى، ويخطئ أحيانًا فيما تحكم عليه القاعدة دون خطأ.","notes":"اسأل: أي معيار من المعايير الثمانية في ملفكم يشبه رقم النوبة؟ لا تجب عنهم؛ هذا عمل المختبر. أشر فقط إلى أن القاعدة تحتاج مصدرًا: جدول أرقام، أو قائمة كلمات، أو حالة الأداة في الأثر.","minutes":null,"lo":["LO3"]},{"id":"model-grader","n":9,"title":"يقرأ معيارًا واحدًا ويجيب: نجح أو فشل","kind":"content","session":1,"hash":"25e26219","md":"#### [day2#model-grader] يقرأ معيارًا واحدًا ويجيب: نجح أو فشل\n\n*المصحح النموذجي*\n\n**ما يصل إلى المصحح:** المعيار، ورسالة المستخدم، والمصادر المسترجعة، والرد. وأمثلة قليلة على نجح وفشل كتبها مراجعون.\n\n**ما يعيده (مثال جيد):** «فشل»، وسطر يسمّي الجزء الذي حكم به.\n\n- معيار واحد لكل مصحح، لا «قيّم الجودة»\n- الأمثلة فيه ليست من مجموعة التقييم","notes":"ثلاث دقائق. مصحح لكل معيار يجعل فشله مفهومًا ومعايرته ممكنة. مصحح واحد لكل شيء يعطي رقمًا لا يُعرف ما يقيسه. الأمثلة داخل تعليمات المصحح إن جاءت من المجموعة فقد رآها، فيبدو أدق مما هو.","minutes":null,"lo":["LO3"]},{"id":"human-review","n":10,"title":"تُصرف حيث ينطبق المعيار، لا على كل رد","kind":"content","session":1,"hash":"2f0875c6","md":"#### [day2#human-review] تُصرف حيث ينطبق المعيار، لا على كل رد\n\n*المراجعة البشرية*\n\n**360** ردًا في جولة كاملة: 120 مثالًا × 3 محاولات\n\n- **اسأل قبل أن تحسب.** على أي الأمثلة ينطبق المعيار أصلًا؟ معيار عن التحويل إلى موظف لا يُراجع في سؤال عن ساعات العمل.\n\n> **والشدة تحكم:** معيار شدة فشله 4 لا يُترك لمصحح لم يعبر المعايرة.","notes":"دقيقتان. المراجعة البشرية غالية ووقتها طويل، لكنها ليست كلها أو لا شيء. في المختبر ستحسب تكلفة الجولة مرة لكل الردود ومرة لمعيار واحد، والإضافي يطلب قصرها على ما ينطبق عليه المعيار.","minutes":null,"lo":["LO3"]},{"id":"segregation","n":11,"title":"من يعدّل التعليمات لا يسمّي الأمثلة ولا يعتمد النتائج","kind":"content","session":1,"hash":"8c067df5","md":"#### [day2#segregation] من يعدّل التعليمات لا يسمّي الأمثلة ولا يعتمد النتائج\n\n*الفصل بين المهام*\n\n| العمل | من يقوم به في الحالة |\n| --- | --- |\n| يكتب التسميات البشرية ويعتمدها | فريق المراجعة، وتعتمدها قائدته |\n| يعدّل التعليمات ويشغّل التقييم | الفريق الهندسي |\n| يقترح معايير الإطلاق ويقرأ النتائج | مالك المنتج |\n| يعتمد قرار الإطلاق | المالكة التجارية |","notes":"السبب ليس الشك في الأشخاص: من عدّل التعليمات يرى ما يريد أن يراه في الردود، ومن يعتمد عمله يمر عليه خطؤه. الأسماء في `owners.csv`. هذا الفصل يعود في كل مخرج: سجل المجموعة، وتقرير التجربة، ومعايير الإطلاق.","minutes":null,"lo":["LO3"]},{"id":"check-grader","n":12,"title":"أي مصحح لهذا المعيار؟","kind":"quiz","session":1,"hash":"bd74242e","md":"#### [day2#check-grader] أي مصحح لهذا المعيار؟\n\n*نقطة تحقق*\n\n**سؤال:** معيار في مساعد جدولة المدربين: «لا يذكر الرد ناديًا غير المذكور في طلب المدرب». أسماء الأندية الستة ثابتة، وكل طلب فيه اسم نادٍ واحد. ما المصحح الأنسب أولًا؟\n\n- أ. قاعدة تقارن أسماء الأندية في الرد باسم النادي في الطلب\n- ب. مصحح نموذجي يقرأ الطلب والرد كاملين ويحكم على اسم النادي\n- ج. مراجعة بشرية من فريق التدريب لكل الردود\n- د. مصحح نموذجي، ثم مراجعة بشرية لكل ما يرفضه","notes":"الإجابة: أ. إن اختار كثيرون المصحح النموذجي، فاسأل: ما الذي يقرؤه النموذج هنا ولا تقرؤه القاعدة؟ متى يصبح المصحح النموذجي ضروريًا؟ لو كتب المدربون أسماء الأندية بصيغ كثيرة غير ثابتة.","minutes":null,"lo":["LO3"]},{"id":"lab-2-1","n":13,"title":"مصحح لكل معيار","kind":"lab","session":1,"hash":"335e650a","md":"#### [day2#lab-2-1] مصحح لكل معيار\n\nالمختبر 2.1 · 35 دقيقة\n\nتقرأ معايير القبول الثمانية لمضمار وأنواع المصححات وتكاليفها، فتسند إلى كل معيار مصححًا، وتقدّر تكلفة جولة التقييم، وتكتب من يصحح ومن يعدّل\n\n[D2_1_grader_choice.html](https://sdaiaacademy.github.io/lds-prd-202/labs/D2_1_grader_choice.html)\n\n- [ ] اقرأ المعايير الثمانية وأنواع المصححات (5 د)\n- [ ] أسند قاعدة برمجية إلى كل معيار تصفه قاعدة (8 د)\n- [ ] أسند مصححًا نموذجيًا أو مراجعة بشرية إلى الباقي، بسبب كل اختيار (8 د)\n- [ ] قدّر تكلفة جولة كاملة: 120 مثالًا في ثلاث محاولات (7 د)\n- [ ] اكتب من يسمّي الأمثلة ومن يعدّل التعليمات (7 د)\n- [ ] ✱ إضافي: المراجعة البشرية لكل الردود الـ360 غالية. اقترح كيف تقصرها على الأمثلة التي ينطبق عليها المعيار، واحسب التكلفة الجديدة","notes":"35 دقيقة، والمساعد المرشد للطريقة. مر على الطاولات في الخطوة 3: من أسند K4 إلى مصحح نموذجي، اسأله عن البديل إن لم يعبر المعايرة، وعن شدة K4. في الخطوة 5 تأكد أن أحدًا لم يجعل الفريق الهندسي يعتمد نتائج التقييم.","minutes":null,"lo":[]},{"id":"s2","n":14,"title":"اتفاق المصحح مع الحكم البشري","kind":"section","session":2,"hash":"cefbb63b","md":"#### [day2#s2] اتفاق المصحح مع الحكم البشري\n\n*الجلسة 2*\n\n- يحسب نسبة التقاط الفشل ونسبة قبول النجاح، لا الاتفاق وحده\n- يكشف المصحح الذي يبدو جيدًا في المتوسط ويخفق في لغة\n- يضع عتبة إطلاق لكل معيار بحسب شدة فشله","notes":"نحو 35 دقيقة قبل المختبر: مراجعة المختبر 2.1 (6)، والأرقام الثلاثة للمعايرة وتفصيلها والعتبات (24)، ونقطة التحقق (5)؛ ثم المختبر 2.2.","minutes":null,"lo":["LO3"]},{"id":"debrief-2-1","n":15,"title":"أربعة معايير تكفيها قاعدة، وأربعة تنتظر المعايرة","kind":"content","session":2,"hash":"050675d8","md":"#### [day2#debrief-2-1] أربعة معايير تكفيها قاعدة، وأربعة تنتظر المعايرة\n\n*ما أظهره المختبر 2.1*\n\n- **فحص برمجي.** K1 الأرقام مقابل الإصدار 2، وK3 حالة الأداة مقابل الرد، وK5 لغة الرد، وK7 قائمة كلمات.\n- **مصحح نموذجي مرشح.** K2 وK4 وK6 وK8. للجولة: 4 × 360 × 0.004 = 5.76 ريال.\n\n> **وإن حلت المراجعة البشرية محل معيار واحد لكل الردود:** 900 ريال وتسع ساعات. مقصورة على أمثلة التصعيد الإلزامي: نحو 98 ريالًا وساعة.","notes":"ست دقائق. اسأل: من أسند K1 إلى مصحح نموذجي؟ لماذا؟ ثم: من كتب أن يزن الشمراني يعتمد النتائج؟ القاعدة: يعدّل التعليمات ويشغّل التقييم، ولا يعتمد ما أنتجه. حساب الإضافي: 13 مثالًا × 3 محاولات = 39 ردًا × 2.50 = 97.50 ريالًا، و39 × 1.5 دقيقة نحو 59 دقيقة.","minutes":null,"lo":["LO3"]},{"id":"agreement-trap","n":16,"title":"اتفاق 91% يخفي مصححًا يفوته ربع الفشل","kind":"content","session":2,"hash":"9c90e2a9","md":"#### [day2#agreement-trap] اتفاق 91% يخفي مصححًا يفوته ربع الفشل\n\n*مثال موازٍ: مصحح «يذكر الرد نادي المدرب»*\n\n- **0.907** الاتفاق: 49 من 54 حكمًا\n- **0.75** التقاط الفشل: 12 من 16\n- **0.974** قبول النجاح: 37 من 38\n\n> **لماذا يرتفع الاتفاق:** حالات النجاح أكثر من ضعفي حالات الفشل، والمصحح يقبلها كلها تقريبًا.\n\nأرقام اصطناعية من `labs/_tools/parallel_examples.mjs`.","notes":"الاتفاق يخلط نوعين من الخطأ. التقاط الفشل وقبول النجاح يفصلانهما. Husain وShankar يوصيان بقياس النسبتين، لا الاتفاق وحده، لأن حالات الفشل قليلة عادة. اسأل: لو قبل المصحح كل شيء دون قراءة، فكم يكون اتفاقه هنا؟ 38 من 54، أي 70%.","minutes":null,"lo":["LO3"]},{"id":"three-numbers","n":17,"title":"الحكم البشري مرجع، والمصحح يُقاس عليه","kind":"content","session":2,"hash":"45a1a628","md":"#### [day2#three-numbers] الحكم البشري مرجع، والمصحح يُقاس عليه\n\n*ثلاثة أرقام*\n\n|  | البشر: فشل | البشر: نجح |\n| --- | --- | --- |\n| المصحح: فشل | التقطه | رفض ردًا سليمًا |\n| المصحح: نجح | فاته | قبله |\n\n- **التقاط الفشل** = ما التقطه ÷ كل ما حكم البشر بفشله\n- **قبول النجاح** = ما قبله ÷ كل ما حكم البشر بنجاحه","notes":"اقرأ الجدول خانة خانة. الخانة الخطرة «فاته»: رد فاشل يمر في التقييم. الخانة المكلفة «رفض ردًا سليمًا»: يعيد الفريق العمل على ما لا يحتاجه. التسميات البشرية تأتي من فريق المراجعة، لا ممن يعدّل التعليمات.","minutes":null,"lo":["LO3"]},{"id":"slice-grader","n":18,"title":"المصحح نفسه يلتقط كل الفشل بالفصحى، وثلثه بالخليجية","kind":"content","session":2,"hash":"5a9da4f2","md":"#### [day2#slice-grader] المصحح نفسه يلتقط كل الفشل بالفصحى، وثلثه بالخليجية\n\n*والتفصيل بحسب اللغة*\n\n| البند | القيمة |\n| --- | --- |\n| الفصحى | 6 من 6 |\n| الإنجليزية | 4 من 4 |\n| الخليجية | 2 من 6 |\n\n> **اكتب العدد بجانب النسبة:** ست حالات فشل في لغة لا تعطي نسبة ثابتة، لكنها تكفي لتقول إن المصحح لا يُعتمد فيها وحده.","notes":"المثال الموازي نفسه، مفصلًا. المتوسط 0.75 كان سيُقرأ «قريبًا من المقبول»، والتفصيل يقول إن مدربي اللهجة الخليجية لن يُحمَوا. الطلب نفسه في بطاقة المقرر: تقسيم النتائج بحسب اللغة حتى لا تخفي المتوسطات الإخفاقات.","minutes":null,"lo":["LO3"]},{"id":"acceptance-rule","n":19,"title":"يُعتمد إذا عبر الشروط الثلاثة معًا","kind":"content","session":2,"hash":"7f68c81c","md":"#### [day2#acceptance-rule] يُعتمد إذا عبر الشروط الثلاثة معًا\n\n*قاعدة قبول المصحح في المقرر*\n\n- **يلتقط.** 85% فأكثر من حالات الفشل البشرية.\n- **يقبل.** 90% فأكثر من حالات النجاح البشرية.\n- **في كل لغة.** لا لغة يفوته فيها أكثر من نصف حالات الفشل.\n\n> **وما لا يعبر** لا يقرر وحده: تحل محله المراجعة البشرية، أو يصبح فرزًا أوليًا تراجعه البشرية.","notes":"القاعدة من وضع المقرر، في `threshold_rule.txt`، وليست معيارًا وطنيًا. اسأل: هل يُعتمد مصحح مثالنا الموازي؟ لا: التقاطه 0.75، ويفوته في الخليجية أربع من ست.","minutes":null,"lo":["LO3"]},{"id":"thresholds","n":20,"title":"العتبة تأتي من شدة الفشل، لا من آخر نتيجة","kind":"content","session":2,"hash":"2cf49098","md":"#### [day2#thresholds] العتبة تأتي من شدة الفشل، لا من آخر نتيجة\n\n*عتبات الإطلاق*\n\n| شدة فشل المعيار | العتبة في مجموعة التقييم |\n| --- | --- |\n| 4 | لا فشل واحد، في كل محاولة من الثلاث |\n| 3 | نسبة النجاح 97% فأكثر |\n| 2 | نسبة النجاح 90% فأكثر |\n| 1 | يُتابع ولا يمنع الإطلاق |\n\nالعتبة على المجموعة كلها، ونسبة كل لغة تُكتب بجانبها: الشريحة التي تقل عنها حد يُكتب ويُراقب.","notes":"الخطأ المعتاد: وضع العتبة تحت النتيجة الحالية بقليل حتى «ينجح» الإصدار. العتبة تُكتب قبل التشغيل، من الضرر. وتُحسب على المجموعة كلها: شريحة من 57 أو 99 تشغيلًا تتأرجح بفشل واحد، فتُكتب حدًا وتُراقب، ولا تمنع الإطلاق وحدها؛ أما الشدة 4 فلا فشل فيها في أي لغة أصلًا. في المختبر ستضع لكل معيار من الثمانية عتبته ومصححه بعد المعايرة.","minutes":null,"lo":["LO3"]},{"id":"check-calibration","n":21,"title":"أي مصحح يُعتمد بقاعدة المقرر؟","kind":"quiz","session":2,"hash":"f09f4edc","md":"#### [day2#check-calibration] أي مصحح يُعتمد بقاعدة المقرر؟\n\n*نقطة تحقق*\n\n**سؤال:** أربعة مصححات نموذجية لمعايير في مساعد نصوص العروض، كل منها عُوير على 60 حكمًا بشريًا. أيها يُعتمد؟\n\n- أ. اتفاق 94%، والتقاط 70%، وقبول 99%، وأضعف لغة 3 من 5\n- ب. اتفاق 92%، والتقاط 88%، وقبول 93%، وأضعف لغة 1 من 4\n- ج. اتفاق 86%، والتقاط 90%، وقبول 85%، وأضعف لغة 4 من 6\n- د. اتفاق 90%، والتقاط 87%، وقبول 91%، وأضعف لغة 3 من 5","notes":"الإجابة: د. الأرقام في الخيارات افتراضية للتمرين. نبّه إلى أن صاحب أعلى اتفاق (أ) أسوأها في الالتقاط. من اختار ب: ثلاث حالات فشل من أربع بالإنجليزية فاتته.","minutes":null,"lo":["LO3"]},{"id":"lab-2-2","n":22,"title":"تقرير المعايرة والعتبات","kind":"lab","session":2,"hash":"89d223fd","md":"#### [day2#lab-2-2] تقرير المعايرة والعتبات\n\nالمختبر 2.2 · 35 دقيقة\n\nتحسب من تقرير المعايرة، لكل معيار يصححه نموذج، الاتفاق ونسبة التقاط الفشل ونسبة قبول النجاح، وتفصّلها بحسب اللغة، فتقرر أي مصحح يُعتمد، وتضع عتبة لكل معيار من المعايير الثمانية\n\n[D2_2_grader_calibration.html](https://sdaiaacademy.github.io/lds-prd-202/labs/D2_2_grader_calibration.html)\n\n- [ ] اقرأ تقرير المعايرة وقاعدة القبول (4 د)\n- [ ] احسب الاتفاق والتقاط الفشل وقبول النجاح لكل معيار (10 د)\n- [ ] فصّل التقاط الفشل بحسب اللغة (8 د)\n- [ ] قرر لكل معيار: يُعتمد المصحح أم تحل محله المراجعة البشرية (5 د)\n- [ ] ضع عتبة الإطلاق لكل معيار بقاعدة الشدة (8 د)\n- [ ] ✱ إضافي: اكتب لنوف البيشي ثلاثة أسطر: ما الحالات التي تضيفها إلى عينة المعايرة القادمة للمصحح الذي رفضته، ولماذا","notes":"35 دقيقة، والمساعد المرشد للمعادلات. الخطأ المعتاد: حساب الالتقاط من كل الصفوف بدل صفوف المعيار، أو قسمة على عدد أحكام المصحح بدل الأحكام البشرية. من انتهى من الخطوة 3 مبكرًا اسأله: أي معيار كان سيُعتمد لو نظرت إلى الاتفاق وحده؟","minutes":null,"lo":[]},{"id":"s3","n":23,"title":"الإصدارات والتسرب والتحديث من التشغيل","kind":"section","session":3,"hash":"85be5182","md":"#### [day2#s3] الإصدارات والتسرب والتحديث من التشغيل\n\n*الجلسة 3*\n\n- يكشف التسرب: أمثلة التقييم التي رآها المساعد في تعليماته\n- يتحقق من تغطية الأنماط واللغات والفئات بقواعد مكتوبة\n- يكتب سجل تغييرات وخطة تحديث من آثار التشغيل","notes":"نحو 35 دقيقة قبل المختبر: مراجعة المختبر 2.2 (6)، والمجموعة منتجًا له إصدارات، والتسرب والتكرار والتغطية والتحديث من التشغيل (24)، ونقطة التحقق (5)؛ ثم المختبر 2.3.","minutes":null,"lo":["LO3"]},{"id":"debrief-2-2","n":24,"title":"K4 اتفاقه 87%، ويلتقط 9 من 16 حالة فشل","kind":"content","session":3,"hash":"ed937848","md":"#### [day2#debrief-2-2] K4 اتفاقه 87%، ويلتقط 9 من 16 حالة فشل\n\n*ما أظهره المختبر 2.2*\n\n| المعيار | الاتفاق | الالتقاط | القرار |\n| --- | --- | --- | --- |\n| K2 | 0.933 | 0.900 | يُعتمد |\n| K4 | 0.867 | 0.563 | بشرية |\n| K6 | 0.967 | 0.917 | يُعتمد |\n| K8 | 0.750 | 0.600 | فرز |\n\n> **وفي اللهجة الخليجية** يلتقط مصحح K4 حالتين من ثماني حالات فشل: الإصابة المكتوبة بالعامية تمر.","notes":"ست دقائق. K4 شدته 4، فعتبته لا فشل واحد، ومصححه يفوته 7 من 16 حالة فشل. القرار: مراجعة بشرية لأمثلة التصعيد الإلزامي. قبول النجاح: K2 0.950، وK4 0.977، وK6 0.979، وK8 0.800. K8 شدته 1، فلا يمنع الإطلاق، ويكفيه فرز أولي تراجع البشرية عينة منه. العتبات: K3 وK4 لا فشل؛ K1 وK2 وK7 97%؛ K5 وK6 90%؛ K8 يُتابع.","minutes":null,"lo":["LO3"]},{"id":"evalset-product","n":25,"title":"المجموعة منتج له إصدارات ومالك وسجل","kind":"content","session":3,"hash":"472ee15c","md":"#### [day2#evalset-product] المجموعة منتج له إصدارات ومالك وسجل\n\n*مجموعة التقييم*\n\n- **إصدار.** v1.0 ثم v1.1: كل نتيجة تُذكر مع إصدار المجموعة الذي قيست عليه.\n- **سجل تغييرات.** ما تغيّر ولماذا، ومن اقترح ومن اعتمد، والفجوات المعروفة.\n- **مالك.** يعتمد الإصدار من لا يعدّل التعليمات.\n\n> **أين يقع الخطأ:** نتيجتان على مجموعتين مختلفتين تُقارنان كأنهما على مجموعة واحدة.","notes":"إن أُضيفت أمثلة صعبة إلى المجموعة فقد تنخفض النتيجة دون أن يسوء المساعد. لذلك يُكتب الإصدار بجانب كل رقم في التقرير والمذكرة.","minutes":null,"lo":["LO3"]},{"id":"leakage","n":26,"title":"مثال في التعليمات يقيس ما حفظه المساعد، لا قدرته","kind":"content","session":3,"hash":"d0d4de56","md":"#### [day2#leakage] مثال في التعليمات يقيس ما حفظه المساعد، لا قدرته\n\n*التسرب*\n\n**مثال في تعليمات مساعد العروض:** «اكتب عرضًا لباقة رمضان للأعضاء الجدد.» ومعه النص المطلوب.\n\n**المثال نفسه في مجموعة التقييم (مثال ضعيف):** ينجح المساعد فيه دائمًا: النص أمامه في تعليماته.\n\n- يُحذف كل مثال نصه من أمثلة التعليمات\n- والقريب جدًا منه يُراجع: كلمة زائدة لا تجعله مثالًا جديدًا","notes":"التسرب يرفع النتيجة دون أن يتحسن شيء. مصدر آخر له: أمثلة المصحح النموذجي إن أُخذت من المجموعة. القاعدة في الحالة تحذف المطابق تمامًا، والإضافي في المختبر يسأل عن القريب.","minutes":null,"lo":["LO3"]},{"id":"duplicates-coverage","n":27,"title":"المكرر يضاعف وزن مثال، والتغطية تقول ما لا تقيسه المجموعة","kind":"content","session":3,"hash":"76b75156","md":"#### [day2#duplicates-coverage] المكرر يضاعف وزن مثال، والتغطية تقول ما لا تقيسه المجموعة\n\n*التكرار والتغطية*\n\n1. **1 · احذف المتسرب** المطابق لأمثلة التعليمات\n2. **2 · احذف المكرر** وأبقِ النسخة الأولى\n3. **3 · عدّ التغطية** لكل نمط ولغة وفئة\n\n> **مثال موازٍ:** مجموعة مساعد العروض، 90 مرشحًا: 6 متسربة و9 مكررة، فيبقى 75.","notes":"الترتيب مهم: لو حذفت المكرر أولًا لبقيت نسخة من مثال متسرب. التغطية جدول بسيط: كم مثالًا لكل نمط، ولكل لغة، وللأعضاء الجدد، ومقارنة كل رقم بالحد. ما لا يفي يُكتب فجوة معروفة، ولا يُخفى. الأرقام من `labs/_tools/parallel_examples.mjs`.","minutes":null,"lo":["LO3"]},{"id":"refresh-production","n":28,"title":"كل نمط جديد في الآثار يدخل الإصدار التالي","kind":"content","session":3,"hash":"80ed7c5e","md":"#### [day2#refresh-production] كل نمط جديد في الآثار يدخل الإصدار التالي\n\n*التحديث من التشغيل*\n\n- الآثار بعد الإطلاق تُقرأ كما قرأناها أمس، بعينة دورية\n- نمط لم يكن في المجموعة: أمثلة له في الإصدار التالي، بعدد أدنى\n- المجموعة التي لا تتغير تقيس مساعد الأمس\n\n> **من الإطار الوطني لإدارة مخاطر الذكاء الاصطناعي:** مرحلة المتابعة والمراجعة تقوم على المراقبة المستمرة للأداء والمخاطر في سياق الاستخدام الفعلي.","notes":"العينة التي وسمناها أمس (P001 إلى P100) هي الأقدم. ما بعدها قد يحوي ما لم نره. هذا سؤال 3 في المختبر 1.3 عائدًا. في الإطار الوطني لإدارة مخاطر الذكاء الاصطناعي، مرحلة المتابعة والمراجعة تشمل رصد مؤشرات الانحراف والتدهور، ومنها ارتفاع معدلات الأخطاء أو الشكاوى. نعود إليه في مواصفات المراقبة في اليوم الثالث. المصدر: سدايا، الإطار الوطني لإدارة مخاطر الذكاء الاصطناعي، النص العربي، مرحلة المتابعة والمراجعة.","minutes":null,"lo":["LO3"]},{"id":"repeated-trials","n":29,"title":"المعيار الخطير يُحكم عليه في كل المحاولات","kind":"content","session":3,"hash":"17c85a41","md":"#### [day2#repeated-trials] المعيار الخطير يُحكم عليه في كل المحاولات\n\n*ثلاث محاولات لكل مثال*\n\n- **شدة 3 و2.** نسبة النجاح على كل الردود: 120 × 3.\n- **شدة 4.** مثال فشل في محاولة واحدة من ثلاث يكفي ليمنع الإطلاق.\n\n> **كما في اليوم الأول:** النجاح في محاولة واحدة قدرة، والنجاح في كل المحاولات اعتمادية.","notes":"اربط بمختبر 1.1: المهام التي نجحت في المحاولات الخمس كانت 11 من 20. في مجموعة التقييم نطبق الفكرة نفسها على المعايير الأشد.","minutes":null,"lo":["LO3"]},{"id":"check-evalset","n":30,"title":"ماذا يكتب سجل التغييرات هنا؟","kind":"quiz","session":3,"hash":"cd2ad29a","md":"#### [day2#check-evalset] ماذا يكتب سجل التغييرات هنا؟\n\n*نقطة تحقق*\n\n**سؤال:** بعد تنظيف مجموعة مساعد العروض بقي 75 مثالًا، والقواعد تطلب 10 أمثلة لنمط «خصم منتهٍ»، والموجود 7. موعد التقييم غدًا. ما الصحيح؟\n\n- أ. يكرر ثلاثة أمثلة من النمط حتى يبلغ العدد 10\n- ب. يصدر v1.0 ويكتب النقص فجوة معروفة، ويضيف الأمثلة في v1.1\n- ج. يصدر v1.0 دون ذكر النقص، فالمجموعة كبيرة بما يكفي\n- د. يعيد إلى المجموعة ثلاثة أمثلة من النمط حُذفت للتسرب من التعليمات","notes":"الإجابة: ب. اسأل: من يعتمد v1.1؟ من لا يعدّل التعليمات.","minutes":null,"lo":["LO3"]},{"id":"lab-2-3","n":31,"title":"مجموعة التقييم v1.0","kind":"lab","session":3,"hash":"d98618cc","md":"#### [day2#lab-2-3] مجموعة التقييم v1.0\n\nالمختبر 2.3 · 35 دقيقة\n\nتنظّف 146 مثالًا مرشحًا من التسرب والتكرار حتى يبقى 120، وتتحقق من التغطية بالقواعد، وتكتب سجل تغييرات الإصدار v1.0 بفجوته المعروفة، وتخطط للإصدار التالي من آثار التشغيل\n\n[D2_3_evalset_v1.html](https://sdaiaacademy.github.io/lds-prd-202/labs/D2_3_evalset_v1.html)\n\n- [ ] احذف كل مرشح نصه من أمثلة التعليمات (6 د)\n- [ ] احذف المكرر، وأبقِ النسخة الأولى (6 د)\n- [ ] ابنِ جدول التغطية وقارنه بالقواعد (8 د)\n- [ ] اكتب سجل التغييرات للإصدار v1.0 مع الفجوة المعروفة (8 د)\n- [ ] خطط للإصدار v1.1 من آثار التشغيل (7 د)\n- [ ] ✱ إضافي: جد المرشحين الباقين الذين لا يختلفون عن مثال من التعليمات إلا بكلمة الشكر في آخره، واكتب هل تحذفهم وما أثر ذلك في التغطية","notes":"35 دقيقة. المرشحون رسائل أعضاء، «مقيد»: لا تدخل أي أداة ذكاء اصطناعي. الخطأ المعتاد: COUNTIF يعامل علامة الاستفهام الإنجليزية رمزًا عامًا، لذلك المعادلات في الصفحة بـSUMPRODUCT. من لم يصل إلى 120، فليراجع ترتيب الحذف.","minutes":null,"lo":[]},{"id":"s4","n":32,"title":"تخطيط تجربة مباشرة","kind":"section","session":4,"hash":"686c7844","md":"#### [day2#s4] تخطيط تجربة مباشرة\n\n*الجلسة 4*\n\n- يميّز تجربة A/B من التشغيل الظلي وما يقيسه كل منهما\n- يحسب حجم العينة من خط الأساس وأقل أثر يهم\n- يكتب قواعد القرار ومتى يُنظر في النتائج قبل بدء التجربة","notes":"نحو 35 دقيقة قبل المختبر: مراجعة المختبر 2.3 (6)، ومن التقييم إلى التجربة، والمقاييس، وأقل أثر وحجم العينة، والنظر المبكر، والخطة المسبقة (24)، ونقطة التحقق (5)؛ ثم المختبر 2.4، والمساعد المرشد مسموح.","minutes":null,"lo":["LO4"]},{"id":"debrief-2-3","n":33,"title":"120 مثالًا، وفجوة معروفة، ونمط جديد ينتظر v1.1","kind":"content","session":4,"hash":"51473603","md":"#### [day2#debrief-2-3] 120 مثالًا، وفجوة معروفة، ونمط جديد ينتظر v1.1\n\n*ما أظهره المختبر 2.3*\n\n- **26** حُذفت: 12 تسربًا و14 مكررًا من 146\n- **2** مثالان إنجليزيان للتصعيد الإلزامي، والحد 3\n- **7** مرات ظهر F8 في P101 إلى P300، ولا مرة في المئة الأولى\n\n> **السجل:** v1.0 تعتمده نوف البيشي، والفجوة مكتوبة. v1.1: ثمانية أمثلة لـF8 على الأقل، ومثال إنجليزي ثالث للتصعيد.","notes":"ست دقائق. باقي التغطية يفي: كل نمط 8 فأكثر، والإنجليزية والخليجية 27.5% لكل منهما، والأعضاء الجدد 32.5%. اسأل من حل الإضافي: كم مرشحًا يختلف عن مثال في التعليمات بكلمة الشكر وحدها؟ ثمانية. القاعدة تبقيهم في v1.0، ويستحقون الاستبدال في v1.1.","minutes":null,"lo":["LO3"]},{"id":"offline-online","n":34,"title":"مجموعة التقييم تقول: هل يمكن. التجربة تقول: هل حدث","kind":"content","session":4,"hash":"e7672c0a","md":"#### [day2#offline-online] مجموعة التقييم تقول: هل يمكن. التجربة تقول: هل حدث\n\n*من التقييم إلى التجربة*\n\n|  | مجموعة التقييم | التشغيل الظلي | تجربة بذراعين |\n| --- | --- | --- | --- |\n| على من | 120 مثالًا ثابتًا | طلبات حقيقية، ولا يرى العضو الرد | أعضاء حقيقيون، نصفهم لكل ذراع |\n| ما يقيسه | المعايير | الفرق في الردود والتكلفة والزمن | ما يحدث للأعضاء: الحل والتصعيد والشكاوى |","notes":"التشغيل الظلي: الإصدار الجديد يرد على الطلبات نفسها في الخلفية، ولا يصل رده إلى العضو؛ آمن، لكنه لا يقيس سلوك العضو. التجربة بذراعين تقيسه، ولذلك تحتاج خطة ومقاييس حماية قبل أن تبدأ.","minutes":null,"lo":["LO4"]},{"id":"metrics-three","n":35,"title":"مقياس أساسي واحد، ومقاييس حماية، ومقياس تكلفة","kind":"content","session":4,"hash":"60115e08","md":"#### [day2#metrics-three] مقياس أساسي واحد، ومقاييس حماية، ومقياس تكلفة\n\n*ثلاثة أنواع من المقاييس*\n\n- **أساسي.** ما يُتخذ به القرار. واحد، ويُكتب قبل البيانات.\n- **حماية.** ما يجب ألا يسوء، ويُقرأ في كل شريحة.\n- **تكلفة.** ما يدفعه الفريق لكل وحدة، والزمن.\n\n> **انتبه للمقام:** مقياس عن التصعيد يُحسب من الطلبات التي تحتاج تصعيدًا، لا من كل الطلبات.","notes":"مثال موازٍ من التسويق، اختبار رسالتي تذكير بالحصص: الأساسي الحضور، والحماية إلغاء الاشتراك في الرسائل، والتكلفة تكلفة الرسالة. بطاقة المقرر تطلب في كل تقرير نتائج مقياس حماية وشريحة لفئة فرعية.","minutes":null,"lo":["LO4"]},{"id":"mde-sample","n":36,"title":"أصغر أثر يهمك يحدد عدد من تحتاجهم","kind":"content","session":4,"hash":"a0c31661","md":"#### [day2#mde-sample] أصغر أثر يهمك يحدد عدد من تحتاجهم\n\n*مثال موازٍ: رسالة التذكير*\n\n- **4,231** لكل ذراع لرؤية 3 نقاط فوق حضور 40%\n- **9,490** لكل ذراع لرؤية نقطتين\n\n> **الأثر الأصغر يحتاج عينة أكبر بكثير:** ثلثا الأثر، وأكثر من ضعفي العدد. مستوى دلالة 5% وقوة 80%.\n\nمحسوبة في `labs/_tools/parallel_examples.mjs` بمعادلة الفرق بين نسبتين.","notes":"أقل أثر يهم قرار تجاري: ما الفرق الذي يغيّر الاستثمار؟ لا يُختار ليناسب العدد المتاح. المعادلة في صفحة المختبر بالثابتين 1.96 و0.8416. المصدر: Evan Miller، How Not To Run an A/B Test، وفيه أن حجم العينة يُحدد قبل التجربة ولا يُنظر في الدلالة قبل بلوغه.","minutes":null,"lo":["LO4"]},{"id":"peeking","n":37,"title":"من ينظر كل يوم يعلن أثرًا غير موجود بأكثر من أربعة أضعاف","kind":"content","session":4,"hash":"f70b5fa8","md":"#### [day2#peeking] من ينظر كل يوم يعلن أثرًا غير موجود بأكثر من أربعة أضعاف\n\n*النظر المبكر*\n\n| البند | القيمة |\n| --- | --- |\n| نظرة واحدة في اليوم 14 | 4.8% |\n| نظرة كل يوم | 21.8% |\n\n> **محاكاة:** 2,000 تجربة لا فرق فيها بين الذراعين، 700 عضو لكل ذراع يوميًا. النسبة: تجارب أُعلن فيها فرق «دال».","notes":"الأرقام محاكاة في `labs/_tools/parallel_examples.mjs`. القاعدة: يُنظر في المقياس الأساسي مرة في الموعد المكتوب. المراجعة اليومية للسلامة مشروعة، والإيقاف للضرر وحده. الاختبار المتسلسل يسمح بالنظر المتكرر، وهو في SPC-EXP-301. المصدر: Evan Miller، How Not To Run an A/B Test.","minutes":null,"lo":["LO4"]},{"id":"pre-registration","n":38,"title":"تُكتب الخطة وتُعتمد قبل أول جلسة","kind":"content","session":4,"hash":"97277a1e","md":"#### [day2#pre-registration] تُكتب الخطة وتُعتمد قبل أول جلسة\n\n*الخطة المسبقة*\n\n| البند | السؤال |\n| --- | --- |\n| الفرضية | ما الذي يتغير، وبكم، وما الذي يبقى؟ |\n| المقاييس | الأساسي، والحماية بمقامها، والتكلفة |\n| العدد والمدة | من أقل أثر يهم، وأسابيع كاملة |\n| قاعدة القرار | بفترة الثقة، وفي كل شريحة |\n| الأدوار | من يعدّ التقرير، ومن يعتمد الخطة |","notes":"الخطة المكتوبة تمنع اختيار المقياس بعد رؤية النتائج. الأسابيع الكاملة لأن طلبات النادي تختلف بين أيام الأسبوع. ومن بنى الإصدار الجديد لا يعدّ تقريره.","minutes":null,"lo":["LO4"]},{"id":"check-experiment","n":39,"title":"ماذا تقول لقسم التسويق؟","kind":"quiz","session":4,"hash":"f7adcd91","md":"#### [day2#check-experiment] ماذا تقول لقسم التسويق؟\n\n*نقطة تحقق*\n\n**سؤال:** خطة اختبار رسالة التذكير تقول: 14 يومًا، ونظرة واحدة في نهايتها. في اليوم الثالث تُظهر اللوحة أن الرسالة الجديدة ترفع الحضور 5 نقاط بفرق «دال». يطلب التسويق إيقاف الاختبار واعتماد الرسالة. ما الرد الذي تدعمه الخطة؟\n\n- أ. نوقف الآن: الفرق أكبر من أقل أثر يهم\n- ب. نكمل، ونجعل الإلغاء المقياس الأساسي\n- ج. نكمل إلى اليوم 14، ونوقف قبله لضرر فقط\n- د. نكمل إلى نهاية الأسبوع الأول، ثم نقرر","notes":"الإجابة: ج. اسأل: ما الضرر الذي يبرر الإيقاف المبكر في اختبار رسالة تذكير؟ قفزة في إلغاء الاشتراك تؤكدها المراجعة اليومية، مثلًا.","minutes":null,"lo":["LO4"]},{"id":"lab-2-4","n":40,"title":"خطة مسجلة مسبقًا","kind":"lab","session":4,"hash":"dd87bc83","md":"#### [day2#lab-2-4] خطة مسجلة مسبقًا\n\nالمختبر 2.4 · 35 دقيقة\n\nتكتب خطة تجربة مضمار قبل البيانات: الفرضية والمقياس الأساسي وأقل أثر يهم وحجم العينة والمدة ومقياسي الحماية ومقياس التكلفة والشرائح وقاعدة القرار ومتى يُنظر في النتائج ومن يعتمد الخطة\n\n[D2_4_experiment_plan.html](https://sdaiaacademy.github.io/lds-prd-202/labs/D2_4_experiment_plan.html)\n\n- [ ] اقرأ موجز التجربة (4 د)\n- [ ] اكتب الفرضية والمقياس الأساسي وأقل أثر يهم (6 د)\n- [ ] احسب حجم العينة لكل ذراع والمدة (8 د)\n- [ ] اختر مقياسي الحماية ومقياس التكلفة والشرائح (8 د)\n- [ ] اكتب قاعدة القرار ومتى يُنظر في النتائج (6 د)\n- [ ] سمِّ من يعدّ التقرير ومن يعتمد الخطة (3 د)\n- [ ] ✱ إضافي: لو لم تتسع المدة إلا لسبعة أيام، فما أقل أثر تستطيع التجربة أن تراه؟ جرّب قيمًا لـd حتى يتسع العدد","notes":"35 دقيقة، والمساعد المرشد مسموح للطريقة. مر على الطاولات في الخطوة 3: من وضع d = 2 بدل 0.02، أو نسي أن العدد لكل ذراع. في الخطوة 5 اسأل: ما ردك على طلب المبيعات قرارًا مبكرًا؟ الخطة المرجعية تبدأ بها المختبر 3.1 غدًا.","minutes":null,"lo":[]},{"id":"wrap-up","n":41,"title":"ثلاثة أمور تبقى معك","kind":"content","session":4,"hash":"1bddc270","md":"#### [day2#wrap-up] ثلاثة أمور تبقى معك\n\n*خلاصة اليوم 2*\n\n- **المصحح يُقاس.** التقاط الفشل وقبول النجاح في كل لغة، لا الاتفاق وحده.\n- **المجموعة منتج.** إصدار وسجل وفجوات مكتوبة، ومالك لا يعدّل التعليمات.\n- **الخطة قبل البيانات.** أقل أثر يهم يحدد العدد، ويُنظر في الموعد.","notes":"اسأل كل طاولة: أي رقم من اليوم كنتم ستصدقونه لو لم تفصّلوه؟ غالبًا اتفاق مصحح K4.","minutes":null,"lo":[]},{"id":"next","n":42,"title":"أكمل سجل التغييرات v1.0 وخطة التجربة","kind":"content","session":4,"hash":"9ab512b6","md":"#### [day2#next] أكمل سجل التغييرات v1.0 وخطة التجربة\n\n*مهمة المساء · 60 دقيقة*\n\nاليوم 3: نقرأ نتائج التجربة على 20,000 جلسة، ونحسب التكلفة لكل مهمة ناجحة، ونكتب معايير الإطلاق.","notes":"مهمة المساء 60 دقيقة: سجل التغييرات بالفجوة المعروفة وخطة v1.1، وخطة التجربة كاملة ببنودها الستة عشر. يدخلان ملف الأدلة في المشروع الختامي. صباح الغد مراجعة اليوم الثاني، ثم نقارن الخطط بالخطة المرجعية.","minutes":null,"lo":[]}],"activities":[{"id":"review-day1-q1","slide":"review-day1","type":"single","prompt":"فريق التسويق يصنّف آثار مساعد نصوص العروض. اقترح أعضاء الفريق أربعة أسماء لنمط واحد. أيها يتبع قاعدة المقرر في التسمية؟","options":[{"key":"أ","text":"مشكلة في فهرس العروض القديمة"},{"key":"ب","text":"النموذج الصغير لا يفهم التواريخ"},{"key":"ج","text":"النص يذكر خصمًا انتهى موعده"},{"key":"د","text":"أخطاء متنوعة في العرض"}],"correct":[2],"explanation":"النمط يُسمّى بما يراه المستخدم أو يقع عليه. السبب يأتي من المهندسين بعد ذلك، وقد يكون لنمطين سبب واحد.","misconceptions":["يسمّي سببًا مفترضًا: الفهرس قد يكون السبب، لكن الاسم لا يقول ما رآه العميل","يسمّي سببًا عن النموذج، ولا يصف ما في النص الذي وصل إلى العميل","","اسم واسع يجمع أنماطًا مختلفة الشدة، ولا يحكم به زميل لم يحضر النقاش"],"lo":["LO2"]},{"id":"check-grader-q1","slide":"check-grader","type":"single","prompt":"معيار في مساعد جدولة المدربين: «لا يذكر الرد ناديًا غير المذكور في طلب المدرب». أسماء الأندية الستة ثابتة، وكل طلب فيه اسم نادٍ واحد. ما المصحح الأنسب أولًا؟","options":[{"key":"أ","text":"قاعدة تقارن أسماء الأندية في الرد باسم النادي في الطلب"},{"key":"ب","text":"مصحح نموذجي يقرأ الطلب والرد كاملين ويحكم على اسم النادي"},{"key":"ج","text":"مراجعة بشرية من فريق التدريب لكل الردود"},{"key":"د","text":"مصحح نموذجي، ثم مراجعة بشرية لكل ما يرفضه"}],"correct":[0],"explanation":"قائمة الأندية ثابتة واسم النادي في الطلب، فالقاعدة تحكم دون خطأ وبتكلفة قريبة من الصفر. أرخص مصحح يصح هو الأول.","misconceptions":["","يدفع ثمن القراءة فيما تحكم عليه قائمة ثابتة من ستة أسماء، ويحتاج معايرة لا يحتاجها الفحص","الأغلى والأبطأ لمعيار تصفه قاعدة بلا التباس","يضيف طبقتين فوق معيار تحسمه مقارنة واحدة"],"lo":["LO3"]},{"id":"check-calibration-q1","slide":"check-calibration","type":"single","prompt":"أربعة مصححات نموذجية لمعايير في مساعد نصوص العروض، كل منها عُوير على 60 حكمًا بشريًا. أيها يُعتمد؟","options":[{"key":"أ","text":"اتفاق 94%، والتقاط 70%، وقبول 99%، وأضعف لغة 3 من 5"},{"key":"ب","text":"اتفاق 92%، والتقاط 88%، وقبول 93%، وأضعف لغة 1 من 4"},{"key":"ج","text":"اتفاق 86%، والتقاط 90%، وقبول 85%، وأضعف لغة 4 من 6"},{"key":"د","text":"اتفاق 90%، والتقاط 87%، وقبول 91%، وأضعف لغة 3 من 5"}],"correct":[3],"explanation":"القاعدة ثلاثة شروط معًا: التقاط 85% فأكثر، وقبول 90% فأكثر، ولا لغة يفوته فيها أكثر من النصف. وحده الرابع يعبرها كلها، وليس أعلاها اتفاقًا.","misconceptions":["الاتفاق مرتفع، لكن الالتقاط 70% تحت حد 85%","الالتقاط والقبول فوق الحد، لكنه يفوته أكثر من نصف الفشل بالإنجليزية","الالتقاط فوق الحد، لكن القبول 85% تحت حد 90%، فيرفض ردودًا سليمة كثيرة",""],"lo":["LO3"]},{"id":"check-evalset-q1","slide":"check-evalset","type":"single","prompt":"بعد تنظيف مجموعة مساعد العروض بقي 75 مثالًا، والقواعد تطلب 10 أمثلة لنمط «خصم منتهٍ»، والموجود 7. موعد التقييم غدًا. ما الصحيح؟","options":[{"key":"أ","text":"يكرر ثلاثة أمثلة من النمط حتى يبلغ العدد 10"},{"key":"ب","text":"يصدر v1.0 ويكتب النقص فجوة معروفة، ويضيف الأمثلة في v1.1"},{"key":"ج","text":"يصدر v1.0 دون ذكر النقص، فالمجموعة كبيرة بما يكفي"},{"key":"د","text":"يعيد إلى المجموعة ثلاثة أمثلة من النمط حُذفت للتسرب من التعليمات"}],"correct":[1],"explanation":"سجل التغييرات يكتب ما تعرفه عن حدود المجموعة. الفجوة المكتوبة تُقرأ مع النتيجة، والإصدار التالي يسدها.","misconceptions":["يغيّر ما تقيسه المجموعة دون سجل: ثلاث نسخ تضاعف وزن مثال","","يخفي حدًا يعرفه الفريق، فيُقرأ رقم النمط كأنه مقيس كما ينبغي","يعيد ثلاثة أمثلة سبق حذفها لأنها في تعليمات المساعد: تسرب"],"lo":["LO3"]},{"id":"check-experiment-q1","slide":"check-experiment","type":"single","prompt":"خطة اختبار رسالة التذكير تقول: 14 يومًا، ونظرة واحدة في نهايتها. في اليوم الثالث تُظهر اللوحة أن الرسالة الجديدة ترفع الحضور 5 نقاط بفرق «دال». يطلب التسويق إيقاف الاختبار واعتماد الرسالة. ما الرد الذي تدعمه الخطة؟","options":[{"key":"أ","text":"نوقف الآن: الفرق أكبر من أقل أثر يهم"},{"key":"ب","text":"نكمل، ونجعل الإلغاء المقياس الأساسي"},{"key":"ج","text":"نكمل إلى اليوم 14، ونوقف قبله لضرر فقط"},{"key":"د","text":"نكمل إلى نهاية الأسبوع الأول، ثم نقرر"}],"correct":[2],"explanation":"الخطة حددت موعد النظر وحجم العينة قبل البيانات. فرق اليوم الثالث نظرة مبكرة، والإيقاف المبكر مكتوب للضرر وحده.","misconceptions":["النظر اليومي يرفع احتمال إعلان أثر غير موجود، والفرق الكبير في الأيام الأولى كثيرًا ما يصغر","يغيّر المقياس بعد رؤية البيانات، وهذا ما تمنعه الخطة المسبقة","","يقصّر التجربة إلى أسبوع لا يغطي العدد المحسوب، فتضعف قدرتها على رؤية الأثر"],"lo":["LO4"]}],"ai":{"context":{"course":"../context/course.md","courseJs":"../context/course.js","day":"day2.md","llms":"../llms.txt"},"tasks":[],"tools":[]},"bridge":{"allowedOrigins":[]},"features":{},"strings":{}}</script>
+<script src="../_engine/academy.js"></script>
+</body>
+</html>

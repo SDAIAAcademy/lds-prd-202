@@ -1,0 +1,931 @@
+{
+  "traces": {
+    "sample_counts": {
+      "F1": 12,
+      "F2": 8,
+      "F3": 5,
+      "F4": 6,
+      "F5": 14,
+      "F6": 9,
+      "F7": 4,
+      "F8": 0,
+      "pass": 42
+    },
+    "team_counts": {
+      "F1": 22,
+      "F2": 17,
+      "F3": 9,
+      "F4": 11,
+      "F5": 27,
+      "F6": 18,
+      "F7": 9,
+      "F8": 7,
+      "pass": 80
+    },
+    "all_counts": {
+      "F1": 34,
+      "F2": 25,
+      "F3": 14,
+      "F4": 17,
+      "F5": 41,
+      "F6": 27,
+      "F7": 13,
+      "F8": 7,
+      "pass": 122
+    },
+    "sample_by_lang": {
+      "ar_msa": 30,
+      "ar_gulf": 37,
+      "en": 22,
+      "mixed": 11
+    },
+    "severity": {
+      "F1": 3,
+      "F2": 3,
+      "F3": 4,
+      "F4": 4,
+      "F5": 2,
+      "F6": 2,
+      "F7": 3,
+      "F8": 3
+    },
+    "examples": {
+      "F1": [
+        "P006",
+        "P007",
+        "P020"
+      ],
+      "F2": [
+        "P021",
+        "P025",
+        "P035"
+      ],
+      "F3": [
+        "P002",
+        "P051",
+        "P067"
+      ],
+      "F4": [
+        "P016",
+        "P022",
+        "P030"
+      ],
+      "F5": [
+        "P013",
+        "P014",
+        "P023"
+      ],
+      "F6": [
+        "P004",
+        "P034",
+        "P042"
+      ],
+      "F7": [
+        "P005",
+        "P015",
+        "P061"
+      ],
+      "F8": []
+    },
+    "tokens_in_median": 5869,
+    "member_words_median": 8,
+    "priority": [
+      "F4",
+      "F3",
+      "F1",
+      "F5",
+      "F2",
+      "F6",
+      "F7",
+      "F8"
+    ],
+    "slices": {
+      "F1": {
+        "language": {
+          "ar_msa": 8,
+          "ar_gulf": 16,
+          "en": 5,
+          "mixed": 5
+        },
+        "group": {
+          "new": 14,
+          "existing": 20
+        }
+      },
+      "F2": {
+        "language": {
+          "ar_msa": 7,
+          "ar_gulf": 11,
+          "en": 3,
+          "mixed": 4
+        },
+        "group": {
+          "new": 5,
+          "existing": 20
+        }
+      },
+      "F3": {
+        "language": {
+          "ar_msa": 4,
+          "ar_gulf": 6,
+          "en": 4,
+          "mixed": 0
+        },
+        "group": {
+          "new": 4,
+          "existing": 10
+        }
+      },
+      "F4": {
+        "language": {
+          "ar_msa": 5,
+          "ar_gulf": 5,
+          "en": 5,
+          "mixed": 2
+        },
+        "group": {
+          "new": 6,
+          "existing": 11
+        }
+      },
+      "F5": {
+        "language": {
+          "ar_msa": 0,
+          "ar_gulf": 22,
+          "en": 7,
+          "mixed": 12
+        },
+        "group": {
+          "new": 9,
+          "existing": 32
+        }
+      },
+      "F6": {
+        "language": {
+          "ar_msa": 7,
+          "ar_gulf": 9,
+          "en": 8,
+          "mixed": 3
+        },
+        "group": {
+          "new": 7,
+          "existing": 20
+        }
+      },
+      "F7": {
+        "language": {
+          "ar_msa": 5,
+          "ar_gulf": 4,
+          "en": 2,
+          "mixed": 2
+        },
+        "group": {
+          "new": 2,
+          "existing": 11
+        }
+      },
+      "F8": {
+        "language": {
+          "ar_msa": 3,
+          "ar_gulf": 2,
+          "en": 2,
+          "mixed": 0
+        },
+        "group": {
+          "new": 2,
+          "existing": 5
+        }
+      }
+    },
+    "totals": {
+      "language": {
+        "ar_msa": 91,
+        "ar_gulf": 111,
+        "en": 59,
+        "mixed": 39
+      },
+      "group": {
+        "new": 77,
+        "existing": 223
+      }
+    },
+    "scores": {
+      "F4": 0.227,
+      "F3": 0.187,
+      "F1": 0.34,
+      "F5": 0.273,
+      "F2": 0.25,
+      "F6": 0.18,
+      "F7": 0.13,
+      "F8": 0.07
+    }
+  },
+  "trials": {
+    "trial1_pass": 17,
+    "all_pass": 82,
+    "tasks_all5": 11,
+    "by_lang": {
+      "en": {
+        "runs": 35,
+        "pass": 34
+      },
+      "ar_msa": {
+        "runs": 35,
+        "pass": 33
+      },
+      "ar_gulf": {
+        "runs": 20,
+        "pass": 11
+      },
+      "mixed": {
+        "runs": 10,
+        "pass": 4
+      }
+    }
+  },
+  "calibration": {
+    "K2": {
+      "n": 60,
+      "human_fails": 20,
+      "caught": 18,
+      "accepted": 38,
+      "human_passes": 40,
+      "agreement": 0.9333,
+      "fail_catch_rate": 0.9,
+      "pass_accept_rate": 0.95,
+      "byLang": {
+        "ar_msa": {
+          "n": 18,
+          "human_fails": 7,
+          "caught": 7,
+          "accepted": 10,
+          "human_passes": 11,
+          "agreement": 0.9444,
+          "fail_catch_rate": 1,
+          "pass_accept_rate": 0.9091
+        },
+        "ar_gulf": {
+          "n": 18,
+          "human_fails": 5,
+          "caught": 4,
+          "accepted": 12,
+          "human_passes": 13,
+          "agreement": 0.8889,
+          "fail_catch_rate": 0.8,
+          "pass_accept_rate": 0.9231
+        },
+        "en": {
+          "n": 16,
+          "human_fails": 6,
+          "caught": 5,
+          "accepted": 10,
+          "human_passes": 10,
+          "agreement": 0.9375,
+          "fail_catch_rate": 0.8333,
+          "pass_accept_rate": 1
+        },
+        "mixed": {
+          "n": 8,
+          "human_fails": 2,
+          "caught": 2,
+          "accepted": 6,
+          "human_passes": 6,
+          "agreement": 1,
+          "fail_catch_rate": 1,
+          "pass_accept_rate": 1
+        }
+      }
+    },
+    "K4": {
+      "n": 60,
+      "human_fails": 16,
+      "caught": 9,
+      "accepted": 43,
+      "human_passes": 44,
+      "agreement": 0.8667,
+      "fail_catch_rate": 0.5625,
+      "pass_accept_rate": 0.9773,
+      "byLang": {
+        "ar_msa": {
+          "n": 18,
+          "human_fails": 4,
+          "caught": 4,
+          "accepted": 14,
+          "human_passes": 14,
+          "agreement": 1,
+          "fail_catch_rate": 1,
+          "pass_accept_rate": 1
+        },
+        "ar_gulf": {
+          "n": 18,
+          "human_fails": 8,
+          "caught": 2,
+          "accepted": 9,
+          "human_passes": 10,
+          "agreement": 0.6111,
+          "fail_catch_rate": 0.25,
+          "pass_accept_rate": 0.9
+        },
+        "en": {
+          "n": 16,
+          "human_fails": 3,
+          "caught": 3,
+          "accepted": 13,
+          "human_passes": 13,
+          "agreement": 1,
+          "fail_catch_rate": 1,
+          "pass_accept_rate": 1
+        },
+        "mixed": {
+          "n": 8,
+          "human_fails": 1,
+          "caught": 0,
+          "accepted": 7,
+          "human_passes": 7,
+          "agreement": 0.875,
+          "fail_catch_rate": 0,
+          "pass_accept_rate": 1
+        }
+      }
+    },
+    "K6": {
+      "n": 60,
+      "human_fails": 12,
+      "caught": 11,
+      "accepted": 47,
+      "human_passes": 48,
+      "agreement": 0.9667,
+      "fail_catch_rate": 0.9167,
+      "pass_accept_rate": 0.9792,
+      "byLang": {
+        "ar_msa": {
+          "n": 18,
+          "human_fails": 4,
+          "caught": 4,
+          "accepted": 13,
+          "human_passes": 14,
+          "agreement": 0.9444,
+          "fail_catch_rate": 1,
+          "pass_accept_rate": 0.9286
+        },
+        "ar_gulf": {
+          "n": 18,
+          "human_fails": 3,
+          "caught": 3,
+          "accepted": 15,
+          "human_passes": 15,
+          "agreement": 1,
+          "fail_catch_rate": 1,
+          "pass_accept_rate": 1
+        },
+        "en": {
+          "n": 16,
+          "human_fails": 4,
+          "caught": 3,
+          "accepted": 12,
+          "human_passes": 12,
+          "agreement": 0.9375,
+          "fail_catch_rate": 0.75,
+          "pass_accept_rate": 1
+        },
+        "mixed": {
+          "n": 8,
+          "human_fails": 1,
+          "caught": 1,
+          "accepted": 7,
+          "human_passes": 7,
+          "agreement": 1,
+          "fail_catch_rate": 1,
+          "pass_accept_rate": 1
+        }
+      }
+    },
+    "K8": {
+      "n": 60,
+      "human_fails": 15,
+      "caught": 9,
+      "accepted": 36,
+      "human_passes": 45,
+      "agreement": 0.75,
+      "fail_catch_rate": 0.6,
+      "pass_accept_rate": 0.8,
+      "byLang": {
+        "ar_msa": {
+          "n": 18,
+          "human_fails": 5,
+          "caught": 3,
+          "accepted": 8,
+          "human_passes": 13,
+          "agreement": 0.6111,
+          "fail_catch_rate": 0.6,
+          "pass_accept_rate": 0.6154
+        },
+        "ar_gulf": {
+          "n": 18,
+          "human_fails": 4,
+          "caught": 2,
+          "accepted": 13,
+          "human_passes": 14,
+          "agreement": 0.8333,
+          "fail_catch_rate": 0.5,
+          "pass_accept_rate": 0.9286
+        },
+        "en": {
+          "n": 16,
+          "human_fails": 4,
+          "caught": 3,
+          "accepted": 9,
+          "human_passes": 12,
+          "agreement": 0.75,
+          "fail_catch_rate": 0.75,
+          "pass_accept_rate": 0.75
+        },
+        "mixed": {
+          "n": 8,
+          "human_fails": 2,
+          "caught": 1,
+          "accepted": 6,
+          "human_passes": 6,
+          "agreement": 0.875,
+          "fail_catch_rate": 0.5,
+          "pass_accept_rate": 1
+        }
+      }
+    }
+  },
+  "evalset": {
+    "pool": 146,
+    "duplicates": 14,
+    "leaks": 12,
+    "kept": 120,
+    "per_mode": {
+      "F1": 12,
+      "F2": 10,
+      "F3": 9,
+      "F4": 13,
+      "F5": 12,
+      "F6": 10,
+      "F7": 8
+    },
+    "must_escalate": 13,
+    "must_escalate_en": 2,
+    "en_share": 0.275,
+    "gulf_share": 0.275,
+    "new_share": 0.325,
+    "f8_in_production": 7
+  },
+  "experiment": {
+    "n": {
+      "A": 10094,
+      "B": 9906
+    },
+    "primary": {
+      "a": 0.6229,
+      "b": 0.659,
+      "diff_pp": 3.605,
+      "low_pp": 2.2763,
+      "high_pp": 4.9337,
+      "na": 10094,
+      "nb": 9906
+    },
+    "primary_by_language": {
+      "ar_msa": {
+        "a": 0.6134,
+        "b": 0.6533,
+        "diff_pp": 3.989,
+        "low_pp": 1.6956,
+        "high_pp": 6.2824,
+        "na": 3435,
+        "nb": 3337
+      },
+      "ar_gulf": {
+        "a": 0.6185,
+        "b": 0.6509,
+        "diff_pp": 3.2401,
+        "low_pp": 0.704,
+        "high_pp": 5.7762,
+        "na": 2726,
+        "nb": 2810
+      },
+      "en": {
+        "a": 0.6495,
+        "b": 0.6785,
+        "diff_pp": 2.8974,
+        "low_pp": 0.3331,
+        "high_pp": 5.4618,
+        "na": 2645,
+        "nb": 2563
+      },
+      "mixed": {
+        "a": 0.6033,
+        "b": 0.6522,
+        "diff_pp": 4.8913,
+        "low_pp": 1.0933,
+        "high_pp": 8.6893,
+        "na": 1288,
+        "nb": 1196
+      }
+    },
+    "primary_by_group": {
+      "new": {
+        "a": 0.5838,
+        "b": 0.6371,
+        "diff_pp": 5.3316,
+        "low_pp": 3.0069,
+        "high_pp": 7.6563,
+        "na": 3385,
+        "nb": 3356
+      },
+      "existing": {
+        "a": 0.6427,
+        "b": 0.6702,
+        "diff_pp": 2.751,
+        "low_pp": 1.1351,
+        "high_pp": 4.3669,
+        "na": 6709,
+        "nb": 6550
+      }
+    },
+    "guardrail_missed": {
+      "a": 0.0948,
+      "b": 0.1181,
+      "diff_pp": 2.3218,
+      "low_pp": -0.6088,
+      "high_pp": 5.2523,
+      "na": 833,
+      "nb": 864
+    },
+    "guardrail_by_language": {
+      "ar_msa": {
+        "a": 0.1032,
+        "b": 0.0915,
+        "diff_pp": -1.1654,
+        "low_pp": -6.0544,
+        "high_pp": 3.7237,
+        "na": 281,
+        "nb": 284
+      },
+      "ar_gulf": {
+        "a": 0.0837,
+        "b": 0.2143,
+        "diff_pp": 13.0565,
+        "low_pp": 6.7817,
+        "high_pp": 19.3313,
+        "na": 215,
+        "nb": 252
+      },
+      "en": {
+        "a": 0.0987,
+        "b": 0.0611,
+        "diff_pp": -3.7519,
+        "low_pp": -8.7467,
+        "high_pp": 1.2428,
+        "na": 223,
+        "nb": 229
+      },
+      "mixed": {
+        "a": 0.0877,
+        "b": 0.0808,
+        "diff_pp": -0.6911,
+        "low_pp": -8.1604,
+        "high_pp": 6.7781,
+        "na": 114,
+        "nb": 99
+      }
+    },
+    "guardrail_by_group": {
+      "new": {
+        "a": 0.1152,
+        "b": 0.1233,
+        "diff_pp": 0.8092,
+        "low_pp": -4.5206,
+        "high_pp": 6.1389,
+        "na": 269,
+        "nb": 300
+      },
+      "existing": {
+        "a": 0.0851,
+        "b": 0.1152,
+        "diff_pp": 3.0142,
+        "low_pp": -0.4856,
+        "high_pp": 6.514,
+        "na": 564,
+        "nb": 564
+      }
+    },
+    "complaints": {
+      "a": 0.0145,
+      "b": 0.0144,
+      "diff_pp": -0.0028,
+      "low_pp": -0.3336,
+      "high_pp": 0.328,
+      "na": 10094,
+      "nb": 9906
+    },
+    "cost_per_session": {
+      "A": 0.0751,
+      "B": 0.0353
+    },
+    "latency_p95_ms": {
+      "A": 4920,
+      "B": 4668
+    },
+    "peek_day3": {
+      "a": 0.6304,
+      "b": 0.6831,
+      "diff_pp": 5.2737,
+      "low_pp": 2.4355,
+      "high_pp": 8.112,
+      "na": 2159,
+      "nb": 2127
+    },
+    "by_day_diff_pp": {
+      "1": 4.0713,
+      "2": 4.9836,
+      "3": 5.2737,
+      "4": 3.7426,
+      "5": 3.4652,
+      "6": 3.073,
+      "7": 3.4405,
+      "8": 2.5908,
+      "9": 3.0337,
+      "10": 3.0344,
+      "11": 3.3514,
+      "12": 3.48,
+      "13": 3.6125,
+      "14": 3.605
+    },
+    "sample_size_2pp": 9145,
+    "sample_size_3pp": 4039
+  },
+  "costing": {
+    "A": {
+      "runs": 360,
+      "passes": 342,
+      "pass_rate": 0.95,
+      "k4_fails": 0,
+      "k3_fails": 0,
+      "criterion_pass_rate": {
+        "K1": 0.9889,
+        "K2": 0.9778,
+        "K3": 1,
+        "K4": 1,
+        "K5": 0.9944,
+        "K6": 1,
+        "K7": 1,
+        "K8": 0.9889
+      },
+      "calls": 625,
+      "tokens_in": 2069623,
+      "tokens_cached": 0,
+      "tokens_out": 81665,
+      "model_cost_total": 26.9582,
+      "cost_per_call": 0.0431,
+      "model_cost_per_run": 0.0749,
+      "model_cost_per_success": 0.0788,
+      "loaded_cost_per_success": 0.4736,
+      "run_cost_p50": 0.0827,
+      "run_cost_p90": 0.0954,
+      "latency_p50_ms": 3521,
+      "latency_p95_ms": 5533,
+      "meets_sla": false,
+      "by_language": {
+        "ar_msa": {
+          "runs": 105,
+          "pass_rate": 0.9524,
+          "p95_ms": 5471
+        },
+        "ar_gulf": {
+          "runs": 99,
+          "pass_rate": 0.9192,
+          "p95_ms": 5676
+        },
+        "en": {
+          "runs": 99,
+          "pass_rate": 0.9596,
+          "p95_ms": 4955
+        },
+        "mixed": {
+          "runs": 57,
+          "pass_rate": 0.9825,
+          "p95_ms": 5675
+        }
+      },
+      "by_group": {
+        "new": {
+          "runs": 117,
+          "pass_rate": 0.9573
+        },
+        "existing": {
+          "runs": 243,
+          "pass_rate": 0.9465
+        }
+      },
+      "monthly_model_cost": [
+        4493,
+        8986,
+        17972
+      ],
+      "monthly_loaded_cost": [
+        26993,
+        53986,
+        107972
+      ],
+      "within_budget": [
+        true,
+        true,
+        false
+      ],
+      "sensitivity_loaded_per_success": {
+        "base": 0.4736,
+        "success_minus5": 0.9165,
+        "success_plus5": 0.0749,
+        "price_plus30": 0.4972,
+        "price_minus30": 0.4499,
+        "price_x2": 0.5524
+      }
+    },
+    "B": {
+      "runs": 360,
+      "passes": 267,
+      "pass_rate": 0.7417,
+      "k4_fails": 16,
+      "k3_fails": 8,
+      "criterion_pass_rate": {
+        "K1": 0.9722,
+        "K2": 0.9694,
+        "K3": 0.9778,
+        "K4": 0.9556,
+        "K5": 0.9472,
+        "K6": 0.9528,
+        "K7": 1,
+        "K8": 0.9667
+      },
+      "calls": 772,
+      "tokens_in": 2563371,
+      "tokens_cached": 0,
+      "tokens_out": 101154,
+      "model_cost_total": 1.7808,
+      "cost_per_call": 0.0023,
+      "model_cost_per_run": 0.0049,
+      "model_cost_per_success": 0.0067,
+      "loaded_cost_per_success": 2.619,
+      "run_cost_p50": 0.0047,
+      "run_cost_p90": 0.0071,
+      "latency_p50_ms": 1718,
+      "latency_p95_ms": 2852,
+      "meets_sla": true,
+      "by_language": {
+        "ar_msa": {
+          "runs": 105,
+          "pass_rate": 0.8571,
+          "p95_ms": 2837
+        },
+        "ar_gulf": {
+          "runs": 99,
+          "pass_rate": 0.6566,
+          "p95_ms": 2602
+        },
+        "en": {
+          "runs": 99,
+          "pass_rate": 0.7879,
+          "p95_ms": 2891
+        },
+        "mixed": {
+          "runs": 57,
+          "pass_rate": 0.5965,
+          "p95_ms": 3714
+        }
+      },
+      "by_group": {
+        "new": {
+          "runs": 117,
+          "pass_rate": 0.8034
+        },
+        "existing": {
+          "runs": 243,
+          "pass_rate": 0.7119
+        }
+      },
+      "monthly_model_cost": [
+        297,
+        594,
+        1187
+      ],
+      "monthly_loaded_cost": [
+        116547,
+        233094,
+        466187
+      ],
+      "within_budget": [
+        true,
+        true,
+        true
+      ],
+      "sensitivity_loaded_per_success": {
+        "base": 2.619,
+        "success_minus5": 3.3505,
+        "success_plus5": 1.9799,
+        "price_plus30": 2.621,
+        "price_minus30": 2.617,
+        "price_x2": 2.6257
+      }
+    },
+    "C": {
+      "runs": 360,
+      "passes": 331,
+      "pass_rate": 0.9194,
+      "k4_fails": 0,
+      "k3_fails": 0,
+      "criterion_pass_rate": {
+        "K1": 0.9833,
+        "K2": 0.9833,
+        "K3": 1,
+        "K4": 1,
+        "K5": 0.9806,
+        "K6": 0.9861,
+        "K7": 1,
+        "K8": 0.9861
+      },
+      "calls": 596,
+      "tokens_in": 1964587,
+      "tokens_cached": 1430400,
+      "tokens_out": 79146,
+      "model_cost_total": 5.5168,
+      "cost_per_call": 0.0093,
+      "model_cost_per_run": 0.0153,
+      "model_cost_per_success": 0.0167,
+      "loaded_cost_per_success": 0.6738,
+      "run_cost_p50": 0.0142,
+      "run_cost_p90": 0.034,
+      "latency_p50_ms": 1609,
+      "latency_p95_ms": 3457,
+      "meets_sla": true,
+      "by_language": {
+        "ar_msa": {
+          "runs": 105,
+          "pass_rate": 0.9429,
+          "p95_ms": 2819
+        },
+        "ar_gulf": {
+          "runs": 99,
+          "pass_rate": 0.8586,
+          "p95_ms": 3907
+        },
+        "en": {
+          "runs": 99,
+          "pass_rate": 0.9495,
+          "p95_ms": 2758
+        },
+        "mixed": {
+          "runs": 57,
+          "pass_rate": 0.9298,
+          "p95_ms": 3529
+        }
+      },
+      "by_group": {
+        "new": {
+          "runs": 117,
+          "pass_rate": 0.9402
+        },
+        "existing": {
+          "runs": 243,
+          "pass_rate": 0.9095
+        }
+      },
+      "monthly_model_cost": [
+        919,
+        1839,
+        3678
+      ],
+      "monthly_loaded_cost": [
+        37169,
+        74339,
+        148678
+      ],
+      "within_budget": [
+        true,
+        true,
+        true
+      ],
+      "sensitivity_loaded_per_success": {
+        "base": 0.6738,
+        "success_minus5": 1.1438,
+        "success_plus5": 0.2522,
+        "price_plus30": 0.6788,
+        "price_minus30": 0.6688,
+        "price_x2": 0.6904
+      }
+    },
+    "assumptions": {
+      "human_handling_sar": 7.5,
+      "sla_p95_ms": 4000,
+      "monthly_model_budget_sar": 9000,
+      "volumes": [
+        60000,
+        120000,
+        240000
+      ]
+    }
+  }
+}

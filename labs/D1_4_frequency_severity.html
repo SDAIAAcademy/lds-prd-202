@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-ax="lab" data-track="executives">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المختبر 1.4 · ترتيب التصنيف · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها</title>
+<meta name="generator" content="SDAIA Academy engine 1.0.0">
+<link rel="icon" href="../_engine/icon.svg">
+<link rel="alternate" type="text/markdown" href="D1_4_frequency_severity.md">
+<link rel="describedby" href="../llms.txt">
+<link rel="stylesheet" href="../_engine/academy.css">
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="top"><div class="logo"></div><nav><a href="../index.html">صفحة المقرر</a><a href="../slides/day1.html#lab-1-4">العودة إلى الشرائح</a></nav></div>
+<span class="tag">المختبر 1.4</span>
+<h1>ترتيب التصنيف</h1>
+<p>تجمع وسمك للآثار المئة مع وسم الفريق الهندسي للآثار المئتين الباقية، وتعدّ كل نمط وتقدّر شدته وترتبه، وتفصّل بحسب اللغة وفئة العضو، فتخرج بجدول التصنيف</p>
+<div class="meta"><span>35 دقيقة</span><span>اليوم 1</span><span>الجلسة 4: التكرار مقابل الشدة</span></div>
+</div>
+</header>
+<main class="wrap">
+<article class="lab" data-lab="1.4">
+  <div class="box goal">
+    <h3>ستخرج من هذا المختبر بـ</h3>
+    <ul>
+      <li>جدول التصنيف: لكل نمط تعريف ومعرّفات أمثلة وعدد ونسبة من 300 أثر وشدة.</li>
+      <li>ترتيب للإصلاح بقاعدة المقرر، وتفصيل للأنماط الثلاثة الأولى بحسب اللغة وفئة العضو.</li>
+    </ul>
+  </div>
+
+  <h2>ما تحتاجه</h2>
+  <div class="files">
+    <a href="files/coding_sheet_P001_P100.csv" target="_blank"><b>coding_sheet_P001_P100.csv</b><span>وسمك للآثار المئة (المختبران 1.2 و1.3)</span></a>
+    <a href="files/team_coding_P101_P300.csv" target="_blank"><b>team_coding_P101_P300.csv</b><span>ملف البداية: وسم الفريق الهندسي للآثار المئتين الباقية</span></a>
+    <a href="files/taxonomy_v0_engineering.csv" target="_blank"><b>taxonomy_v0_engineering.csv</b><span>تصنيف الفريق الهندسي ورموزه وشدته</span></a>
+    <a href="files/traces_300.csv" target="_blank"><b>traces_300.csv</b><span>الآثار، ومنها عمودا اللغة وفئة العضو</span></a>
+  </div>
+  <p class="small">وحّد رموزك مع رموز الفريق الهندسي قبل الجمع. إن لم يكتمل وسمك فاعمل على ملف الفريق وحده (200 أثر)، واكتب ذلك فوق الجدول. سياسة الذكاء الاصطناعي: مساعد مرشد للمعادلات وحدها؛ لا تضع فيه أي سطر من الآثار، فهي «مقيد».</p>
+
+  <h2>الخطوات</h2>
+
+  <div class="step">
+    <h3>1 · اجمع وسمك مع ملف الفريق الهندسي <span class="min">5 د</span></h3>
+    <p>انسخ عمودي <code>trace_id</code> و<code>failure_mode</code> من الملفين في ورقة واحدة: 300 صف. ثم أضف اللغة وفئة العضو من <code>traces_300.csv</code>:</p>
+    <div class="prompt" data-tool="جدول بيانات">=XLOOKUP(A2, traces!A:A, traces!E:E)</div>
+    <p class="small">فئة العضو بالمعادلة نفسها مع العمود <code>F</code>. إن لم يكن في جدول بياناتك <code>XLOOKUP</code>: <code>=INDEX(traces!E:E, MATCH(A2, traces!A:A, 0))</code>.</p>
+  </div>
+
+  <div class="step">
+    <h3>2 · عدّ كل نمط واحسب نسبته من 300 <span class="min">7 د</span></h3>
+    <div class="prompt" data-tool="جدول بيانات">=COUNTIF(B:B, "<span class="ph">F4</span>")</div>
+  </div>
+
+  <div class="step">
+    <h3>3 · طبّق مقياس الشدة وقاعدة الأولوية <span class="min">8 د</span></h3>
+    <p>القاعدة من وضع المقرر: كل نمط شدته 4 يُعالج قبل الإطلاق مهما قل تكراره، ثم ترتب الأنماط الباقية بحاصل ضرب نسبة التكرار في الشدة.</p>
+  </div>
+
+  <div class="step">
+    <h3>4 · فصّل الأنماط الثلاثة الأولى بحسب اللغة وفئة العضو <span class="min">8 د</span></h3>
+    <p>احسب لكل لغة نسبة آثارها التي فيها النمط، لا العدد وحده: اللغات مختلفة الحجم.</p>
+    <div class="prompt" data-tool="جدول بيانات">=COUNTIFS(B:B, "<span class="ph">F1</span>", C:C, "<span class="ph">ar_gulf</span>") / COUNTIF(C:C, "<span class="ph">ar_gulf</span>")</div>
+  </div>
+
+  <div class="step">
+    <h3>5 · اكتب جدول التصنيف <span class="min">7 د</span></h3>
+    <table>
+      <tr><th>النمط</th><th>التعريف</th><th>أمثلة</th><th>العدد</th><th>النسبة</th><th>الشدة</th><th>الترتيب</th></tr>
+      <tr><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+    </table>
+  </div>
+
+  <div class="step stretch">
+    <h3>✱ إضافي</h3>
+    <p>قدّر كم مرة يقع النمط الأول في الشهر إذا بلغ الاستخدام 60,000 مهمة، واكتب ما يفترضه تقديرك.</p>
+  </div>
+
+  <h2>أسئلة تحقق</h2>
+  <ol class="checks">
+    <li>هل الترتيب بقاعدة المقرر هو ترتيب التكرار نفسه؟ ما الذي تغيّر ولماذا؟</li>
+    <li>أي نمط تتركز نسبته في لغة واحدة؟ وماذا كان المتوسط سيخفي؟</li>
+    <li>هل لكل نمط في جدولك ثلاثة معرّفات أمثلة يستطيع المهندس فتحها؟</li>
+  </ol>
+
+  <details class="instructor">
+    <summary>للمدرّب: مفتاح المختبر</summary>
+    <ul>
+      <li><b>الأعداد من 300:</b> F5 41، F1 34، F6 27، F2 25، F4 17، F3 14، F7 13، F8 7؛ وبلا فشل 122.</li>
+      <li><b>الترتيب بقاعدة المقرر:</b> F4 ثم F3 (شدتهما 4)، ثم F1 (0.340)، ثم F5 (0.273)، ثم F2 (0.250)، ثم F6 (0.180)، ثم F7 (0.130)، ثم F8 (0.070). الأكثر تكرارًا (F5) ليس الأول.</li>
+      <li><b>التفصيل:</b> F1 في اللهجة الخليجية 16 من 111 أثرًا (14%) وفي الفصحى 8 من 91 (9%)؛ F5 لا يقع في الفصحى (0 من 91) ويقع في الخليجية 22 من 111 وفي المختلطة 12 من 39؛ F4 يتوزع على اللغات (5 و5 و5 و2). الأعضاء الجدد 77 من 300.</li>
+      <li>من عمل على ملف الفريق وحده يصل إلى الترتيب نفسه في أوله (F4 ثم F3).</li>
+      <li><b>الفصل بين المهام:</b> جدول التصنيف وترتيبه يعدّهما مالك المنتج بقاعدة المقرر، ويعتمدهما فريق المراجعة. الفريق الهندسي يتسلم كل نمط تذكرة، ولا يعيد الترتيب وحده ليقدّم الأسهل إصلاحًا.</li>
+      <li>التحقق: <code>node labs/solutions/check_all.mjs</code>.</li>
+    </ul>
+  </details>
+</article>
+<nav class="pager"><a href="D1_3_axial_coding.html" rel="prev">→ المختبر السابق</a><a href="D2_1_grader_choice.html" rel="next">المختبر التالي ←</a></nav>
+</main>
+<footer><div class="wrap">أكاديمية سدايا · مسار التنفيذيين والقادة · تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها<br><span class="muted">إصدار المقرر 2027.1.0 · المحرّك 1.0.0 · بُني في ⁦2026-11-18⁩ · الإيداع 5b3a497</span></div></footer>
+<script type="application/json" id="academy-data">{"v":1,"engine":"1.0.0","build":{"at":"2026-11-18T06:07:40Z","version":"2027.1.0","commit":"5b3a497"},"course":{"id":"lds-prd-202","code":"LDS-PRD-202","title":"تقييم منتجات الذكاء الاصطناعي وتجاربها واقتصادياتها","track":"executives","lang":"ar","dir":"rtl","url":"https://sdaiaacademy.github.io/lds-prd-202/","repo":"SDAIAAcademy/lds-prd-202","home":"../index.html"},"lab":{"id":"1.4","title":"ترتيب التصنيف","summary":"تجمع وسمك للآثار المئة مع وسم الفريق الهندسي للآثار المئتين الباقية، وتعدّ كل نمط وتقدّر شدته وترتبه، وتفصّل بحسب اللغة وفئة العضو، فتخرج بجدول التصنيف","minutes":35,"day":1,"unit":"اليوم 1","session":4,"deck":"../slides/day1.html#lab-1-4","prev":"D1_3_axial_coding.html","next":"D2_1_grader_choice.html","alt":{}},"ai":{"context":{"course":"../context/course.md","courseJs":"../context/course.js","day":null,"llms":"../llms.txt"},"tasks":[],"tools":[]},"features":{},"strings":{}}</script>
+<script src="../_engine/academy.js"></script>
+</body>
+</html>
