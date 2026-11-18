@@ -22,6 +22,7 @@
     <h3>1 · اجمع وسمك مع ملف الفريق الهندسي <span class="min">5 د</span></h3>
     <p>انسخ عمودي <code>trace_id</code> و<code>failure_mode</code> من الملفين في ورقة واحدة: 300 صف. ثم أضف اللغة وفئة العضو من <code>traces_300.csv</code>:</p>
     <div class="prompt" data-tool="جدول بيانات">=XLOOKUP(A2, traces!A:A, traces!E:E)</div>
+    <p class="small">فئة العضو بالمعادلة نفسها مع العمود <code>F</code>. إن لم يكن في جدول بياناتك <code>XLOOKUP</code>: <code>=INDEX(traces!E:E, MATCH(A2, traces!A:A, 0))</code>.</p>
   </div>
 
   <div class="step">
